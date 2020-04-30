@@ -1,10 +1,16 @@
 
 public class Objet {
-
-	public Objet() {
-		// TODO Auto-generated constructor stub
-		//test
-		//test2
+	String nom;
+	
+	
+	public Objet(String nom) {
+		this.nom = nom;
+	}
+	
+	public String toString() {
+		String res = "";
+		res+= nom; //TODO rajouter l'état des objets
+		return res;
 	}
 
 }
