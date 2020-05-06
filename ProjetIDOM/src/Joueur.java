@@ -6,8 +6,8 @@ public class Joueur {
 	private Piece pieceCourante;
 	private List<Objet> inventaire;
 
-	public Joueur() {
-		this.pieceCourante = new Piece(null, null, null); // TODO
+	public Joueur(Piece debut) {
+		this.pieceCourante = debut; // TODO
 		this.inventaire = new ArrayList<Objet>();
 	}
 
