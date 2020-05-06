@@ -103,14 +103,9 @@ public class Main {
 			case "aller":
 				Joueur.changerPiece(entreeSplit[1]);
 				break;
-<<<<<<< HEAD
-			case "telephone": //commande pour utiliser le telephone
-				Telephone.utiliserTelephone(null);
-=======
 			case "telephone" : // commande pour utiliser le téléphone
 				Telephone.utiliserTelephone();
 				break;
->>>>>>> branch 'master' of https://github.com/Francois35850/ProjetMaisonIDOM.git
 			default: // cas par défaut, cad commande invalide
 				System.out.println("Commande invalide.");
 				break;
