@@ -101,33 +101,30 @@ public class Telephone {
 						
 					case "connexion" : //commande pour voir l'Ã©tat des connexions 
 						System.out.println("Problemes de connexion ?");
-						int choix_connexion = input.nextInt();
 						System.out.println("1 - Voir l'Ã©tat de la connexion wifi");
 						System.out.println("2 - Changer l'Ã©tat de la connexion wifi");
 						System.out.println("3 - Voir l'Ã©tat de la connexion gsm");
 						System.out.println("4 - Changer l'Ã©tat de la connexion gsm");
 						System.out.println("5 - Quitter l'application");
 						System.out.println("6 - Quitter le téléphone");
+						int choix_connexion = input.nextInt();
 						Connexion(choix_connexion,iphone );
-						System.out.println("6 - Quitter le tÃ©lÃ©phone");
-						Connexion(choix_connexion, iphone );
 						break;
 						
 					case "course" : // commande pour ouvrir l'application course
 						System.out.println("Bientot l'heure de manger ?");
-						int choix_course = input.nextInt();
 						System.out.println("1 - Aller faire ses courses tout seul");
 						System.out.println("2 - Commander et aller retirer ses courses au drive");
 						System.out.println("3 - Se faire livrer ses courses");
 						System.out.println("4 - Regarder ses points de fidÃ©litÃ©");
 						System.out.println("5 - Quitter l'application");
 						System.out.println("6 - Quitter le tÃ©lÃ©phone");
+						int choix_course = input.nextInt();
 						Course(choix_course);
 						break;
 				
 					case "homekit" : // commande pour affiche l'application de la maison connectÃ©e
 						System.out.println("Faire son choix :");
-						int choix_homekit = input.nextInt();
 						System.out.println("1 - Enceintes");
 						System.out.println("2 - Lumières");
 						System.out.println("3 - Frigo");
@@ -140,12 +137,14 @@ public class Telephone {
 						System.out.println("10 - Sam le chien");
 						System.out.println("11 - Quitter l'application");
 						System.out.println("12 - Quitter le tÃ©lÃ©phone");
+						int choix_homekit = input.nextInt();
 						Homekit(choix_homekit);
 						break;																						
 						
 					case "help" : // commande pour afficher la liste des commandes
 						System.out.println("Besoin d'aide ?");
 						System.out.println("   - carte : affiche la carte");
+						System.out.println("   - connexion : affiche les options de connexion");
 						System.out.println("   - musique : ouvrir l'application musique");
 						System.out.println("   - messages : ouvrir l'application message");
 						System.out.println("   - course : ouvrir l'application d'IntermarchÃ©");
@@ -154,30 +153,29 @@ public class Telephone {
 						System.out.println("   - credits : voir les crÃ©dits");
 						break;
 						
-						
 					case "musique" : // commande pour ouvrir l'application musique
 						System.out.println("Un peu de musique ?");
-						int choix_musique = input.nextInt();
 						System.out.println("1 - Jouer de la musique");
 						System.out.println("2 - Se connecter à une enceinte");
 						System.out.println("3 - Se connecter à plusieurs pièces");
 						System.out.println("4 - Mettre de la musique dans toute la maison");
 						System.out.println("5 - Quitter l'application");
 						System.out.println("6 - Quitter le téléphone");
-						Musique(choix_musique,iphone);
-						System.out.println("6 - Quitter le tÃ©lÃ©phone");
+						int choix_musique = input.nextInt();
 						Musique(choix_musique,iphone);
 						break;
 						
 					case "messages" : // commande pour ouvrir l'application message
 						System.out.println("Envie de contacter quelqu'un");
-						int choix_message = input.nextInt();
 						System.out.println("1 - Passer un appel");
 						System.out.println("2 - Faire un coronapéro");
 						System.out.println("3 - Envoyer un message");
 						System.out.println("4 - Quitter l'application");
 						System.out.println("5 - Quitter le tÃ©lÃ©phone");
-					
+						int choix_message = input.nextInt();
+						Messages(choix_message,iphone);
+						break;
+						
 					case "credits" : // commande pour ouvrir les credits
 						System.out.println("");	
 						break;	
