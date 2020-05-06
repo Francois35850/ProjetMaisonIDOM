@@ -43,6 +43,8 @@ public class Main {
 			case "aller":
 				Joueur.changerPiece(entreeSplit[1]);
 				break;
+			case "telephone": //commande pour utiliser le telephone
+				Telephone.utiliserTelephone(null);
 			default: // cas par défaut, cad commande invalide
 				System.out.println("Commande invalide.");
 				break;
