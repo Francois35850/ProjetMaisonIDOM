@@ -9,6 +9,8 @@ public class Main {
 	// scanner pour lire les commandes du joueur
 	private static Scanner input = new Scanner(System.in);
 	
+	private ITelephone iPhone = ITelephone.newTelephone();
+	
 	private static Piece garage = new Piece("Garage", null, true);
 	private static Piece cuisine = new Piece("Cuisine", null, true);
 	private static Piece salon = new Piece("Salon", null, true);
