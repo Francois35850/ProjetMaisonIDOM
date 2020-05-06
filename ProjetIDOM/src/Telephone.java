@@ -9,6 +9,9 @@ public class Telephone {
 			// scanner pour lire les commandes du joueur
 			private static Scanner input = new Scanner(System.in);
 
+			//telephone pour les fonctions
+			private static ITelephone iphone;
+			
 			/**
 			 * Fonction principale téléphone
 			 */
@@ -105,7 +108,7 @@ public class Telephone {
 						System.out.println("4 - Changer l'état de la connexion gsm");
 						System.out.println("5 - Quitter l'application");
 						System.out.println("6 - Quitter le téléphone");
-						Connexion(choix_connexion, ITelephone iphone );
+						Connexion(choix_connexion,iphone );
 						break;
 						
 					case "course" : // commande pour ouvrir l'application course
@@ -159,7 +162,7 @@ public class Telephone {
 						System.out.println("4 - Mettre de la musique dans toute la maison");
 						System.out.println("5 - Quitter l'application");
 						System.out.println("6 - Quitter le téléphone");
-						Musique(choix_musique);
+						Musique(choix_musique,iphone);
 						break;
 						
 					case "messages" : // commande pour ouvrir l'application message
