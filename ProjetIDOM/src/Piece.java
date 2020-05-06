@@ -6,15 +6,21 @@ public class Piece {
 	List<Piece> piecesAdj;
 	List<Objet> listeObjets;
 	
-	public Piece(String nom, List<Piece> piecesAdj, List<Objet> listeObjets, boolean etage) {
+	public Piece(String nom, List<Objet> listeObjets, boolean rdc) {
 		this.nom = nom;
-		this.piecesAdj = piecesAdj;
+		this.piecesAdj = new ArrayList<Piece>();
 		this.listeObjets = listeObjets;
-		estAuRezDeC = etage;
+		estAuRezDeC = rdc;
 	}
 	
 	public void addObjets(Objet o) {
 		listeObjets.add(o);
+	}
+	
+	public void ajouterPiecesAdj(Piece[] aAjouter) {
+		for(int i = 0; i<aAjouter.length; i++) {
+			piecesAdj.add(aAjouter[i]);
+		}
 	}
 	
 	public void soustractObjets(Objet o) {

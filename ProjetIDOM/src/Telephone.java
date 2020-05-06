@@ -12,7 +12,7 @@ public class Telephone {
 			/**
 			 * Fonction principale tÃ©lÃ©phone
 			 */
-			public static void utiliserTelephone(String[] args) {
+			public static void utiliserTelephone() {
 				
 				// active le tÃ©lÃ©phone une premiere fois
 				telActive = true;
@@ -210,7 +210,8 @@ public class Telephone {
 				}
 				
 			}
-				
+			
+			telActive = false;
 
 		}
 			
