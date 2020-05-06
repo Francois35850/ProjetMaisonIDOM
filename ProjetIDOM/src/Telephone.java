@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import Main.ITelephone;
 
 public class Telephone {
 
@@ -35,33 +34,64 @@ public class Telephone {
 						
 					case "carte" : // commande pour afficher la carte
 						System.out.println("Tu veux savoir où tu es ?");
-						System.out.println("|------------------------------------------------------------------|");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|------------------------------------------------------------------|");				
+						if() {
+						System.out.println("|---------------------------------------------------------------------|");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                             JARDIN                                  |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");						
+						System.out.println("|------------------------------------|-------------|------------------|");
+						System.out.println("|                             |_ VERS|             |                  |");
+						System.out.println("|                               |_R+1|             |                  |");
+						System.out.println("|              SALON              |_ |   CHAMBRE   |     CHAMBRE      |");
+						System.out.println("|                                   ||      1      |        2         |");
+						System.out.println("|                                    |             |                  |");
+						System.out.println("|------:  :------------------|       |             |        |---------|");
+						System.out.println("|                            |       |             |        |         |");
+						System.out.println("|                            |       |--:  :-------|--:  :--|   SDB 1 |");
+						System.out.println("|       SALLE A MANGER                                            +   |");
+						System.out.println("|                                          ENTREE               WC 1  |");
+						System.out.println("|                            |       |                      |         |");
+						System.out.println("|------:  :------|-----------|-------|       |----:  :------|---------|");
+						System.out.println("|                |                   |       |                        |");
+						System.out.println("|                                    |       |                        |");
+						System.out.println("|     CUISINE          BUANDERIE     |       |        BUREAU          |");
+						System.out.println("|                |                   |       |                        |");
+						System.out.println("|                |                   |       |                        |");
+						System.out.println("|------:  :------|------:  :---------|-;  ;--|------------------------|");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|              GARAGE                |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|------------------------------------|--------------------------------|");	
+						}
+						else {
+						System.out.println("|----------------------------|-------|--------------------------------|");
+						System.out.println("|                            ||_VERS |                                |");
+						System.out.println("|                            |  |_RDC|                                |");
+						System.out.println("|                            |    |_ |                                |");
+						System.out.println("|       SALLE DE JEUX        |      ||            GRENIER             |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                            |       |                                |");
+						System.out.println("|----------------------------|       |---------------------|----------|");
+						System.out.println("|                                                          |          |");
+						System.out.println("|                                                              SDB 2  |");
+						System.out.println("|        AUDITORIUM          |       |                           +    |");
+						System.out.println("|                            |       |       CHAMBRE       |   WC 2   |");
+						System.out.println("|                |-----------|       |                     |----------|");
+						System.out.println("|                |           |       |      PARENTALE      |          |");
+						System.out.println("|                |   WC 3            |                       DRESSING |");
+						System.out.println("|                |                   |                                |");
+						System.out.println("|                |           |       |                     |          |");
+						System.out.println("|----------------|-----------|-------|---------------------|----------|");
+						}
 						break;
 						
 						
