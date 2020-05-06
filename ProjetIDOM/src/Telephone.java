@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import Main.ITelephone;
 
 public class Telephone {
 
@@ -62,6 +61,65 @@ public class Telephone {
 						System.out.println("|                                                                  |");
 						System.out.println("|                                                                  |");
 						System.out.println("|------------------------------------------------------------------|");				
+						System.out.println("Tu veux savoir o� tu es ?");
+						if(true) {
+						System.out.println("|---------------------------------------------------------------------|");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                             JARDIN                                  |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");						
+						System.out.println("|------------------------------------|-------------|------------------|");
+						System.out.println("|                             |_ VERS|             |                  |");
+						System.out.println("|                               |_R+1|             |                  |");
+						System.out.println("|              SALON              |_ |   CHAMBRE   |     CHAMBRE      |");
+						System.out.println("|                                   ||      1      |        2         |");
+						System.out.println("|                                    |             |                  |");
+						System.out.println("|------:  :------------------|       |             |        |---------|");
+						System.out.println("|                            |       |             |        |         |");
+						System.out.println("|                            |       |--:  :-------|--:  :--|   SDB 1 |");
+						System.out.println("|       SALLE A MANGER                                            +   |");
+						System.out.println("|                                          ENTREE               WC 1  |");
+						System.out.println("|                            |       |                      |         |");
+						System.out.println("|------:  :------|-----------|-------|       |----:  :------|---------|");
+						System.out.println("|                |                   |       |                        |");
+						System.out.println("|                                    |       |                        |");
+						System.out.println("|     CUISINE          BUANDERIE     |       |        BUREAU          |");
+						System.out.println("|                |                   |       |                        |");
+						System.out.println("|                |                   |       |                        |");
+						System.out.println("|------:  :------|------:  :---------|-;  ;--|------------------------|");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|              GARAGE                |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|                                    |                                |");
+						System.out.println("|------------------------------------|--------------------------------|");	
+						}
+						else {
+						System.out.println("|----------------------------|-------|--------------------------------|");
+						System.out.println("|                            ||_VERS |                                |");
+						System.out.println("|                            |  |_RDC|                                |");
+						System.out.println("|                            |    |_ |                                |");
+						System.out.println("|       SALLE DE JEUX        |      ||            GRENIER             |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                                                                     |");
+						System.out.println("|                            |       |                                |");
+						System.out.println("|----------------------------|       |---------------------|----------|");
+						System.out.println("|                                                          |          |");
+						System.out.println("|                                                              SDB 2  |");
+						System.out.println("|        AUDITORIUM          |       |                           +    |");
+						System.out.println("|                            |       |       CHAMBRE       |   WC 2   |");
+						System.out.println("|                |-----------|       |                     |----------|");
+						System.out.println("|                |           |       |      PARENTALE      |          |");
+						System.out.println("|                |   WC 3            |                       DRESSING |");
+						System.out.println("|                |                   |                                |");
+						System.out.println("|                |           |       |                     |          |");
+						System.out.println("|----------------|-----------|-------|---------------------|----------|");
+						}
 						break;
 						
 						
@@ -75,7 +133,7 @@ public class Telephone {
 						System.out.println("4 - Changer l'Ã©tat de la connexion gsm");
 						System.out.println("5 - Quitter l'application");
 						System.out.println("6 - Quitter le tÃ©lÃ©phone");
-						Connexion(choix_connexion, ITelephone iphone );
+						Connexion(choix_connexion, iphone );
 						break;
 						
 					case "course" : // commande pour ouvrir l'application course
