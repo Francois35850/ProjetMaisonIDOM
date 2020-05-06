@@ -35,35 +35,7 @@ public class Telephone {
 					case "quitter" : // commande pour quitter le tel
 						telActive = false;
 						
-					case "carte" : // commande pour afficher la carte
-						System.out.println("Tu veux savoir où tu es ?");
-						System.out.println("|------------------------------------------------------------------|");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|                                                                  |");
-						System.out.println("|------------------------------------------------------------------|");				
+					case "carte" : // commande pour afficher la carte			
 						System.out.println("Tu veux savoir o� tu es ?");
 						if(true) {
 						System.out.println("|---------------------------------------------------------------------|");
@@ -135,13 +107,10 @@ public class Telephone {
 						System.out.println("3 - Voir l'Ã©tat de la connexion gsm");
 						System.out.println("4 - Changer l'Ã©tat de la connexion gsm");
 						System.out.println("5 - Quitter l'application");
-<<<<<<< HEAD
 						System.out.println("6 - Quitter le téléphone");
 						Connexion(choix_connexion,iphone );
-=======
 						System.out.println("6 - Quitter le tÃ©lÃ©phone");
 						Connexion(choix_connexion, iphone );
->>>>>>> branch 'master' of https://github.com/Francois35850/ProjetMaisonIDOM.git
 						break;
 						
 					case "course" : // commande pour ouvrir l'application course
@@ -194,13 +163,10 @@ public class Telephone {
 						System.out.println("3 - Se connecter à plusieurs pièces");
 						System.out.println("4 - Mettre de la musique dans toute la maison");
 						System.out.println("5 - Quitter l'application");
-<<<<<<< HEAD
 						System.out.println("6 - Quitter le téléphone");
 						Musique(choix_musique,iphone);
-=======
 						System.out.println("6 - Quitter le tÃ©lÃ©phone");
 						Musique(choix_musique);
->>>>>>> branch 'master' of https://github.com/Francois35850/ProjetMaisonIDOM.git
 						break;
 						
 					case "messages" : // commande pour ouvrir l'application message
