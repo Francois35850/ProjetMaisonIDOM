@@ -166,7 +166,7 @@ public class Telephone {
 						System.out.println("6 - Quitter le téléphone");
 						Musique(choix_musique,iphone);
 						System.out.println("6 - Quitter le tÃ©lÃ©phone");
-						Musique(choix_musique);
+						Musique(choix_musique,iphone);
 						break;
 						
 					case "messages" : // commande pour ouvrir l'application message
