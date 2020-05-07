@@ -26,7 +26,7 @@ public class Main {
 	private static Piece salle_de_jeux = new Piece("Salle de jeux", null, true);
 	private static Piece couloir = new Piece("Couloir", null, true);
 	private static Piece grenier = new Piece("Grenier", null, true);
-	private static Piece auditorium = new Piece("Auditorium", null, true);
+	private static Piece studio = new Piece("Studio", null, true);
 	private static Piece dressing = new Piece("Dressing", null, true);
 	private static Piece toilettes = new Piece("Toilettes", null, true);
 	private static Piece jardin = new Piece("Jardin", null, true);
@@ -36,24 +36,24 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Piece [] adjGarage = {buanderie,cuisine}; 
-		Piece [] adjCuisine = {buanderie,cuisine}; 
-		Piece [] adjBuanderie = {buanderie,cuisine}; 
-		Piece [] adjSalleAManger = {buanderie,cuisine}; 
-		Piece [] adjSalon = {buanderie,cuisine}; 
-		Piece [] adjEntree = {buanderie,cuisine}; 
-		Piece [] adjChambre1 = {buanderie,cuisine}; 
-		Piece [] adjChambre2 = {buanderie,cuisine}; 
-		Piece [] adjSdB1 = {buanderie,cuisine}; 
-		Piece [] adjBureau = {buanderie,cuisine}; 
-		Piece [] adjCouloir = {buanderie,cuisine}; 
-		Piece [] adjSdB2 = {buanderie,cuisine}; 
-		Piece [] adjSalleDeJeux = {buanderie,cuisine}; 
-		Piece [] adjChambreParentale = {buanderie,cuisine}; 
-		Piece [] adjAuditorium = {buanderie,cuisine}; 
-		Piece [] adjToilettes = {buanderie,cuisine}; 
-		Piece [] adjGrenier = {buanderie,cuisine}; 
-		Piece [] adjDressing = {buanderie,cuisine}; 
-		Piece [] adjJardin = {buanderie,cuisine}; 
+		Piece [] adjCuisine = {buanderie,garage,salle_a_manger}; 
+		Piece [] adjBuanderie = {cuisine,garage}; 
+		Piece [] adjSalleAManger = {salon,cuisine}; 
+		Piece [] adjSalon = {salle_a_manger,entree,jardin,couloir}; 
+		Piece [] adjEntree = {salon,chambre1,chambre2,sdb1,bureau}; 
+		Piece [] adjChambre1 = {entree}; 
+		Piece [] adjChambre2 = {entree}; 
+		Piece [] adjSdB1 = {entree}; 
+		Piece [] adjBureau = {entree}; 
+		Piece [] adjCouloir = {salon,salle_de_jeux,grenier,studio,toilettes,chambre_parentale}; 
+		Piece [] adjSdB2 = {chambre_parentale}; 
+		Piece [] adjSalleDeJeux = {couloir}; 
+		Piece [] adjChambreParentale = {couloir,sdb2,dressing}; 
+		Piece [] adjStudio = {couloir}; 
+		Piece [] adjToilettes = {couloir}; 
+		Piece [] adjGrenier = {couloir}; 
+		Piece [] adjDressing = {chambre_parentale}; 
+		Piece [] adjJardin = {salon}; 
 		garage.ajouterPiecesAdj(adjGarage);
 		cuisine.ajouterPiecesAdj(adjCuisine);
 		buanderie.ajouterPiecesAdj(adjBuanderie);
@@ -68,7 +68,7 @@ public class Main {
 		sdb2.ajouterPiecesAdj(adjSdB2);
 		salle_de_jeux.ajouterPiecesAdj(adjSalleDeJeux);
 		chambre_parentale.ajouterPiecesAdj(adjChambreParentale);
-		auditorium.ajouterPiecesAdj(adjAuditorium);
+		studio.ajouterPiecesAdj(adjStudio);
 		toilettes.ajouterPiecesAdj(adjToilettes);
 		grenier.ajouterPiecesAdj(adjGrenier);
 		dressing.ajouterPiecesAdj(adjDressing);
@@ -79,7 +79,7 @@ public class Main {
 		// Message de lancement du jeu
 		System.out.println("Bienvenue !");
 		System.out.println(" ");
-		// joueur.getPieceCourante().toString();
+		joueur.getPieceCourante().toString();
 
 		// boucle du jeu
 		while (gameActive) {
