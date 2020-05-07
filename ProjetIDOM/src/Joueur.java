@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.StringTokenizer;
 
 public class Joueur {
 
-	private Piece pieceCourante;
+	private static Piece pieceCourante;
 	private List<Objet> inventaire;
 
 	public Joueur(Piece debut) {
-		this.pieceCourante = debut; // TODO
+		this.pieceCourante = debut;
 		this.inventaire = new ArrayList<Objet>();
 	}
 
@@ -15,8 +17,12 @@ public class Joueur {
 		return this.inventaire;
 	}
 
-	public Piece getPieceCourante() {
-		return this.pieceCourante;
+	public static Piece getPieceCourante() {
+		return pieceCourante;
+	}
+	
+	public static void setPieceCourante(Piece p) {
+		pieceCourante = p;
 	}
 
 	public void addInventaire(Objet o) {
@@ -26,16 +32,21 @@ public class Joueur {
 	public boolean removeInventaire(Objet o) {
 		return this.inventaire.remove(o);
 	}
+	
+	public static Piece StringToPiece(String nomPiece) {
+		ListIterator<Piece> it = pieceCourante.piecesAdj.listIterator();
+		while(it.hasNext()) {
+			Piece nextPiece = it.next();
+			if(nextPiece.nom.compareToIgnoreCase(nomPiece)==0) return nextPiece;
+		}
+		return null;
+	}
 
 	public static void changerPiece(String piece) {
-		switch (piece.toLowerCase()) {
-		case "":
-			// TODO : fonction qui, avec le nom, trouve la classe de la pièce
-			// TODO : si la pièce est dans la liste des pièces adjointes à la pièce
-			// courante, changer de pièce
-		default:
-			System.out.println("Pièce mal écrite ou inconnue");
-			break;
+		Piece deplacement = StringToPiece(piece);
+		if(deplacement == null) System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
+		else {
+			setPieceCourante(deplacement);
 		}
 	}
 	

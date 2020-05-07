@@ -74,10 +74,12 @@ public class Main {
 		dressing.ajouterPiecesAdj(adjDressing);
 		jardin.ajouterPiecesAdj(adjJardin);
 		
+		Joueur joueur = new Joueur(chambre_parentale);
 		
 		// Message de lancement du jeu
 		System.out.println("Bienvenue !");
 		System.out.println(" ");
+		// joueur.getPieceCourante().toString();
 
 		// boucle du jeu
 		while (gameActive) {
@@ -102,7 +104,7 @@ public class Main {
 				System.out.println("     depuis la pièce actuelle");
 				break;
 			case "aller":
-				Joueur.changerPiece(entreeSplit[1]);
+				joueur.changerPiece(entreeSplit[1]);
 				break;
 			case "telephone" : // commande pour utiliser le téléphone
 				Telephone.utiliserTelephone();

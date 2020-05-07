@@ -43,13 +43,16 @@ public class Piece {
 			res+= itObjet.next().toString();
 		}
 		if(piecesAdj.size()>1) {
-			res+="\nVous avez acc�s aux portes : ";
+			res+="\nVous avez accès aux portes : ";
 			ListIterator<Piece> itPiece = piecesAdj.listIterator();
 			while(itPiece.hasNext()) {
 				res+="\n - " + itPiece.next().nom;
 			}
 		}
-		else res+= "\nVous avez accès à la porte " + piecesAdj.get(0).nom;
+		else {
+			ListIterator<Piece> pieceAdj = piecesAdj.listIterator();
+			res+= "\nVous avez accès à la porte : " + pieceAdj.next().nom;
+		}
 		return res;
 	}
 
