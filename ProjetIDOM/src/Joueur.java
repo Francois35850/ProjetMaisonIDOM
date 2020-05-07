@@ -47,6 +47,7 @@ public class Joueur {
 		if(deplacement == null) System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
 		else {
 			setPieceCourante(deplacement);
+			System.out.println(getPieceCourante().toString());
 		}
 	}
 	

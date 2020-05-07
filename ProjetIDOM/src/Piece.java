@@ -37,11 +37,11 @@ public class Piece {
 	
 	public String toString() {
 		String res = "";
-		res+= "Vous vous trouvez dans la pi�ce " + this.nom + ".\n Liste des objets pr�sents : \n";
-		ListIterator<Objet> itObjet = listeObjets.listIterator();
+		res+= "Vous vous trouvez dans la pièce " + this.nom + ".\n Liste des objets pr�sents : \n";
+		/*ListIterator<Objet> itObjet = listeObjets.listIterator();
 		while(itObjet.hasNext()) {
 			res+= itObjet.next().toString();
-		}
+		}*/
 		if(piecesAdj.size()>1) {
 			res+="\nVous avez accès aux portes : ";
 			ListIterator<Piece> itPiece = piecesAdj.listIterator();
