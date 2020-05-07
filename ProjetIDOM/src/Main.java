@@ -99,18 +99,27 @@ public class Main {
 				break;
 			case "help": // commande pour afficher la liste des commandes
 				System.out.println("Liste des commandes disponibles :");
-				System.out.println("   - quitter : ferme le jeu");
 				System.out.println("   - help : affiche cette liste");
-				System.out.println("   - telephone : utilise le téléphone");
 				System.out.println("   - aller [nom de la pièce] : déplacement dans la pièce indiquée");
 				System.out.println("     possible uniquement quand la pièce demandée est accessible");
 				System.out.println("     depuis la pièce actuelle");
+				System.out.println("   - telephone : utilise le téléphone");
+				System.out.println("   - sortir : sortir de la maison depuis l'entrée");
+				System.out.println("   - quitter : ferme le jeu");
 				break;
 			case "aller":
 				Joueur.changerPiece(entreeSplit);
 				break;
 			case "telephone": // commande pour utiliser le téléphone
 				Telephone.utiliserTelephone();
+				break;
+			case "sortir": // commande pour sortir de la maison depuis l'entrée
+				if (Joueur.getPieceCourante().nom.compareToIgnoreCase("entree") == 0) {
+					System.out.println("Vous êtes sorti de la maison");
+					gameActive = false;
+					System.out.println("Jeu terminé");
+				}
+				else System.out.println("Vous ne pouvez sortir que depuis l'entrée");
 				break;
 			default: // cas par défaut, cad commande invalide
 				System.out.println("Commande invalide.");
