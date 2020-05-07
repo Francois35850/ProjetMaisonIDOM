@@ -88,6 +88,7 @@ public class Main {
 			// Demande de la commande
 			System.out.println("Entrez une commande ('help' pour la liste des commandes) :");
 			String entree = input.nextLine();
+			entree = entree.toLowerCase();
 			String[] entreeSplit = entree.split(" ");
 
 			// code en fonction de la commande
