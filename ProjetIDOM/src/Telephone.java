@@ -25,7 +25,7 @@ public class Telephone {
 				while (telActive) {
 					
 					// Demande de la commande
-					System.out.println("Entrez une commande ('help' pour la liste des commandes) :");
+					System.out.println("Menu du téléphone ('help' pour la liste des commandes) :");
 					String entree = input.nextLine();											
 					
 					
