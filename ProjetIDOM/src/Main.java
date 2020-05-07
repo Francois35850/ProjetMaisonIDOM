@@ -8,9 +8,9 @@ public class Main {
 
 	// scanner pour lire les commandes du joueur
 	private static Scanner input = new Scanner(System.in);
-	
+
 	private ITelephone iPhone = ITelephone.newTelephone();
-	
+
 	private static Piece garage = new Piece("Garage", null, true);
 	private static Piece cuisine = new Piece("Cuisine", null, true);
 	private static Piece salon = new Piece("Salon", null, true);
@@ -35,25 +35,25 @@ public class Main {
 	 * Fonction principale main
 	 */
 	public static void main(String[] args) {
-		Piece [] adjGarage = {buanderie,cuisine}; 
-		Piece [] adjCuisine = {buanderie,garage,salle_a_manger}; 
-		Piece [] adjBuanderie = {cuisine,garage}; 
-		Piece [] adjSalleAManger = {salon,cuisine}; 
-		Piece [] adjSalon = {salle_a_manger,entree,jardin,couloir}; 
-		Piece [] adjEntree = {salon,chambre1,chambre2,sdb1,bureau}; 
-		Piece [] adjChambre1 = {entree}; 
-		Piece [] adjChambre2 = {entree}; 
-		Piece [] adjSdB1 = {entree}; 
-		Piece [] adjBureau = {entree}; 
-		Piece [] adjCouloir = {salon,salle_de_jeux,grenier,studio,toilettes,chambre_parentale}; 
-		Piece [] adjSdB2 = {chambre_parentale}; 
-		Piece [] adjSalleDeJeux = {couloir}; 
-		Piece [] adjChambreParentale = {couloir,sdb2,dressing}; 
-		Piece [] adjStudio = {couloir}; 
-		Piece [] adjToilettes = {couloir}; 
-		Piece [] adjGrenier = {couloir}; 
-		Piece [] adjDressing = {chambre_parentale}; 
-		Piece [] adjJardin = {salon}; 
+		Piece[] adjGarage = { buanderie, cuisine };
+		Piece[] adjCuisine = { buanderie, garage, salle_a_manger };
+		Piece[] adjBuanderie = { cuisine, garage };
+		Piece[] adjSalleAManger = { salon, cuisine };
+		Piece[] adjSalon = { salle_a_manger, entree, jardin, couloir };
+		Piece[] adjEntree = { salon, chambre1, chambre2, sdb1, bureau };
+		Piece[] adjChambre1 = { entree };
+		Piece[] adjChambre2 = { entree };
+		Piece[] adjSdB1 = { entree };
+		Piece[] adjBureau = { entree };
+		Piece[] adjCouloir = { salon, salle_de_jeux, grenier, studio, toilettes, chambre_parentale };
+		Piece[] adjSdB2 = { chambre_parentale };
+		Piece[] adjSalleDeJeux = { couloir };
+		Piece[] adjChambreParentale = { couloir, sdb2, dressing };
+		Piece[] adjStudio = { couloir };
+		Piece[] adjToilettes = { couloir };
+		Piece[] adjGrenier = { couloir };
+		Piece[] adjDressing = { chambre_parentale };
+		Piece[] adjJardin = { salon };
 		garage.ajouterPiecesAdj(adjGarage);
 		cuisine.ajouterPiecesAdj(adjCuisine);
 		buanderie.ajouterPiecesAdj(adjBuanderie);
@@ -73,15 +73,15 @@ public class Main {
 		grenier.ajouterPiecesAdj(adjGrenier);
 		dressing.ajouterPiecesAdj(adjDressing);
 		jardin.ajouterPiecesAdj(adjJardin);
-		
+
 		Joueur.setPieceCourante(chambre_parentale);
-		
+
 		// Message de lancement du jeu
 		System.out.println("Bienvenue !");
 		System.out.println(" ");
 		System.out.println(Joueur.getPieceCourante().toString());
 		System.out.println(" ");
-		
+
 		// boucle du jeu
 		while (gameActive) {
 
@@ -107,7 +107,7 @@ public class Main {
 			case "aller":
 				Joueur.changerPiece(entreeSplit[1]);
 				break;
-			case "telephone" : // commande pour utiliser le téléphone
+			case "telephone": // commande pour utiliser le téléphone
 				Telephone.utiliserTelephone();
 				break;
 			default: // cas par défaut, cad commande invalide
@@ -117,6 +117,15 @@ public class Main {
 
 		}
 
+	}
+
+	public String tabToString(String[] tab) {
+		String res = "";
+		for (int i=0; i<tab.length;i++) {
+			res += tab[i].toString();
+			res += " ";
+		}
+		return res;
 	}
 
 }
