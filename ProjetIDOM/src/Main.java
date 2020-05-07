@@ -73,15 +73,15 @@ public class Main {
 		grenier.ajouterPiecesAdj(adjGrenier);
 		dressing.ajouterPiecesAdj(adjDressing);
 		jardin.ajouterPiecesAdj(adjJardin);
-		
-		// Joueur joueur = new Joueur(chambre_parentale);
+
 		Joueur.setPieceCourante(chambre_parentale);
 		
 		// Message de lancement du jeu
 		System.out.println("Bienvenue !");
 		System.out.println(" ");
-		System.out.println(joueur.getPieceCourante().toString());
-
+		System.out.println(Joueur.getPieceCourante().toString());
+		System.out.println(" ");
+		
 		// boucle du jeu
 		while (gameActive) {
 
