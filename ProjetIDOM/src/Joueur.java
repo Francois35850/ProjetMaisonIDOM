@@ -19,7 +19,7 @@ public class Joueur {
 		inventaire = new ArrayList<Objet>();
 	}
 
-	public List<Objet> getInventaire() {
+	public static List<Objet> getInventaire() {
 		return inventaire;
 	}
 
@@ -31,11 +31,11 @@ public class Joueur {
 		pieceCourante = p;
 	}
 
-	public void addInventaire(Objet o) {
+	public static void addInventaire(Objet o) {
 		inventaire.add(o);
 	}
 
-	public boolean removeInventaire(Objet o) {
+	public static boolean removeInventaire(Objet o) {
 		return inventaire.remove(o);
 	}
 
