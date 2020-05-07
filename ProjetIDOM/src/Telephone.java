@@ -20,14 +20,13 @@ public class Telephone {
 				// active le tÃ©lÃ©phone une premiere fois
 				telActive = true;
 				
-				
+				System.out.println("Vous sortez votre téléphone");
 				// boucle du tel
 				while (telActive) {
 
-					System.out.println("Vous sortez votre téléphone");
 					
 					// Demande de la commande
-					System.out.println("Menu du t�l�phone ('help' pour la liste des commandes) :");
+					System.out.println("Menu du téléphone ('help' pour la liste des commandes) :");
 					String entree = input.nextLine();											
 					
 					
@@ -185,7 +184,7 @@ public class Telephone {
 						break;	
 						
 					default : // cas par dÃ©faut, cad commande invalide
-						System.out.println("Hein ?");
+						System.out.println("La commande n'est pas valide");
 						break;
 						
 				}
