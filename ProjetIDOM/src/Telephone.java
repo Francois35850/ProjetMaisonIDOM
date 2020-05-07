@@ -23,6 +23,8 @@ public class Telephone {
 				
 				// boucle du tel
 				while (telActive) {
+
+					System.out.println("Vous sortez votre téléphone");
 					
 					// Demande de la commande
 					System.out.println("Menu du t�l�phone ('help' pour la liste des commandes) :");
@@ -34,6 +36,8 @@ public class Telephone {
 					
 					case "quitter" : // commande pour quitter le tel
 						telActive = false;
+						System.out.println("Vous rangez votre téléphone");
+						break;
 						
 					case "carte" : // commande pour afficher la carte			
 						System.out.println("Tu veux savoir o� tu es ?");
