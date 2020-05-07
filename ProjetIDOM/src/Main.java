@@ -19,16 +19,16 @@ public class Main {
 	private static Piece entree = new Piece("Entree", null, true);
 	private static Piece chambre1 = new Piece("Chambre de Régine", null, true);
 	private static Piece chambre2 = new Piece("Chambre de David", null, true);
-	private static Piece chambre_parentale = new Piece("Chambre parentale", null, true);
+	private static Piece chambre_parentale = new Piece("Chambre parentale", null, false);
 	private static Piece sdb1 = new Piece("Salle de bain", null, true);
-	private static Piece sdb2 = new Piece("Salle de bain", null, true);
+	private static Piece sdb2 = new Piece("Salle de bain", null, false);
 	private static Piece bureau = new Piece("Bureau", null, true);
-	private static Piece salle_de_jeux = new Piece("Salle de jeux", null, true);
-	private static Piece couloir = new Piece("Couloir", null, true);
-	private static Piece grenier = new Piece("Grenier", null, true);
-	private static Piece studio = new Piece("Studio", null, true);
-	private static Piece dressing = new Piece("Dressing", null, true);
-	private static Piece toilettes = new Piece("Toilettes", null, true);
+	private static Piece salle_de_jeux = new Piece("Salle de jeux", null, false);
+	private static Piece couloir = new Piece("Couloir", null, false);
+	private static Piece grenier = new Piece("Grenier", null, false);
+	private static Piece studio = new Piece("Studio", null, false);
+	private static Piece dressing = new Piece("Dressing", null, false);
+	private static Piece toilettes = new Piece("Toilettes", null, false);
 	private static Piece jardin = new Piece("Jardin", null, true);
 
 	/**
