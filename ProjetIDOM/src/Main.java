@@ -114,6 +114,8 @@ public class Main {
 				System.out.println("Commande invalide.");
 				break;
 			}
+			
+			System.out.println(Joueur.getPieceCourante().toString());
 
 		}
 
