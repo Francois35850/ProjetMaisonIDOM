@@ -79,7 +79,7 @@ public class Main {
 		// Message de lancement du jeu
 		System.out.println("Bienvenue !");
 		System.out.println(" ");
-		joueur.getPieceCourante().toString();
+		System.out.println(joueur.getPieceCourante().toString());
 
 		// boucle du jeu
 		while (gameActive) {
