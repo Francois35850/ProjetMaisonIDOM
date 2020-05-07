@@ -49,8 +49,16 @@ public class Joueur {
 		return null;
 	}
 
-	public static void changerPiece(String piece) {
-		Piece deplacement = StringToPiece(piece);
+	public static void changerPiece(String[] piece) {
+		String resPiece = "";
+		resPiece = piece[1];
+		if (piece.length > 2) {
+			for (int i = 2; i < piece.length; i++) {
+				resPiece += " ";
+				resPiece += piece[i];
+			}
+		}
+		Piece deplacement = StringToPiece(resPiece);
 		if (deplacement == null)
 			System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
 		else {

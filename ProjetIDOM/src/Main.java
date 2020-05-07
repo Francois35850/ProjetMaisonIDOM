@@ -100,12 +100,13 @@ public class Main {
 				System.out.println("Liste des commandes disponibles :");
 				System.out.println("   - quitter : ferme le jeu");
 				System.out.println("   - help : affiche cette liste");
+				System.out.println("   - telephone : utilise le téléphone");
 				System.out.println("   - aller [nom de la pièce] : déplacement dans la pièce indiquée");
 				System.out.println("     possible uniquement quand la pièce demandée est accessible");
 				System.out.println("     depuis la pièce actuelle");
 				break;
 			case "aller":
-				Joueur.changerPiece(entreeSplit[1]);
+				Joueur.changerPiece(entreeSplit);
 				break;
 			case "telephone": // commande pour utiliser le téléphone
 				Telephone.utiliserTelephone();
@@ -114,20 +115,10 @@ public class Main {
 				System.out.println("Commande invalide.");
 				break;
 			}
-			
-			System.out.println(Joueur.getPieceCourante().toString());
 
 		}
 
 	}
 
-	public String tabToString(String[] tab) {
-		String res = "";
-		for (int i=0; i<tab.length;i++) {
-			res += tab[i].toString();
-			res += " ";
-		}
-		return res;
-	}
 
 }
