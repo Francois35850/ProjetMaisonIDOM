@@ -37,7 +37,7 @@ public class Telephone {
 						
 					case "carte" : // commande pour afficher la carte			
 						System.out.println("Tu veux savoir o� tu es ?");
-						if(true) {
+						if(Joueur.getPieceCourante().estAuRezDeC) {
 						System.out.println("|---------------------------------------------------------------------|");
 						System.out.println("|                                                                     |");
 						System.out.println("|                                                                     |");
