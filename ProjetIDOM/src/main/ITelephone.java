@@ -1,3 +1,4 @@
+package main;
 
 public class ITelephone {
 	private int mu_tel;
