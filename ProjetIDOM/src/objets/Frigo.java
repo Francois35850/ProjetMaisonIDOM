@@ -2,9 +2,9 @@ package objets;
 
 import main.Objet;
 
-public final class Lumiere extends Objet {
+public final class Frigo extends Objet {
 
-	public Lumiere(String nom) {
+	public Frigo(String nom) {
 		super(nom);
 		// TODO Auto-generated constructor stub
 	}

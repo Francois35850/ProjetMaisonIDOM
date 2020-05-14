@@ -7,9 +7,11 @@ public abstract class Objet {
 		this.nom = nom;
 	}
 
+	public abstract String etat();
+
 	public String toString() {
 		String res = "";
-		res += nom; // TODO rajouter l'�tat des objets
+		res += nom + " " + this.etat();
 		return res;
 	}
 
