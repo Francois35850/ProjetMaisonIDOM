@@ -1,4 +1,18 @@
+package objets;
 
-public class Alarme {
+import main.Objet;
+
+public final class Alarme extends Objet {
+
+	public Alarme(String nom) {
+		super(nom);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String etat() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
