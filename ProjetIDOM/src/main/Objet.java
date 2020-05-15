@@ -2,10 +2,13 @@ package main;
 
 public abstract class Objet {
 	String nom;
+	boolean utilisationEnCours;
 	boolean ramasserPos;
 
-	public Objet(String nom) {
+	public Objet(String nom, boolean ramasserPos) {
 		this.nom = nom;
+		this.ramasserPos = ramasserPos;
+		utilisationEnCours = false;
 	}
 	
 	public void ramasser() {
@@ -27,4 +30,10 @@ public abstract class Objet {
 	}
 	
 	public abstract void utiliserObjet();
+	
+	public boolean getUtilisation() {return utilisationEnCours;}
+	
+	public void setUtilisation(boolean use) {this.utilisationEnCours = use;}
+	
+	public String getNom() {return nom;}
 }

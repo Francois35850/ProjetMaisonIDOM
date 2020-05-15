@@ -4,8 +4,8 @@ import main.Objet;
 
 public final class LaveVaisselle extends Objet {
 
-	public LaveVaisselle(String nom) {
-		super(nom);
+	public LaveVaisselle(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
 		// TODO Auto-generated constructor stub
 	}
 

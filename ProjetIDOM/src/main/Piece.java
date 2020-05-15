@@ -7,10 +7,10 @@ public class Piece {
 	List<Piece> piecesAdj;
 	List<Objet> listeObjets;
 	
-	public Piece(String nom, List<Objet> listeObjets, boolean rdc) {
+	public Piece(String nom, boolean rdc) {
 		this.nom = nom;
 		this.piecesAdj = new ArrayList<Piece>();
-		this.listeObjets = listeObjets;
+		this.listeObjets = new ArrayList<Objet>();
 		estAuRezDeC = rdc;
 	}
 	
@@ -21,6 +21,12 @@ public class Piece {
 	public void ajouterPiecesAdj(Piece[] aAjouter) {
 		for(int i = 0; i<aAjouter.length; i++) {
 			piecesAdj.add(aAjouter[i]);
+		}
+	}
+	
+	public void ajouterObjets(Objet[] aAjouter) {
+		for(int i = 0; i<aAjouter.length; i++) {
+			listeObjets.add(aAjouter[i]);
 		}
 	}
 	

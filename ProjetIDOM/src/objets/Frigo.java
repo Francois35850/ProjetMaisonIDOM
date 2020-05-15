@@ -4,8 +4,8 @@ import main.Objet;
 
 public final class Frigo extends Objet {
 
-	public Frigo(String nom) {
-		super(nom);
+	public Frigo(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
 		// TODO Auto-generated constructor stub
 	}
 

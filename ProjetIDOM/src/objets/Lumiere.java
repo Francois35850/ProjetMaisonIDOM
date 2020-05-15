@@ -3,24 +3,16 @@ package objets;
 import main.Objet;
 
 public final class Lumiere extends Objet {
-	
-	private boolean allumee;
 
-	public Lumiere() {
-		super("La lumière");
-		this.allumee = false;
-	}
-	
-	public void changerEtat() {
-		this.allumee = !this.allumee;
+	public Lumiere(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String etat() {
-		if (this.allumee)
-			return "est allumée";
-		else
-			return "est éteinte";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override

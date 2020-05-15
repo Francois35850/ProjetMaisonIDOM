@@ -4,8 +4,8 @@ import main.Objet;
 
 public final class HomeCinema extends Objet {
 
-	public HomeCinema(String nom) {
-		super(nom);
+	public HomeCinema(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
 		// TODO Auto-generated constructor stub
 	}
 

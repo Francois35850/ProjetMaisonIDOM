@@ -4,8 +4,8 @@ import main.Objet;
 
 public final class Alarme extends Objet {
 
-	public Alarme(String nom) {
-		super(nom);
+	public Alarme(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
 		// TODO Auto-generated constructor stub
 	}
 

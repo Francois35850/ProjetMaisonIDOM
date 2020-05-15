@@ -4,8 +4,8 @@ import main.Objet;
 
 public final class Sam extends Objet {
 
-	public Sam(String nom) {
-		super(nom);
+	public Sam(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
 		// TODO Auto-generated constructor stub
 	}
 

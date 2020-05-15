@@ -4,8 +4,8 @@ import main.Objet;
 
 public final class SecheLinge extends Objet {
 
-	public SecheLinge(String nom) {
-		super(nom);
+	public SecheLinge(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
 		// TODO Auto-generated constructor stub
 	}
 

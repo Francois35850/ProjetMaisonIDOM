@@ -4,8 +4,8 @@ import main.Objet;
 
 public final class Cvc extends Objet {
 
-	public Cvc(String nom) {
-		super(nom);
+	public Cvc(String nom, boolean ramasserPos) {
+		super(nom, ramasserPos);
 		// TODO Auto-generated constructor stub
 	}
 
