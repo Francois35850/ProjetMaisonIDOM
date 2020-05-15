@@ -6,7 +6,7 @@ import java.util.ListIterator;
 public class Joueur {
 
 	private static Piece pieceCourante;
-	private static List<Objet> inventaire;
+	private static List<ObjetRamassable> inventaire;
 
 	static {
 		init();
@@ -17,10 +17,10 @@ public class Joueur {
 
 	private static void init() {
 		pieceCourante = null;
-		inventaire = new ArrayList<Objet>();
+		inventaire = new ArrayList<ObjetRamassable>();
 	}
 
-	public static List<Objet> getInventaire() {
+	public static List<ObjetRamassable> getInventaire() {
 		return inventaire;
 	}
 
@@ -32,24 +32,35 @@ public class Joueur {
 		pieceCourante = p;
 	}
 
-	public static void addInventaire(Objet o) {
-		inventaire.add(o);
+	public static void addInventaire(ObjetRamassable o) {
+		if(inventaire.contains(o)) System.out.println("Vous avez déjà cet objet dans votre inventaire.");
+		else {
+			inventaire.add(o);
+			System.out.println("Vous avez récupéré l'objet " + o.getNom() + ".");
+		}
 	}
 
-	public static boolean removeInventaire(Objet o) {
-		return inventaire.remove(o);
+	public static void removeInventaire(ObjetRamassable o) {
+		if(!inventaire.contains(o)) System.out.println("Vous n'avez pas cet objet dans votre inventaire.");
+		else {
+			inventaire.remove(o);
+			System.out.println("Vous avez utilisé l'objet " + o.getNom() + ".");
+		}
 	}
 	
 	public static void inventaireToString() {
 		String res = "";
-		res+= "Dans votre inventaire, il y a : \n";
-		ListIterator<Objet> itObjet = inventaire.listIterator();
-		while(itObjet.hasNext()) {
-			res+=" - ";
-			res+= itObjet.next().toString();
-			res+=" \n";
+		if(!inventaire.isEmpty()) {
+			res+= "Dans votre inventaire, il y a : \n";
+			ListIterator<ObjetRamassable> itObjet = inventaire.listIterator();
+			while(itObjet.hasNext()) {
+				res+=" - ";
+				res+= itObjet.next().toString();
+				res+=" \n";
+			}
+			System.out.println(res);
 		}
-		System.out.println(res);
+		else System.out.println("Votre inventaire est vide...");
 	}
 
 	public static Piece StringToPiece(String nomPiece) {
@@ -80,21 +91,21 @@ public class Joueur {
 		}
 	}
 	
-	public static Objet StringtoObjet(String o) {
-		ListIterator<Objet> itInv = inventaire.listIterator();
-		ListIterator<Objet> itPie = getPieceCourante().listeObjets.listIterator();
+	public static Objets StringtoObjet(String o) {
+		ListIterator<ObjetRamassable> itInv = inventaire.listIterator();
+		ListIterator<Objets> itPie = getPieceCourante().listeObjets.listIterator();
 		boolean dispo = false;
-		Objet ret = null;
+		Objets ret = null;
 		while (itInv.hasNext()&&!dispo) {
-			Objet compare = itInv.next();
-			if (compare.nom.equalsIgnoreCase(o)) {
+			Objets compare = itInv.next();
+			if (compare.getNom().equalsIgnoreCase(o)) {
 				dispo = true;
 				ret = compare;
 			}
 		}
 		while (itPie.hasNext()&&!dispo) {
-			Objet compare = itPie.next();
-			if (compare.nom.equalsIgnoreCase(o)) {
+			Objets compare = itPie.next();
+			if (compare.getNom().equalsIgnoreCase(o)) {
 				dispo = true;
 				ret = compare;
 			}

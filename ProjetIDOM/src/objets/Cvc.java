@@ -1,11 +1,11 @@
 package objets;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class Cvc extends Objet {
+public final class Cvc extends ObjetNonRamassable {
 
-	public Cvc(String nom, boolean ramasserPos) {
-		super(nom, ramasserPos);
+	public Cvc(String nom) {
+		super(nom);
 		// TODO Auto-generated constructor stub
 	}
 

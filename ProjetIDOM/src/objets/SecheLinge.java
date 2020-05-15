@@ -1,11 +1,11 @@
 package objets;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class SecheLinge extends Objet {
+public final class SecheLinge extends ObjetNonRamassable {
 
-	public SecheLinge(String nom, boolean ramasserPos) {
-		super(nom, ramasserPos);
+	public SecheLinge(String nom) {
+		super(nom);
 		// TODO Auto-generated constructor stub
 	}
 

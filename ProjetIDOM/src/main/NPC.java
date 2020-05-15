@@ -4,14 +4,14 @@ import java.util.List;
 
 public class NPC {
 	private Piece pieceActuelle;
-	private List<Objet> inventaire;
+	private List<ObjetNonRamassable> inventaire;
 	
 	public NPC(Piece act) {
 		pieceActuelle = act;
-		this.inventaire = new ArrayList<Objet>();
+		this.inventaire = new ArrayList<ObjetNonRamassable>();
 	}
 	
-	public List<Objet> getInventaire() {
+	public List<ObjetNonRamassable> getInventaire() {
 		return this.inventaire;
 	}
 
@@ -19,11 +19,11 @@ public class NPC {
 		return this.pieceActuelle;
 	}
 
-	public void addInventaire(Objet o) {
+	public void addInventaire(ObjetNonRamassable o) {
 		this.inventaire.add(o);
 	}
 
-	public boolean removeInventaire(Objet o) {
+	public boolean removeInventaire(ObjetNonRamassable o) {
 		return this.inventaire.remove(o);
 	}
 

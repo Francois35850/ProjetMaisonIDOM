@@ -1,11 +1,11 @@
 package objets;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class LaveLinge extends Objet {
+public final class LaveLinge extends ObjetNonRamassable {
 
-	public LaveLinge(String nom, boolean ramasserPos) {
-		super(nom, ramasserPos);
+	public LaveLinge(String nom) {
+		super(nom);
 		// TODO Auto-generated constructor stub
 	}
 

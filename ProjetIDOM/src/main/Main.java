@@ -5,6 +5,7 @@ import java.util.Scanner;
 import javax.swing.plaf.SliderUI;
 
 import objets.Enceinte;
+import objets.Frigo;
 
 public class Main {
 
@@ -17,13 +18,14 @@ public class Main {
 	private ITelephone iPhone = ITelephone.newTelephone();
 
 	// Ajout des objets
-	private static Objet enceinte1 = new Enceinte("Enceinte salon", false);
+	private static Objets enceinte1 = new Enceinte("Enceinte salon", false);
+	private static Objets frigo = new Frigo("Frigo",false);
 	
 	// Ajout des pièces
 	private static Piece garage = new Piece("Garage",true);
 	private static Piece cuisine = new Piece("Cuisine",true);
 	private static Piece salon = new Piece("Salon",  true);
-	private static Piece salle_a_manger = new Piece("Salle à manger",true);
+	private static Piece salle_a_manger = new Piece("Salle a manger",true);
 	private static Piece buanderie = new Piece("Buanderie",true);
 	private static Piece entree = new Piece("Entree",  true);
 	private static Piece chambre1 = new Piece("Chambre de Régine", true);
@@ -66,12 +68,14 @@ public class Main {
 		Piece[] adjJardin = { salon };
 		
 		// Création des listes d'objets
-		Objet[] objSalon = {enceinte1};
+		Objets[] objSalon = {enceinte1};
+		Objets[] objCuisine = {frigo};
 		
 		// Ajout des pièces adj et des objets
 		garage.ajouterPiecesAdj(adjGarage);
 		
 		cuisine.ajouterPiecesAdj(adjCuisine);
+		cuisine.ajouterObjets(objCuisine);
 		
 		buanderie.ajouterPiecesAdj(adjBuanderie);
 		
@@ -127,31 +131,30 @@ public class Main {
 			String[] entreeSplit = entree.split(" ");
 
 			// code en fonction de la commande
-			switch (entreeSplit[0]) {
-			case "quitter": // commande pour quitter le jeu
+			switch (entreeSplit[0].toUpperCase()) {
+			case "QUITTER": // commande pour quitter le jeu
 				gameActive = false;
 				System.out.println("Jeu quitté");
 				break;
-			case "help": // commande pour afficher la liste des commandes
+			case "HELP": // commande pour afficher la liste des commandes
 				System.out.println("Liste des commandes disponibles :");
 				System.out.println("   - help : affiche cette liste");
 				System.out.println("   - aller [nom de la pièce] : déplacement dans la pièce indiquée");
 				System.out.println("     possible uniquement quand la pièce demandée est accessible");
 				System.out.println("     depuis la pièce actuelle");
-				System.out.println("   - telephone : utilise le téléphone");
+				System.out.println("   - téléphone : utilise le téléphone");
 				System.out.println("   - utiliser [nom de l'objet] : utiliser un objet");
 				System.out.println("   - inventaire : consulter l'inventaire");
-				System.out.println("   - telephone : utilise le téléphone");
 				System.out.println("   - sortir : sortir de la maison depuis l'entrée");
 				System.out.println("   - quitter : ferme le jeu");
 				break;
-			case "aller":
+			case "ALLER":
 				Joueur.changerPiece(entreeSplit);
 				break;
-			case "telephone": // commande pour utiliser le téléphone
+			case "TELEPHONE": // commande pour utiliser le téléphone
 				Telephone.utiliserTelephone();
 				break;
-			case "utiliser": // commande pour utiliser un objet
+			case "UTILISER": // commande pour utiliser un objet
 				String resObjet = "";
 				resObjet = entreeSplit[1];
 				if (entreeSplit.length > 2) {
@@ -160,16 +163,16 @@ public class Main {
 						resObjet += entreeSplit[i];
 					}
 				}
-				Objet cherche = Joueur.StringtoObjet(resObjet);
+				Objets cherche = Joueur.StringtoObjet(resObjet);
 				if (cherche!=null) {
 					cherche.utiliserObjet();
 				}
 				else System.out.println("Cet objet n'est pas disponible ... \n");
 				break;
-			case "inventaire": // commande pour consulter l'inventaire
+			case "INVENTAIRE": // commande pour consulter l'inventaire
 				Joueur.inventaireToString();
 				break;
-			case "sortir": // commande pour sortir de la maison depuis l'entrée
+			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().nom.compareToIgnoreCase("entree") == 0) {
 					System.out.println("Vous êtes sorti de la maison");
 					gameActive = false;

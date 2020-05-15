@@ -2,15 +2,15 @@ package objets;
 
 import java.util.Scanner;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class Enceinte extends Objet {
+public final class Enceinte extends ObjetNonRamassable {
 
 	private boolean allumer;
 	private boolean jouerMusique;
 	
 	public Enceinte(String nom, boolean allumer) {
-		super(nom, false);
+		super(nom);
 		this.allumer = allumer;
 		this.jouerMusique = false;
 		// TODO Auto-generated constructor stub
@@ -18,8 +18,14 @@ public final class Enceinte extends Objet {
 
 	@Override
 	public String etat() {
-		// TODO Auto-generated method stub
-		return null;
+		String res = "";
+		if(allumer) {
+			res+= " : allumé";
+			if(jouerMusique) res+= ", musique allumée";
+			else res+= ", musique éteinte";
+		}
+		else res+= ": éteinte";
+		return res;
 	}
 
 	@Override
@@ -28,25 +34,25 @@ public final class Enceinte extends Objet {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - allumer\n  - eteindre\n  - jouer musique\n - annuler");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - allumer\n  - éteindre\n  - jouer musique\n  - retour");
 			String input = sc.nextLine();
-			switch(input) {
-				case "allumer" : 
+			switch(input.toUpperCase()) {
+				case "ALLUMER" : 
 					if(allumer) System.out.println("L'enceinte est déjà allumée");
 					else {allumer = true; System.out.println("L'enceintre s'est allumée");}
 					break;
-				case "eteindre" : 
+				case "ETEINDRE" : 
 					if(!allumer) System.out.println("L'enceinte est déjà éteinte");
 					else {allumer = false;jouerMusique = false; System.out.println("L'enceintre s'est éteinte");}
 					break;
-				case "jouer musique" :
+				case "JOUER MUSIQUE" :
 					if(!allumer) System.out.println("Commencez par allumer l'enceinte");
 					else if(jouerMusique) System.out.println("La musique est déjà lancée");
 					else {jouerMusique = true; System.out.println("Voila du bon gros Jul");}
 					break;
-				case "annuler" :
+				case "RETOUR" :
 					this.setUtilisation(false);
-					System.out.println("Vous n'utilisez pas l'objet");
+					System.out.println("Vous arrêtez d'utilisez l'objet");
 					break;
 				default :
 					System.out.println("La commande n'est pas valide");

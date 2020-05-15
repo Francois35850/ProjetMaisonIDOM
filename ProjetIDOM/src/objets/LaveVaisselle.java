@@ -1,11 +1,11 @@
 package objets;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class LaveVaisselle extends Objet {
+public final class LaveVaisselle extends ObjetNonRamassable {
 
-	public LaveVaisselle(String nom, boolean ramasserPos) {
-		super(nom, ramasserPos);
+	public LaveVaisselle(String nom) {
+		super(nom);
 		// TODO Auto-generated constructor stub
 	}
 
