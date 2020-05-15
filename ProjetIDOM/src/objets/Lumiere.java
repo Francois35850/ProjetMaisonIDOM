@@ -23,4 +23,10 @@ public final class Lumiere extends Objet {
 			return "est éteinte";
 	}
 
+	@Override
+	public void utiliserObjet() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

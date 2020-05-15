@@ -15,4 +15,10 @@ public final class Alarme extends Objet {
 		return null;
 	}
 
+	@Override
+	public void utiliserObjet() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
