@@ -17,7 +17,6 @@ public final class Enceinte extends Objet {
 
 	@Override
 	public void utiliserObjet() {
-		// TODO Auto-generated method stub
 		
 	}
 
