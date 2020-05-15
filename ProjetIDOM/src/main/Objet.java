@@ -2,9 +2,19 @@ package main;
 
 public abstract class Objet {
 	String nom;
+	boolean ramasserPos;
 
 	public Objet(String nom) {
 		this.nom = nom;
+	}
+	
+	public void ramasser() {
+		if (ramasserPos) {
+			Joueur.addInventaire(this);
+		}
+		else {
+			System.out.println("Vous ne pouvez pas ramasser cet objet");
+		}
 	}
 
 	public abstract String etat();
