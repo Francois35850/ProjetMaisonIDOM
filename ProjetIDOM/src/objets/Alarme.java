@@ -1,22 +1,17 @@
 package objets;
 
 import main.Objet;
+<<<<<<< HEAD
+=======
 
 public final class Alarme extends Objet {
 
-	public DetecteurOuverture(String nom, int fonctionnement) {
-		this.nom=nom;
-		this.fonctionnement=fonctionnement;
+	public Alarme(String nom) {
+		super(nom);
+		// TODO Auto-generated constructor stub
 	}
-	
-	public DetecteurPresence(String nom, int fonctionnement) {
-		this.nom=nom;
-		this.fonctionnement=fonctionnement;
-	}
-	public Digicode(String nom, int code) {
-		this.nom=nom;
-		this.code=code;
-	}
+
+
 	
 	
 	
