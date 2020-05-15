@@ -53,6 +53,7 @@ public final class Enceinte extends Objet {
 					break;
 			}
 		}
+		
 	}
 
 }
