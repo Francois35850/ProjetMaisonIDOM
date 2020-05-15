@@ -25,5 +25,6 @@ public abstract class Objet {
 		res += nom + " " + this.etat();
 		return res;
 	}
-
+	
+	public abstract void utiliserObjet();
 }

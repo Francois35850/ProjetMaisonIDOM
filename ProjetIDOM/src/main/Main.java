@@ -105,6 +105,9 @@ public class Main {
 				System.out.println("     possible uniquement quand la pièce demandée est accessible");
 				System.out.println("     depuis la pièce actuelle");
 				System.out.println("   - telephone : utilise le téléphone");
+				System.out.println("   - utiliser [nom de l'objet] : utiliser un objet");
+				System.out.println("   - inventaire : consulter l'inventaire");
+				System.out.println("   - telephone : utilise le téléphone");
 				System.out.println("   - sortir : sortir de la maison depuis l'entrée");
 				System.out.println("   - quitter : ferme le jeu");
 				break;
@@ -113,6 +116,24 @@ public class Main {
 				break;
 			case "telephone": // commande pour utiliser le téléphone
 				Telephone.utiliserTelephone();
+				break;
+			case "utiliser": // commande pour utiliser un objet
+				String resObjet = "";
+				resObjet = entreeSplit[1];
+				if (entreeSplit.length > 2) {
+					for (int i = 2; i < entreeSplit.length; i++) {
+						resObjet += " ";
+						resObjet += entreeSplit[i];
+					}
+				}
+				Objet cherche = Joueur.StringtoObjet(resObjet);
+				if (cherche!=null) {
+					cherche.utiliserObjet();
+				}
+				else System.out.println("Cet objet n'est pas disponible ... \n");
+				break;
+			case "inventaire": // commande pour consulter l'inventaire
+				Joueur.inventaireToString();
 				break;
 			case "sortir": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().nom.compareToIgnoreCase("entree") == 0) {

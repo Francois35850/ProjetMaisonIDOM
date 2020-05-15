@@ -39,6 +39,18 @@ public class Joueur {
 	public static boolean removeInventaire(Objet o) {
 		return inventaire.remove(o);
 	}
+	
+	public static void inventaireToString() {
+		String res = "";
+		res+= "Dans votre inventaire, il y a : \n";
+		ListIterator<Objet> itObjet = inventaire.listIterator();
+		while(itObjet.hasNext()) {
+			res+=" - ";
+			res+= itObjet.next().toString();
+			res+=" \n";
+		}
+		System.out.println(res);
+	}
 
 	public static Piece StringToPiece(String nomPiece) {
 		ListIterator<Piece> it = pieceCourante.piecesAdj.listIterator();
@@ -66,6 +78,28 @@ public class Joueur {
 			setPieceCourante(deplacement);
 			System.out.println(getPieceCourante().toString());
 		}
+	}
+	
+	public static Objet StringtoObjet(String o) {
+		ListIterator<Objet> itInv = inventaire.listIterator();
+		ListIterator<Objet> itPie = getPieceCourante().listeObjets.listIterator();
+		boolean dispo = false;
+		Objet ret = null;
+		while (itInv.hasNext()&&!dispo) {
+			Objet compare = itInv.next();
+			if (compare.nom.equalsIgnoreCase(o)) {
+				dispo = true;
+				ret = compare;
+			}
+		}
+		while (itPie.hasNext()&&!dispo) {
+			Objet compare = itPie.next();
+			if (compare.nom.equalsIgnoreCase(o)) {
+				dispo = true;
+				ret = compare;
+			}
+		}
+		return ret;
 	}
 
 }
