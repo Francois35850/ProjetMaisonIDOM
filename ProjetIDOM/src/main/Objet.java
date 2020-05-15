@@ -11,6 +11,7 @@ public abstract class Objet {
 	public void ramasser() {
 		if (ramasserPos) {
 			Joueur.addInventaire(this);
+			Joueur.getPieceCourante().soustractObjets(this);
 		}
 		else {
 			System.out.println("Vous ne pouvez pas ramasser cet objet");
