@@ -1,4 +1,5 @@
 package main;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -33,7 +34,8 @@ public class Joueur {
 	}
 
 	public static void addInventaire(ObjetRamassable o) {
-		if(inventaire.contains(o)) System.out.println("Vous avez déjà cet objet dans votre inventaire.");
+		if (inventaire.contains(o))
+			System.out.println("Vous avez déjà cet objet dans votre inventaire.");
 		else {
 			inventaire.add(o);
 			System.out.println("Vous avez récupéré l'objet " + o.getNom() + ".");
@@ -41,26 +43,27 @@ public class Joueur {
 	}
 
 	public static void removeInventaire(ObjetRamassable o) {
-		if(!inventaire.contains(o)) System.out.println("Vous n'avez pas cet objet dans votre inventaire.");
+		if (!inventaire.contains(o))
+			System.out.println("Vous n'avez pas cet objet dans votre inventaire.");
 		else {
 			inventaire.remove(o);
 			System.out.println("Vous avez utilisé l'objet " + o.getNom() + ".");
 		}
 	}
-	
+
 	public static void inventaireToString() {
 		String res = "";
-		if(!inventaire.isEmpty()) {
-			res+= "Dans votre inventaire, il y a : \n";
+		if (!inventaire.isEmpty()) {
+			res += "Dans votre inventaire, il y a : \n";
 			ListIterator<ObjetRamassable> itObjet = inventaire.listIterator();
-			while(itObjet.hasNext()) {
-				res+=" - ";
-				res+= itObjet.next().toString();
-				res+=" \n";
+			while (itObjet.hasNext()) {
+				res += " - ";
+				res += itObjet.next().toString();
+				res += " \n";
 			}
 			System.out.println(res);
-		}
-		else System.out.println("Votre inventaire est vide...");
+		} else
+			System.out.println("Votre inventaire est vide...");
 	}
 
 	public static Piece StringToPiece(String nomPiece) {
@@ -74,36 +77,40 @@ public class Joueur {
 	}
 
 	public static void changerPiece(String[] piece) {
-		String resPiece = "";
-		resPiece = piece[1];
-		if (piece.length > 2) {
-			for (int i = 2; i < piece.length; i++) {
-				resPiece += " ";
-				resPiece += piece[i];
+		if (piece.length < 2) {
+			System.out.println("Aucune pièce n'a été précisée.");
+		} else {
+			String resPiece = "";
+			resPiece = piece[1];
+			if (piece.length > 2) {
+				for (int i = 2; i < piece.length; i++) {
+					resPiece += " ";
+					resPiece += piece[i];
+				}
+			}
+			Piece deplacement = StringToPiece(resPiece);
+			if (deplacement == null)
+				System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
+			else {
+				setPieceCourante(deplacement);
+				System.out.println(getPieceCourante().toString());
 			}
 		}
-		Piece deplacement = StringToPiece(resPiece);
-		if (deplacement == null)
-			System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
-		else {
-			setPieceCourante(deplacement);
-			System.out.println(getPieceCourante().toString());
-		}
 	}
-	
+
 	public static Objets StringtoObjet(String o) {
 		ListIterator<ObjetRamassable> itInv = inventaire.listIterator();
 		ListIterator<Objets> itPie = getPieceCourante().listeObjets.listIterator();
 		boolean dispo = false;
 		Objets ret = null;
-		while (itInv.hasNext()&&!dispo) {
+		while (itInv.hasNext() && !dispo) {
 			Objets compare = itInv.next();
 			if (compare.getNom().equalsIgnoreCase(o)) {
 				dispo = true;
 				ret = compare;
 			}
 		}
-		while (itPie.hasNext()&&!dispo) {
+		while (itPie.hasNext() && !dispo) {
 			Objets compare = itPie.next();
 			if (compare.getNom().equalsIgnoreCase(o)) {
 				dispo = true;
