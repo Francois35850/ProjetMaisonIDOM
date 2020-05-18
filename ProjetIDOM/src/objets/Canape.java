@@ -77,7 +77,7 @@ public final class Canape extends ObjetNonRamassable {
 					objetsARamasser.remove(indice2);
 				}
 				else {
-					System.out.println("Vous ne trouvez rien sous le canapé...");
+					System.out.println("Vous ne trouvez rien sous les coussins...");
 				}
 				break;
 			case "RETOUR" :
