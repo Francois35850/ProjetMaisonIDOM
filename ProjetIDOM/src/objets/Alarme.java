@@ -19,7 +19,7 @@ public final class Alarme {
 	private int detecteur_ouverture_ch2;
 	private int detecteur_ouverture_chp;
 	private int detecteur_ouverture_sallejeux;
-	private int detecteur_ouverture_auditorium;
+	private int detecteur_ouverture_studio;
 	private int detecteur_ouverture_cuisine;
 	private int detecteur_ouverture_sallemanger;
 	
@@ -78,7 +78,7 @@ public final class Alarme {
 	private String vue_cam_devantMaison="Systeme defaillant, veuillez contacter le service maintenance !";
 	
 ;
-	public Alarme(int code_digicode, int detecteur_incendie_rdc, int detecteur_incendie_r1, int detecteur_mouvement_couloirrdc,int detecteur_mouvement_couloirr1, int detecteur_mouvement_salon, int detecteur_mouvement_garage, int detecteur_ouverture_porte, int detecteur_ouverture_bureau, int detecteur_ouverture_salon, int detecteur_ouverture_ch1,  int detecteur_ouverture_ch2, int detecteur_ouverture_chp, int detecteur_ouverture_sallejeux, int detecteur_ouverture_auditorium,  int detecteur_ouverture_cuisine, int detecteur_ouverture_sallemanger, String vue_cam_couloir, String vue_cam_jardin, String vue_cam3) {	
+	public Alarme(int code_digicode, int detecteur_incendie_rdc, int detecteur_incendie_r1, int detecteur_mouvement_couloirrdc,int detecteur_mouvement_couloirr1, int detecteur_mouvement_salon, int detecteur_mouvement_garage, int detecteur_ouverture_porte, int detecteur_ouverture_bureau, int detecteur_ouverture_salon, int detecteur_ouverture_ch1,  int detecteur_ouverture_ch2, int detecteur_ouverture_chp, int detecteur_ouverture_sallejeux, int detecteur_ouverture_studio,  int detecteur_ouverture_cuisine, int detecteur_ouverture_sallemanger, String vue_cam_couloir, String vue_cam_jardin, String vue_cam3) {	
 	
 	this.code_digicode=code_digicode;
 	
@@ -97,7 +97,7 @@ public final class Alarme {
 	this.detecteur_ouverture_ch2=detecteur_ouverture_ch2;
 	this.detecteur_ouverture_chp=detecteur_ouverture_chp;
 	this.detecteur_ouverture_sallejeux=detecteur_ouverture_sallejeux;
-	this.detecteur_ouverture_auditorium=detecteur_ouverture_auditorium;
+	this.detecteur_ouverture_studio=detecteur_ouverture_studio;
 	this.detecteur_ouverture_cuisine=detecteur_ouverture_cuisine;
 	this.detecteur_ouverture_sallemanger=detecteur_ouverture_sallemanger;
 	
@@ -157,7 +157,7 @@ public final class Alarme {
 	public static int getEtat_DO_sallejeux(Alarme alarm) {return this.detecteur_ouverture_sallejeux;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de l'auditorium: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_auditorium(Alarme alarm) {return this.detecteur_ouverture_auditorium;}
+	public static int getEtat_DO_studio(Alarme alarm) {return this.detecteur_ouverture_studio;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de la cuisine: 1 quand la fenetre est ouverte
 	public static int getEtat_DO_cuisine(Alarme alarm) {return this.detecteur_ouverture_cuisine;}
@@ -253,7 +253,7 @@ public final class Alarme {
 	System.out.println(" - Détecteur chambre 2 :") + affichageDO(this.detecteur_ouverture_ch2) + ".");
 	System.out.println(" - Détecteur chambre parentale :") + affichageDO(this.detecteur_ouverture_chp) + ".");
 	System.out.println(" - Détecteur salle de jeux :") + affichageDO(this.detecteur_ouverture_sallejeux) + ".");
-	System.out.println(" - Détecteur auditorium :") + affichageDO(this.detecteur_ouverture_auditorium) + ".");
+	System.out.println(" - Détecteur studio :") + affichageDO(this.detecteur_ouverture_studio) + ".");
 	System.out.println(" - Détecteur cuisine :") + affichageDO(this.detecteur_ouverture_cuisine) + ".");
 	System.out.println(" - Détecteur salle � manger :") + affichageDO(this.detecteur_ouverture_sallemanger) + ".");
 	
