@@ -123,10 +123,10 @@ public final class Alarme {
 	
 	
 	//fonction qui retourne l'état du détecteur de mouvement du couloir au rdc: 1 quand détection infrarouge
-	public static int getEtat_DM_couloirRdc(Alarme alarm) {return this.detecteur_incendie_rdc;}
+	public static int getEtat_DM_couloirRdc(Alarme alarm) {return this.detecteur_mouvement_rdc;}
 	
 	//fonction qui retourne l'état du détecteur de mouvement du couloir au r+1: 1 quand détection infrarouge
-	public static int getEtat_DM_couloirR1(Alarme alarm) {return this.detecteur_incendie_r1;}
+	public static int getEtat_DM_couloirR1(Alarme alarm) {return this.detecteur_mouvement_r1;}
 			
 	//fonction qui retourne l'état du détecteur de mouvement du salon: 1 quand détection infrarouge
 	public static int getEtat_DM_salon(Alarme alarm) {return this.detecteur_mouvement_salon;}
@@ -174,6 +174,63 @@ public final class Alarme {
 	
 	//fonction qui retourne la vue de la caméra de l'avant de la maison (purement scénaristique)
 	public static String getCam_devantMaison(Alarme alarm) {return this.vue_cam_devantMaison;}
+	
+	//fonction utilitaire qui retourne le dialogue pour le détecteur incendie
+	public static String affichageDI(int valeur) {
+		String res="";
+		if(valeur==1) {res+=" incendie en cours"}
+		else {res+=" pas de fumée dans la piece"}
+		return res;
+	}
+	
+	//fonction utilitaire qui retourne le dialogue pour le détecteur de mouvement
+	public static String affichageDM(int valeur) {
+		String res="";
+		if(valeur==1) {res+=" une personne est présente dans la piece"}
+		else {res+=" personne dans la piece"}
+		return res;
+	}
+	
+	//fonction utilitaire qui retourne le dialogue pour le détecteur d'ouverture
+	public static String affichageDO(int valeur) {
+		String res="";
+		if(valeur==1) {res+=" la fenetre est ouverte"}
+		else {res+=" la fenetre est fermée"}
+		return res;
+	}
+	
+	
+	//fonction qui retourne létat global de l'alarme de la maison
+	public static void getEtat_global(Alarme alarm) {	
+	System.out.println("Etat des détecteurs incendie :")
+	System.out.println(" - Détecteur rdc :" + affichageDI(this.detecteur_incendie_rdc) + "."); 
+	System.out.println(" - Détecteur r+1 :" + affichageDI(this.detecteur_incendie_r1) + "."); 
+	
+	System.out.println("Etat des détecteurs de mouvement : ")
+	System.out.println(" - Détecteur couloir rdc :") + affichageDM(this.detecteur_mouvement_rdc) + ".");
+	System.out.println(" - Détecteur couloir r+1 :") + affichageDM(this.detecteur_mouvement_r1) + ".");
+	System.out.println(" - Détecteur salon :") + affichageDM(this.detecteur_mouvement_salon) + ".");
+	System.out.println(" - Détecteur garage :") + affichageDM(this.detecteur_mouvement_garage) + ".");
+			
+	System.out.println("Etat des détecteurs d'ouverture :")
+	System.out.println(" - Détecteur porte :") + affichageDO(this.detecteur_ouverture_porte) + ".");
+	System.out.println(" - Détecteur bureau :") + affichageDO(this.detecteur_ouverture_bureau) + ".");
+	System.out.println(" - Détecteur salon :") + affichageDO(this.detecteur_ouverture_salon) + ".");
+	System.out.println(" - Détecteur chambre 1 :") + affichageDO(this.detecteur_ouverture_ch1) + ".");
+	System.out.println(" - Détecteur chambre 2 :") + affichageDO(this.detecteur_ouverture_ch2) + ".");
+	System.out.println(" - Détecteur chambre parentale :") + affichageDO(this.detecteur_ouverture_chp) + ".");
+	System.out.println(" - Détecteur salle de jeux :") + affichageDO(this.detecteur_ouverture_sallejeux) + ".");
+	System.out.println(" - Détecteur auditorium :") + affichageDO(this.detecteur_ouverture_auditorium) + ".");
+	System.out.println(" - Détecteur cuisine :") + affichageDO(this.detecteur_ouverture_cuisine) + ".");
+	System.out.println(" - Détecteur salle � manger :") + affichageDO(this.detecteur_ouverture_sallemanger) + ".");
+	
+	System.out.println("Etat de la connexion avec les caméra :")
+	System.out.println(" - Caméra couloir rdc : on.")
+	System.out.println(" - Caméra jardin : on.")
+	System.out.println(" - Caméra devant maison : off.")
+	
+	System.out.println("Code d'activation :" + getCodeDigicode(Alarme alarm) + ".");
+		}
 			
 }
 	
