@@ -43,7 +43,8 @@ public class Main {
 	// Ajout des objets
 	private static Objets enceinteSalon = new Enceinte("Enceinte", false);
 	private static Objets frigo = new Frigo("Frigo",false);
-	private static Objets canapeSalon = new Canape("Canapé",false);
+	private static Objets canapeSalon = new Canape("Canapé",false,true);
+	private static Objets canapeSdJ = new Canape("Canapé",false,false);
 	private static Objets televisionSalon = new Television("TV");
 	private static Objets televisionSalleDeJeux = new Television("TV");
 	private static Objets telecommandeSalon = new Telecommande("Télécommande",false,true,0,0);
@@ -106,7 +107,7 @@ public class Main {
 		Objets[] objBureau = {interrupteurBureau};
 		Objets[] objCouloir = {interrupteurCouloir};
 		Objets[] objSdB2 = {interrupteurSdB2};
-		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux};
+		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ};
 		Objets[] objChambreParentale = {interrupteurChambreP};
 		Objets[] objStudio = {interrupteurStudio};
 		Objets[] objToilettes = {interrupteurToilettes};
