@@ -170,7 +170,40 @@ public final class Alarme {
 	public static String getCam_couloir(Alarme alarm) {return this.vue_cam_couloir;}
 	
 	//fonction qui retourne la vue de la caméra du jardin
-	public static String getCam_jardin(Alarme alarm) {return this.vue_cam_jardin;}
+	public static String getCam_jardin(Alarme alarm) {
+		if() {
+			String res="";
+			res+= 
+		 "|---------------------------------------------------------------------|")+Newligne+
+		 "|                  |   / 	    	      |  ______ |                   |")+Newligne+
+		 "|                  |  /                 |  |    | |                   |")+Newligne+  
+		 "|       /|         | /                  |  |    | |                   |")+Newligne+
+		 "|      / |         |/           |_| |_| |__|____|_|                   |")+Newligne+
+		 "|     /  |         /                                                  |")+Newligne+
+		 "|    /   |        /                                                   |")+Newligne+
+		 "|   /    |       /                                                    |")+Newligne+
+		 "|   |    |      /               _____________________________         |")+Newligne+
+	 	 "|   |    |     /              //|   |    |    |    |    |  //        _|")+Newligne+
+		 "|   |    |    /              // |   |    |    |    |    | //        / |")+Newligne+
+		 "|   |   /    /              //| |   |    |    |    |    |//        /  |")+Newligne+
+		 "|   |  /    /              // | |   |    |    |    |    //        /__/|")+Newligne+
+		 "|   | /    /              //| | |   |    |    |    |   //        //   |")+Newligne+
+		 "|   |/    /              // | | |   |    |    |    |  //        //    |")+Newligne+
+		 "|        /              //| | | |___|____|____|____|_//    ___________|")+Newligne+
+		 "|       /              // | | | /                   //    /  /  /  /  |")+Newligne+
+		 "|      /              //| | | |/                   //    /  /  /  /  /|")+Newligne+
+		 "|	    /              // | | | /                   //    /__/__/__/__/_|")+Newligne+
+		 "|    /              //| | | |/                   //    //           //|")+Newligne+
+		 "|   /              // | | | /                   //    //           // |")+Newligne+
+		 "|  /              //__|_|_|/___________________//                     |")+Newligne+              
+		 "| /                         										    |")+Newligne+
+		 "|/              													    |")+Newligne+
+		 "|---------------------------------------------------------------------|");
+		 return res;
+		}
+		else {return this.vue_cam_jardin;}
+		
+	}
 	
 	//fonction qui retourne la vue de la caméra de l'avant de la maison (purement scénaristique)
 	public static String getCam_devantMaison(Alarme alarm) {return this.vue_cam_devantMaison;}
