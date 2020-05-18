@@ -2,10 +2,11 @@ package main;
 import java.util.*;
 import java.util.Scanner;
 
-import javax.swing.plaf.SliderUI;
-
+import objets.Canape;
 import objets.Enceinte;
 import objets.Frigo;
+import objets.Telecommande;
+import objets.Television;
 
 public class Main {
 
@@ -16,10 +17,6 @@ public class Main {
 	private static Scanner input = new Scanner(System.in);
 
 	private ITelephone iPhone = ITelephone.newTelephone();
-
-	// Ajout des objets
-	private static Objets enceinte1 = new Enceinte("Enceinte salon", false);
-	private static Objets frigo = new Frigo("Frigo",false);
 	
 	// Ajout des pièces
 	private static Piece garage = new Piece("Garage",true);
@@ -42,6 +39,15 @@ public class Main {
 	private static Piece toilettes = new Piece("Toilettes",  false);
 	private static Piece jardin = new Piece("Jardin",  true);
 
+	// Ajout des objets
+	private static Objets enceinteSalon = new Enceinte("Enceinte salon", false);
+	private static Objets frigo = new Frigo("Frigo",false);
+	private static Objets canapeSalon = new Canape("Canapé salon",false);
+	private static Objets televisionSalon = new Television("TV salon");
+	private static Objets televisionSalleDeJeux = new Television("TV salle de jeux");
+	private static Objets telecommandeSalon = new Telecommande("Télécommande salon",false,true,0,0);
+	private static Objets telecommandeSalleDeJeux = new Telecommande("Télécommande sdj",false,true,4,2);
+	
 	/**
 	 * Fonction principale main
 	 */
@@ -68,56 +74,93 @@ public class Main {
 		Piece[] adjJardin = { salon };
 		
 		// Création des listes d'objets
-		Objets[] objSalon = {enceinte1};
+		Objets[] objGarage = {};
 		Objets[] objCuisine = {frigo};
+		Objets[] objBuanderie = {};
+		Objets[] objSalleAManger = {};
+		Objets[] objSalon = {enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon};
+		Objets[] objEntree = {};
+		Objets[] objChambre1 = {};
+		Objets[] objChambre2 = {};
+		Objets[] objSdB1 = {};
+		Objets[] objBureau = {};
+		Objets[] objCouloir = {};
+		Objets[] objSdB2 = {};
+		Objets[] objSalleDeJeux = {televisionSalleDeJeux};
+		Objets[] objChambreParentale = {};
+		Objets[] objStudio = {};
+		Objets[] objToilettes = {};
+		Objets[] objGrenier = {};
+		Objets[] objDressing = {};
+		Objets[] objJardin = {};
 		
 		// Ajout des pièces adj et des objets
 		garage.ajouterPiecesAdj(adjGarage);
+		garage.ajouterObjets(objGarage);
 		
 		cuisine.ajouterPiecesAdj(adjCuisine);
 		cuisine.ajouterObjets(objCuisine);
 		
 		buanderie.ajouterPiecesAdj(adjBuanderie);
+		buanderie.ajouterObjets(objBuanderie);
 		
 		salle_a_manger.ajouterPiecesAdj(adjSalleAManger);
+		salle_a_manger.ajouterObjets(objSalleAManger);
 		
 		salon.ajouterPiecesAdj(adjSalon);
 		salon.ajouterObjets(objSalon);
 		
 		entree.ajouterPiecesAdj(adjEntree);
+		entree.ajouterObjets(objEntree);
 		
 		chambre1.ajouterPiecesAdj(adjChambre1);
+		chambre1.ajouterObjets(objChambre1);
 		
 		chambre2.ajouterPiecesAdj(adjChambre2);
+		chambre2.ajouterObjets(objChambre2);
 		
 		sdb1.ajouterPiecesAdj(adjSdB1);
+		sdb1.ajouterObjets(objSdB1);
 		
 		bureau.ajouterPiecesAdj(adjBureau);
+		bureau.ajouterObjets(objBureau);
 		
 		couloir.ajouterPiecesAdj(adjCouloir);
+		couloir.ajouterObjets(objCouloir);
 		
 		sdb2.ajouterPiecesAdj(adjSdB2);
+		sdb2.ajouterObjets(objSdB2);
 		
 		salle_de_jeux.ajouterPiecesAdj(adjSalleDeJeux);
+		salle_de_jeux.ajouterObjets(objSalleDeJeux);
 		
 		chambre_parentale.ajouterPiecesAdj(adjChambreParentale);
+		chambre_parentale.ajouterObjets(objChambreParentale);
 		
 		studio.ajouterPiecesAdj(adjStudio);
+		studio.ajouterObjets(objStudio);
 		
 		toilettes.ajouterPiecesAdj(adjToilettes);
+		toilettes.ajouterObjets(objToilettes);
 		
 		grenier.ajouterPiecesAdj(adjGrenier);
+		grenier.ajouterObjets(objGrenier);
 		
 		dressing.ajouterPiecesAdj(adjDressing);
+		dressing.ajouterObjets(objDressing);
 		
 		jardin.ajouterPiecesAdj(adjJardin);
+		jardin.ajouterObjets(objJardin);
 		
 
 		Joueur.setPieceCourante(chambre_parentale);
 
 		// Message de lancement du jeu
-		System.out.println("Bienvenue !");
-		System.out.println(" ");
+		System.out.println("Bonjour !");
+		System.out.println("Vous venez de vous réveiller, il est déjà 13h05...");
+		System.out.println("Il va falloir se dépêcher, vous avez un rendez-vous à 18h30 et il vous faut partir de chez vous avant 18h15.");
+		System.out.println("Mais vous avez encore beaucoup à faire avant de sortir ! Voici la liste des tâches que vous devez accomplir :");
+		System.out.println();
 		System.out.println(Joueur.getPieceCourante().toString());
 		System.out.println(" ");
 
@@ -145,6 +188,7 @@ public class Main {
 				System.out.println("   - téléphone : utilise le téléphone");
 				System.out.println("   - utiliser [nom de l'objet] : utiliser un objet");
 				System.out.println("   - inventaire : consulter l'inventaire");
+				System.out.println("   - infos : consulter les informations sur la pièce");
 				System.out.println("   - sortir : sortir de la maison depuis l'entrée");
 				System.out.println("   - quitter : ferme le jeu");
 				break;
@@ -171,6 +215,9 @@ public class Main {
 				break;
 			case "INVENTAIRE": // commande pour consulter l'inventaire
 				Joueur.inventaireToString();
+				break;
+			case "INFOS" :
+				System.out.println(Joueur.getPieceCourante().toString());
 				break;
 			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().nom.compareToIgnoreCase("entree") == 0) {

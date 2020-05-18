@@ -25,7 +25,7 @@ public final class Enceinte extends ObjetNonRamassable {
 			else res+= ", musique éteinte";
 		}
 		else res+= ": éteinte";
-		return res;
+		return res + "\n";
 	}
 
 	@Override
