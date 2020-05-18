@@ -7,8 +7,11 @@ import objets.Canape;
 import objets.Enceinte;
 import objets.Frigo;
 import objets.Interrupteur;
+import objets.Piscine;
 import objets.Telecommande;
 import objets.Television;
+import objetsRamassables.Gonflable;
+import objetsRamassables.LiquideVaisselle;
 
 public class Main {
 
@@ -68,7 +71,9 @@ public class Main {
 	private static Objets interrupteurStudio = new Interrupteur("Interrupteur", false);
 	private static Objets interrupteurDressing = new Interrupteur("Interrupteur", false);
 	private static Objets interrupteurToilettes = new Interrupteur("Interrupteur", false);
-	
+	private static Piscine piscine = new Piscine("piscine");
+	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
+	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
 	
 	/**
 	 * Fonction principale main
@@ -97,7 +102,7 @@ public class Main {
 
 		// Création des listes d'objets
 		Objets[] objGarage = {interrupteurGarage};
-		Objets[] objCuisine = {interrupteurCuisine,frigo};
+		Objets[] objCuisine = {interrupteurCuisine,frigo,liquideVaisselle};
 		Objets[] objBuanderie = {interrupteurBuanderie};
 		Objets[] objSalleAManger = {interrupteurSaM};
 		Objets[] objSalon = {interrupteurSalon,enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon};
@@ -112,9 +117,9 @@ public class Main {
 		Objets[] objChambreParentale = {interrupteurChambreP};
 		Objets[] objStudio = {interrupteurStudio};
 		Objets[] objToilettes = {interrupteurToilettes};
-		Objets[] objGrenier = {interrupteurGrenier};
+		Objets[] objGrenier = {interrupteurGrenier,AnimauxGonflables};
 		Objets[] objDressing = {interrupteurDressing};
-		Objets[] objJardin = {};
+		Objets[] objJardin = {piscine};
 
 		// Ajout des pièces adj et des objets
 		garage.ajouterPiecesAdj(adjGarage);
@@ -243,6 +248,23 @@ public class Main {
 				break;
 			case "INFOS":
 				System.out.println(Joueur.getPieceCourante().toString());
+				break;
+			case "PRENDRE" :
+				if (entreeSplit.length > 1) {
+					String resObjet = "";
+					resObjet = entreeSplit[1];
+					if (entreeSplit.length > 2) {
+						for (int i = 2; i < entreeSplit.length; i++) {
+							resObjet += " ";
+							resObjet += entreeSplit[i];
+						}
+					}
+					Objets cherche = Joueur.StringtoObjet(resObjet);
+					if (cherche != null && cherche.getClass()==ObjetRamassable.class) {
+						Joueur.addInventaire((ObjetRamassable) cherche);
+					} else
+						System.out.println("Cet objet n'est pas disponible ... \n");
+				}
 				break;
 			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().nom.compareToIgnoreCase("entree") == 0) {

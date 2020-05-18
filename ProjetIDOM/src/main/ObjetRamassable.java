@@ -9,7 +9,7 @@ public abstract class ObjetRamassable extends Objets {
 	public String getNom() {return super.getNom();}
 
 	public String toString() {
-		String res = "";
+		String res = " - ";
 		res += super.getNom();
 		return res;
 	}
