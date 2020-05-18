@@ -15,12 +15,14 @@ public final class Canape extends ObjetNonRamassable {
 	private boolean occupe;
 	private List<ObjetRamassable> objetsARamasser;
 	
-	public Canape(String nom,boolean occupe) {
+	public Canape(String nom,boolean occupe,boolean pilesARamasser) {
 		super(nom);
 		this.occupe = occupe;
 		objetsARamasser = new ArrayList<ObjetRamassable>();
-		objetsARamasser.add(new Pile("Pile télécommande 1"));
-		objetsARamasser.add(new Pile("Pile télécommande 2"));
+		if(pilesARamasser) {
+			objetsARamasser.add(new Pile("Pile télécommande 1"));
+			objetsARamasser.add(new Pile("Pile télécommande 2"));
+		}
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import java.util.Scanner;
 import objets.Canape;
 import objets.Enceinte;
 import objets.Frigo;
+import objets.Interrupteur;
 import objets.Telecommande;
 import objets.Television;
 
@@ -41,14 +42,34 @@ public class Main {
 	private static Piece jardin = new Piece("Jardin", true);
 
 	// Ajout des objets
-	private static Objets enceinteSalon = new Enceinte("Enceinte salon", false);
-	private static Objets frigo = new Frigo("Frigo", false);
-	private static Objets canapeSalon = new Canape("Canapé salon", false);
-	private static Objets televisionSalon = new Television("TV salon");
-	private static Objets televisionSalleDeJeux = new Television("TV salle de jeux");
-	private static Objets telecommandeSalon = new Telecommande("Télécommande salon", false, true, 0, 0);
-	private static Objets telecommandeSalleDeJeux = new Telecommande("Télécommande sdj", false, true, 4, 2);
-
+	private static Objets enceinteSalon = new Enceinte("Enceinte", false);
+	private static Objets frigo = new Frigo("Frigo",false);
+	private static Objets canapeSalon = new Canape("Canapé",false,true);
+	private static Objets canapeSdJ = new Canape("Canapé",false,false);
+	private static Objets televisionSalon = new Television("TV");
+	private static Objets televisionSalleDeJeux = new Television("TV");
+	private static Objets telecommandeSalon = new Telecommande("Télécommande",false,true,0,0);
+	private static Objets telecommandeSalleDeJeux = new Telecommande("Télécommande",false,true,4,2);
+	private static Objets interrupteurGarage = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurCuisine = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurSalon = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurSaM = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurBuanderie = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurEntree = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurChambre1 = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurChambre2 = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurChambreP = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurSdB1 = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurSdB2 = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurBureau = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurSdJ = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurCouloir = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurGrenier = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurStudio = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurDressing = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurToilettes = new Interrupteur("Interrupteur", false);
+	
+	
 	/**
 	 * Fonction principale main
 	 */
@@ -75,24 +96,24 @@ public class Main {
 		Piece[] adjJardin = { salon };
 
 		// Création des listes d'objets
-		Objets[] objGarage = {};
-		Objets[] objCuisine = { frigo };
-		Objets[] objBuanderie = {};
-		Objets[] objSalleAManger = {};
-		Objets[] objSalon = { enceinteSalon, canapeSalon, televisionSalon, telecommandeSalon };
-		Objets[] objEntree = {};
-		Objets[] objChambre1 = {};
-		Objets[] objChambre2 = {};
-		Objets[] objSdB1 = {};
-		Objets[] objBureau = {};
-		Objets[] objCouloir = {};
-		Objets[] objSdB2 = {};
-		Objets[] objSalleDeJeux = { televisionSalleDeJeux };
-		Objets[] objChambreParentale = {};
-		Objets[] objStudio = {};
-		Objets[] objToilettes = {};
-		Objets[] objGrenier = {};
-		Objets[] objDressing = {};
+		Objets[] objGarage = {interrupteurGarage};
+		Objets[] objCuisine = {interrupteurCuisine,frigo};
+		Objets[] objBuanderie = {interrupteurBuanderie};
+		Objets[] objSalleAManger = {interrupteurSaM};
+		Objets[] objSalon = {interrupteurSalon,enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon};
+		Objets[] objEntree = {interrupteurEntree};
+		Objets[] objChambre1 = {interrupteurChambre1};
+		Objets[] objChambre2 = {interrupteurChambre2};
+		Objets[] objSdB1 = {interrupteurSdB1};
+		Objets[] objBureau = {interrupteurBureau};
+		Objets[] objCouloir = {interrupteurCouloir};
+		Objets[] objSdB2 = {interrupteurSdB2};
+		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ};
+		Objets[] objChambreParentale = {interrupteurChambreP};
+		Objets[] objStudio = {interrupteurStudio};
+		Objets[] objToilettes = {interrupteurToilettes};
+		Objets[] objGrenier = {interrupteurGrenier};
+		Objets[] objDressing = {interrupteurDressing};
 		Objets[] objJardin = {};
 
 		// Ajout des pièces adj et des objets
