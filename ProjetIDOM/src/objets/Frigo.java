@@ -5,6 +5,7 @@ import java.util.Scanner;
 import main.Joueur;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
+import objetsRamassables.Boisson;
 
 public final class Frigo extends ObjetNonRamassable {
 
@@ -20,7 +21,7 @@ public final class Frigo extends ObjetNonRamassable {
 		String res = "";
 		if(ouvert) res+= " : ouvert";
 		else res += " : fermé";
-		return res;
+		return res + "\n";
 	}
 
 	@Override

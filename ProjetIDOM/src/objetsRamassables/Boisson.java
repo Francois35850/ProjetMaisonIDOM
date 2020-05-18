@@ -1,4 +1,4 @@
-package objets;
+package objetsRamassables;
 
 import main.Joueur;
 import main.ObjetRamassable;

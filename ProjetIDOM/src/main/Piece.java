@@ -43,8 +43,8 @@ public class Piece {
 	}
 	
 	public String toString() {
-		String res = "";
-		res+= "Vous vous trouvez dans la pièce " + this.nom + ".\nListe des objets pr�sents : \n";
+		String res = "\n";
+		res+= "Vous vous trouvez dans la pièce " + this.nom + ".\nListe des objets présents : \n";
 		ListIterator<Objets> itObjet = listeObjets.listIterator();
 		while(itObjet.hasNext()) {
 			res+= itObjet.next().toString();
@@ -63,4 +63,8 @@ public class Piece {
 		return res;
 	}
 
+	public List<Objets> getObjets() {
+		return listeObjets;
+	}
+	
 }
