@@ -75,29 +75,35 @@ public final class Alarme extends ObjetNonRamassable {
 			 "| /                         										    |")+Newligne+
 			 "|/              													    |")+Newligne+
 			 "|---------------------------------------------------------------------|");
-	private String vue_cam3="Systeme defaillant, veuillez contacter le service maintenance !";
+	private String vue_cam_devantMaison="Systeme defaillant, veuillez contacter le service maintenance !";
 	
 ;
-	public Alarme(int code_digicode, int detecteur_incendie_rdc, int detecteur_incendie_r1, int detecteur_mouvement_couloirrdc, int detecteur_mouvement_salon, int detecteur_mouvement_couloirr1,  int detecteur_mouvement_garage, int detecteur_ouverture_porte, int detecteur_ouverture_bureau, int detecteur_ouverture_salon, int detecteur_ouverture_ch1,  int detecteur_ouverture_ch2, int detecteur_ouverture_chp, int detecteur_ouverture_sallejeux, int detecteur_ouverture_auditorium,  int detecteur_ouverture_cuisine, int detecteur_ouverture_sallemanger, String vue_cam_couloir, String vue_cam_jardin, String vue_cam3) {	
+	public Alarme(int code_digicode, int detecteur_incendie_rdc, int detecteur_incendie_r1, int detecteur_mouvement_couloirrdc,int detecteur_mouvement_couloirr1, int detecteur_mouvement_salon, int detecteur_mouvement_garage, int detecteur_ouverture_porte, int detecteur_ouverture_bureau, int detecteur_ouverture_salon, int detecteur_ouverture_ch1,  int detecteur_ouverture_ch2, int detecteur_ouverture_chp, int detecteur_ouverture_sallejeux, int detecteur_ouverture_auditorium,  int detecteur_ouverture_cuisine, int detecteur_ouverture_sallemanger, String vue_cam_couloir, String vue_cam_jardin, String vue_cam3) {	
+	
 	this.code_digicode=code_digicode;
+	
 	this.detecteur_incendie_rdc=detecteur_incendie_rdc;
 	this.detecteur_incendie_r1=detecteur_incendie_r1;
+	
 	this.detecteur_mouvement_couloirrdc=detecteur_mouvement_couloirrdc;
-	this.detecteur_mouvement_garage=detecteur_mouvement_garage;
+	this.detecteur_mouvement_couloirr1=detecteur_mouvement_couloirr1;
 	this.detecteur_mouvement_salon=detecteur_mouvement_salon;
-	this.detecteur_ouverture_auditorium=detecteur_ouverture_auditorium;
+	this.detecteur_mouvement_garage=detecteur_mouvement_garage;
+	
+	this.detecteur_ouverture_porte=detecteur_ouverture_porte;
 	this.detecteur_ouverture_bureau=detecteur_ouverture_bureau;
+	this.detecteur_ouverture_salon=detecteur_ouverture_salon;
 	this.detecteur_ouverture_ch1=detecteur_ouverture_ch1;
 	this.detecteur_ouverture_ch2=detecteur_ouverture_ch2;
 	this.detecteur_ouverture_chp=detecteur_ouverture_chp;
-	this.detecteur_ouverture_cuisine=detecteur_ouverture_cuisine;
-	this.detecteur_ouverture_porte=detecteur_ouverture_porte;
-	this.detecteur_ouverture_sallemanger=detecteur_ouverture_sallemanger;
 	this.detecteur_ouverture_sallejeux=detecteur_ouverture_sallejeux;
-	this.detecteur_ouverture_salon=detecteur_ouverture_salon;
-	this.vue_cam3=vue_cam3;
+	this.detecteur_ouverture_auditorium=detecteur_ouverture_auditorium;
+	this.detecteur_ouverture_cuisine=detecteur_ouverture_cuisine;
+	this.detecteur_ouverture_sallemanger=detecteur_ouverture_sallemanger;
+	
 	this.vue_cam_couloir=vue_cam_couloir;
-	this.vue_cam_jardin=vue_cam_couloir;
+	this.vue_cam_jardin=vue_cam_jardin;
+	this.vue_cam3=vue_cam_devantMaison;
 	}
 	
 	public static Alarme newAlarme () {
@@ -105,18 +111,71 @@ public final class Alarme extends ObjetNonRamassable {
 		return alarm;
 	}
 	
+	//fonction qui retourne le code de l'alarme
 	public static int getCodeDigicode(Alarme alarm)	{return this.code_digicode;}
 	
-	public static int getEtat_DI_rdc(Alarme alarm) {return this.detecteur_incendie_rdc;}
 	
+	//fonction qui retourne l'état du détecteur incendie du rdc: 1 quand détection de fumée
+	public static int getEtat_DI_rdc(Alarme alarm) {return this.detecteur_incendie_rdc;}
+
+	//fonction qui retourne l'état du détecteur incendie du r+1: 1 quand détection de fumée
 	public static int getEtat_DI_r1(Alarme alarm) {return this.detecteur_incendie_r1;}
 	
-	public static int getEtat_DM_couloir(Alarme alarm) {return this.detecteur_incendie_r1;}
 	
-	public static int getEtat_DM_couloir(Alarme alarm) {return
+	//fonction qui retourne l'état du détecteur de mouvement du couloir au rdc: 1 quand détection infrarouge
+	public static int getEtat_DM_couloirRdc(Alarme alarm) {return this.detecteur_incendie_rdc;}
+	
+	//fonction qui retourne l'état du détecteur de mouvement du couloir au r+1: 1 quand détection infrarouge
+	public static int getEtat_DM_couloirR1(Alarme alarm) {return this.detecteur_incendie_r1;}
 			
-	public static int getEtat_DM_couloir(Alarme alarm) {return
-	}
+	//fonction qui retourne l'état du détecteur de mouvement du salon: 1 quand détection infrarouge
+	public static int getEtat_DM_salon(Alarme alarm) {return this.detecteur_mouvement_salon;}
+	
+	//fonction qui retourne l'état du détecteur de mouvement du garage: 1 quand détection infrarouge
+	public static int getEtat_DM_garage(Alarme alarm) {return this.detecteur_mouvement_garage;}
+	
+	
+	//fonction qui retourne l'état du détecteur d'ouverture du garage: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_porte(Alarme alarm) {return this.detecteur_ouverture_porte;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture du bureau: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_bureau(Alarme alarm) {return this.detecteur_ouverture_bureau;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture du salon: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_salon(Alarme alarm) {return this.detecteur_ouverture_salon;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture de la chambre 1: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_ch1(Alarme alarm) {return this.detecteur_ouverture_ch1;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture de la chambre 2: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_ch2(Alarme alarm) {return this.detecteur_ouverture_ch2;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture de la chambre parentale: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_chp(Alarme alarm) {return this.detecteur_ouverture_chp;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture de la salle de jeux: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_sallejeux(Alarme alarm) {return this.detecteur_ouverture_sallejeux;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture de l'auditorium: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_auditorium(Alarme alarm) {return this.detecteur_ouverture_auditorium;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture de la cuisine: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_cuisine(Alarme alarm) {return this.detecteur_ouverture_cuisine;}
+	
+	//fonction qui retourne l'état du détecteur d'ouverture de la salle a manger: 1 quand la fenetre est ouverte
+	public static int getEtat_DO_sallemanger(Alarme alarm) {return this.detecteur_ouverture_sallemanger;}
+	
+	
+	//fonction qui retourne la vue de la caméra du couloir au rdc
+	public static String getCam_couloir(Alarme alarm) {return this.vue_cam_couloir;}
+	
+	//fonction qui retourne la vue de la caméra du jardin
+	public static String getCam_jardin(Alarme alarm) {return this.vue_cam_jardin;}
+	
+	//fonction qui retourne la vue de la caméra de l'avant de la maison (purement scénaristique)
+	public static String getCam_devantMaison(Alarme alarm) {return this.vue_cam_devantMaison;}
+			
+	
 	
 	
 	
