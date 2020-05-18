@@ -1,6 +1,6 @@
 package objets;
 
-public final class Alarme extends ObjetNonRamassable {
+public final class Alarme {
 
 	private int code_digicode;
 	
@@ -175,63 +175,36 @@ public final class Alarme extends ObjetNonRamassable {
 	//fonction qui retourne la vue de la caméra de l'avant de la maison (purement scénaristique)
 	public static String getCam_devantMaison(Alarme alarm) {return this.vue_cam_devantMaison;}
 			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public Alarme(String nom) {
-		super(nom);
-		// TODO Auto-generated constructor stub
-	}
-
-
-<<<<<<< HEAD
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-=======
-	@Override
-	public void utiliserObjet() {
-		// TODO Auto-generated method stub
-		
-	}
-
->>>>>>> branch 'master' of https://github.com/Francois35850/ProjetMaisonIDOM.git
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
