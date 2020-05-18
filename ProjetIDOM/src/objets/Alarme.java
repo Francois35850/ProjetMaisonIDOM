@@ -1,7 +1,5 @@
 package objets;
 
-import Maison.Alarme;
-
 public final class Alarme extends ObjetNonRamassable {
 
 	private int code_digicode;
@@ -41,13 +39,13 @@ public final class Alarme extends ObjetNonRamassable {
 		     "|              |       |    |             |    |       |              |"+Newligne+
 		     "|              |       |    |             |    |       |              |"+Newligne+
 		     "|              |       |____|_____________|____|       |              |"+Newligne+
-		     "|              |      /                         \      |              |"+Newligne+
-		     "|              |     /                           \     |              |"+Newligne+
-		     "|              |    /                             \    |              |"+Newligne+
-		     "|	 		     |   /							     \   |			    |"+Newligne+
-		     "|              |  /                                 \  |              |"+Newligne+
-		     "|              | /                                   \ |              |"+Newligne+
-		     "|______________|/        							    \|______________|"+Newligne+
+		     "|              |      /                         \\      |              |"+Newligne+
+		     "|              |     /                           \\     |              |"+Newligne+
+		     "|              |    /                             \\    |              |"+Newligne+
+		     "|	 		     |   /							     \\   |			     |"+Newligne+
+		     "|              |  /                                 \\  |              |"+Newligne+
+		     "|              | /                                   \\ |              |"+Newligne+
+		     "|______________|/        							    \\|______________|"+Newligne+
 		     "|                          										    |"+Newligne+
 		     "|               													    |"+Newligne+
 		     "|---------------------------------------------------------------------|";;
@@ -85,7 +83,6 @@ public final class Alarme extends ObjetNonRamassable {
 	this.detecteur_incendie_rdc=detecteur_incendie_rdc;
 	this.detecteur_incendie_r1=detecteur_incendie_r1;
 	this.detecteur_mouvement_couloirrdc=detecteur_mouvement_couloirrdc;
-	this.detecteur_mouvement_couloirrdc=detecteur_mouvement_couloirrdc;
 	this.detecteur_mouvement_garage=detecteur_mouvement_garage;
 	this.detecteur_mouvement_salon=detecteur_mouvement_salon;
 	this.detecteur_ouverture_auditorium=detecteur_ouverture_auditorium;
@@ -110,7 +107,16 @@ public final class Alarme extends ObjetNonRamassable {
 	
 	public static int getCodeDigicode(Alarme alarm)	{return this.code_digicode;}
 	
-	public static int getEtat_DI_rdc(Alarme alarm) {return alarm.;}
+	public static int getEtat_DI_rdc(Alarme alarm) {return this.detecteur_incendie_rdc;}
+	
+	public static int getEtat_DI_r1(Alarme alarm) {return this.detecteur_incendie_r1;}
+	
+	public static int getEtat_DM_couloir(Alarme alarm) {return this.detecteur_incendie_r1;}
+	
+	public static int getEtat_DM_couloir(Alarme alarm) {return
+			
+	public static int getEtat_DM_couloir(Alarme alarm) {return
+	}
 	
 	
 	
