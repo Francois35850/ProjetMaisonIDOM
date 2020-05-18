@@ -1,10 +1,14 @@
 package objets;
 
+<<<<<<< HEAD
 import main.Objet;
 <<<<<<< HEAD
 =======
+=======
+import main.ObjetNonRamassable;
+>>>>>>> branch 'master' of https://github.com/Francois35850/ProjetMaisonIDOM.git
 
-public final class Alarme extends Objet {
+public final class Alarme extends ObjetNonRamassable {
 
 	public Alarme(String nom) {
 		super(nom);
@@ -12,6 +16,7 @@ public final class Alarme extends Objet {
 	}
 
 
+<<<<<<< HEAD
 	
 	
 	
@@ -23,4 +28,12 @@ public final class Alarme extends Objet {
 	
 	
 	
+=======
+	@Override
+	public void utiliserObjet() {
+		// TODO Auto-generated method stub
+		
+	}
+
+>>>>>>> branch 'master' of https://github.com/Francois35850/ProjetMaisonIDOM.git
 }

@@ -1,8 +1,8 @@
 package objets;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class HomeCinema extends Objet {
+public final class HomeCinema extends ObjetNonRamassable {
 
 	public HomeCinema(String nom) {
 		super(nom);
@@ -13,6 +13,12 @@ public final class HomeCinema extends Objet {
 	public String etat() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void utiliserObjet() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

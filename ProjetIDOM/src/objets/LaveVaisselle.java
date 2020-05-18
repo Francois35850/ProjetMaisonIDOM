@@ -1,8 +1,8 @@
 package objets;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class LaveVaisselle extends Objet {
+public final class LaveVaisselle extends ObjetNonRamassable {
 
 	public LaveVaisselle(String nom) {
 		super(nom);
@@ -13,6 +13,12 @@ public final class LaveVaisselle extends Objet {
 	public String etat() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void utiliserObjet() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

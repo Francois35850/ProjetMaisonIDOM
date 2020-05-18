@@ -5,16 +5,16 @@ public class Piece {
 	String nom;
 	Boolean estAuRezDeC;
 	List<Piece> piecesAdj;
-	List<Objet> listeObjets;
+	List<Objets> listeObjets;
 	
-	public Piece(String nom, List<Objet> listeObjets, boolean rdc) {
+	public Piece(String nom, boolean rdc) {
 		this.nom = nom;
 		this.piecesAdj = new ArrayList<Piece>();
-		this.listeObjets = listeObjets;
+		this.listeObjets = new ArrayList<Objets>();
 		estAuRezDeC = rdc;
 	}
 	
-	public void addObjets(Objet o) {
+	public void addObjets(ObjetNonRamassable o) {
 		listeObjets.add(o);
 	}
 	
@@ -24,11 +24,17 @@ public class Piece {
 		}
 	}
 	
-	public void soustractObjets(Objet o) {
+	public void ajouterObjets(Objets[] aAjouter) {
+		for(int i = 0; i<aAjouter.length; i++) {
+			listeObjets.add(aAjouter[i]);
+		}
+	}
+	
+	public void soustractObjets(ObjetNonRamassable o) {
 		boolean retire = false;
-		ListIterator<Objet> itObjet = listeObjets.listIterator();
+		ListIterator<Objets> itObjet = listeObjets.listIterator();
 		while (!retire | itObjet.hasNext()) {
-			Objet next = itObjet.next();
+			Objets next = itObjet.next();
 			if (next == o) {
 				itObjet.remove();
 				retire = true;
@@ -38,11 +44,11 @@ public class Piece {
 	
 	public String toString() {
 		String res = "";
-		res+= "Vous vous trouvez dans la pièce " + this.nom + ".\n Liste des objets pr�sents : \n";
-		/*ListIterator<Objet> itObjet = listeObjets.listIterator();
+		res+= "Vous vous trouvez dans la pièce " + this.nom + ".\nListe des objets pr�sents : \n";
+		ListIterator<Objets> itObjet = listeObjets.listIterator();
 		while(itObjet.hasNext()) {
 			res+= itObjet.next().toString();
-		}*/
+		}
 		if(piecesAdj.size()>1) {
 			res+="\nVous avez accès aux portes : ";
 			ListIterator<Piece> itPiece = piecesAdj.listIterator();

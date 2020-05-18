@@ -1,8 +1,8 @@
 package objets;
 
-import main.Objet;
+import main.ObjetNonRamassable;
 
-public final class Lumiere extends Objet {
+public final class Lumiere extends ObjetNonRamassable {
 
 	public Lumiere(String nom) {
 		super(nom);
@@ -13,6 +13,12 @@ public final class Lumiere extends Objet {
 	public String etat() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void utiliserObjet() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
