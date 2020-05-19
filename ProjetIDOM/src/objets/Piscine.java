@@ -3,6 +3,7 @@ package objets;
 import java.util.Scanner;
 
 import main.Joueur;
+import main.Main;
 import main.ObjetNonRamassable;
 
 public class Piscine extends ObjetNonRamassable {
@@ -43,7 +44,7 @@ public class Piscine extends ObjetNonRamassable {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez la " + this.getNom() + ".");
 		while (this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - plongeon\n  - nager\n  - ouvrir\n  - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - plongeon (3 min)\n  - nager (15 min)\n  - ouvrir\n  - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "PLONGEON":
@@ -51,8 +52,12 @@ public class Piscine extends ObjetNonRamassable {
 					if(Joueur.getEtatVetements()!=3) {
 						System.out.println("Vous effectuez un plongeon tout habillé et ressortez trempé ...");
 						System.out.println("Un maillot de bain aurait été une bonne idée ...");
+						Main.ajoutTemps(3);
 					}
-					else System.out.println("Vous faites une grosse bombe au milieu de la piscine\nVous ressortez trempé...");
+					else {
+						System.out.println("Vous faites une grosse bombe au milieu de la piscine\nVous ressortez trempé...");
+						Main.ajoutTemps(3);
+					}
 					if (secu) {
 						System.out.println("L'alarme retentie, vous avez oubliez de la désactiver \nLes chiens du quartier se mettent à aboyer");
 					}
@@ -65,12 +70,16 @@ public class Piscine extends ObjetNonRamassable {
 					if(Joueur.getEtatVetements()!=3) {
 						System.out.println("Vous n'avez pas la tenue adéquate pour faire quelques longueurs, allez vous changer");
 					}
-					else {
+					else if(!secu){
 						System.out.println("Vous faites quelques longueurs de piscine, c'est vraiment agréable sous ce beau soleil");
 						System.out.println("Vous sortez de l'eau");
+						Main.ajoutTemps(15);
 					}
-					if (secu) {
-						System.out.println("L'alarme retentie, vous avez oubliez de la désactiver \nLes chiens du quartier se mettent à aboyer");
+					else {
+						System.out.println("Vous entrez tranquillement dans l'eau et commencez à nager quand l'alarme retentie !");
+						System.out.println("Vous vous empressez de ressortir de l'eau");
+						System.out.println("Bravo, vous faites hurler tous les chiens du quartier !");
+						Main.ajoutTemps(2);
 					}
 				} else {
 					System.out.println("La piscine est fermée ! Impossible de nager");

@@ -22,8 +22,9 @@ public class Main {
 	// boolean pour l'état du jeu : true quand le jeu est en cours
 	private static boolean gameActive = true;
 	
-	private static int temps = 0;
-
+	private static int heure = 13;
+	private static int minute = 05;
+	
 	// scanner pour lire les commandes du joueur
 	private static Scanner input = new Scanner(System.in);
 
@@ -77,7 +78,7 @@ public class Main {
 	private static Objets interrupteurStudio = new Interrupteur("Interrupteur", false);
 	private static Objets interrupteurDressing = new Interrupteur("Interrupteur", false);
 	private static Objets interrupteurToilettes = new Interrupteur("Interrupteur", false);
-	private static Piscine piscine = new Piscine("piscine");
+	private static Piscine piscine = new Piscine("Piscine");
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
 	private static Objets Panodectrl = new PanneauDeCtrl("Panneau de Controle", piscine);
@@ -101,7 +102,33 @@ public class Main {
 	private static Volet volet_studio = new Volet("Volet", false);
 	private static Volet volet_cuisine = new Volet("Volet", false);
 	private static Volet volet_sallemanger = new Volet("Volet", false);
-	private static Armoire armoireChambreP = new Armoire("Armoire", false);
+	private static Armoire armoireDressing = new Armoire("Armoire", false);
+	
+	// String de l'affichage de l'heure
+	public static String affichageHeure() {
+		if(minute<10) return heure + "h0" + minute;
+		else return heure + "h" + minute;
+	}
+	
+	// ajouter du temps (en minute)
+	public static void ajoutTemps(int tempsSupp) {
+		heure = heure + tempsSupp/60;
+		minute = minute + tempsSupp%60;
+		while(minute>=60) {
+			minute = minute-60;
+			heure++;
+		}
+	}
+	
+	// retirer du temps (en minute)
+	public static void retirerTemps(int tempsSupp) {
+		heure = heure - tempsSupp/60;
+		minute = minute - tempsSupp%60;
+		while(minute>=60) {
+			minute = minute-60;
+			heure++;
+		}
+	}
 	
 	/**
 	 * Fonction principale main
@@ -142,11 +169,11 @@ public class Main {
 		Objets[] objCouloir = {interrupteurCouloir};
 		Objets[] objSdB2 = {interrupteurSdB2};
 		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ,fenetre_sallejeux,volet_sallejeux};
-		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp,armoireChambreP};
+		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp};
 		Objets[] objStudio = {interrupteurStudio,fenetre_studio,volet_studio};
 		Objets[] objToilettes = {interrupteurToilettes};
 		Objets[] objGrenier = {interrupteurGrenier,AnimauxGonflables};
-		Objets[] objDressing = {interrupteurDressing};
+		Objets[] objDressing = {interrupteurDressing,armoireDressing};
 		Objets[] objJardin = {piscine,Panodectrl};
 
 		// Ajout des pièces adj et des objets
@@ -211,7 +238,7 @@ public class Main {
 
 		// Message de lancement du jeu
 		System.out.println("Bonjour !");
-		System.out.println("Vous venez de vous réveiller, il est déjà 13h05...");
+		System.out.println("Vous venez de vous réveiller, il est déjà " + affichageHeure() + "...");
 		System.out.println(
 				"Il va falloir se dépêcher, vous avez un rendez-vous à 18h30 et il vous faut partir de chez vous avant 18h15.");
 		System.out.println(
@@ -222,7 +249,6 @@ public class Main {
 
 		// boucle du jeu
 		while (gameActive) {
-
 			// Demande de la commande
 			System.out.println("Entrez une commande ('help' pour la liste des commandes) :");
 			String entree = input.nextLine();
@@ -246,6 +272,7 @@ public class Main {
 				System.out.println("   - prendre [nom de l'objet] : prendre un objet");
 				System.out.println("   - inventaire : consulter l'inventaire");
 				System.out.println("   - infos : consulter les informations sur la pièce");
+				System.out.println("   - heure : consulter l'heure qu'il est");
 				System.out.println("   - sortir : sortir de la maison depuis l'entrée");
 				System.out.println("   - quitter : ferme le jeu");
 				break;
@@ -296,11 +323,17 @@ public class Main {
 						System.out.println("Cet objet n'est pas disponible ... \n");
 				}
 				break;
+			case "HEURE" :
+				System.out.println("Il est " + affichageHeure() + ", votre rendez-vous est à 18h30");
+				break;
 			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().getNom().compareToIgnoreCase("entree") == 0) {
-					System.out.println("Vous êtes sorti de la maison");
-					gameActive = false;
-					System.out.println("Jeu terminé");
+					if(Joueur.getEtatVetements()==1) {
+						System.out.println("Vous êtes sorti de la maison");
+						gameActive = false;
+						System.out.println("Jeu terminé");
+					}
+					else System.out.println("Vous ne pouvez pas sortir habillé comme ça...");
 				} else
 					System.out.println("Vous ne pouvez sortir que depuis l'entrée");
 				break;
@@ -312,7 +345,6 @@ public class Main {
 		}
 
 	}
-	
-	public void ajoutTemps(int tempsSupp) {temps = temps + tempsSupp;}
+
 
 }
