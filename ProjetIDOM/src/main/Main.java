@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 import objets.Canape;
 import objets.Enceinte;
+import objets.Fenetre;
 import objets.Frigo;
 import objets.Interrupteur;
 import objets.Piscine;
 import objets.Telecommande;
 import objets.Television;
+import objets.Volet;
 import objetsRamassables.Gonflable;
 import objetsRamassables.LiquideVaisselle;
 
