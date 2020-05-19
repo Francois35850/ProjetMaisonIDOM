@@ -241,6 +241,7 @@ public class Main {
 				System.out.println("     depuis la pièce actuelle");
 				System.out.println("   - téléphone : utilise le téléphone");
 				System.out.println("   - utiliser [nom de l'objet] : utiliser un objet");
+				System.out.println("   - prendre [nom de l'objet] : prendre un objet");
 				System.out.println("   - inventaire : consulter l'inventaire");
 				System.out.println("   - infos : consulter les informations sur la pièce");
 				System.out.println("   - sortir : sortir de la maison depuis l'entrée");
@@ -288,12 +289,13 @@ public class Main {
 					Objets cherche = Joueur.StringtoObjet(resObjet);
 					if (cherche != null && cherche instanceof ObjetRamassable) {
 						Joueur.addInventaire((ObjetRamassable) cherche);
+						Joueur.getPieceCourante().soustractObjets(cherche);
 					} else
 						System.out.println("Cet objet n'est pas disponible ... \n");
 				}
 				break;
 			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
-				if (Joueur.getPieceCourante().nom.compareToIgnoreCase("entree") == 0) {
+				if (Joueur.getPieceCourante().getNom().compareToIgnoreCase("entree") == 0) {
 					System.out.println("Vous êtes sorti de la maison");
 					gameActive = false;
 					System.out.println("Jeu terminé");

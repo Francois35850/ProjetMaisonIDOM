@@ -2,10 +2,10 @@ package main;
 import java.util.*;
 
 public class Piece {
-	String nom;
-	Boolean estAuRezDeC;
-	List<Piece> piecesAdj;
-	List<Objets> listeObjets;
+	private String nom;
+	private Boolean estAuRezDeC;
+	private List<Piece> piecesAdj;
+	private List<Objets> listeObjets;
 	
 	public Piece(String nom, boolean rdc) {
 		this.nom = nom;
@@ -30,7 +30,7 @@ public class Piece {
 		}
 	}
 	
-	public void soustractObjets(ObjetNonRamassable o) {
+	public void soustractObjets(Objets o) {
 		boolean retire = false;
 		ListIterator<Objets> itObjet = listeObjets.listIterator();
 		while (!retire | itObjet.hasNext()) {
@@ -65,6 +65,10 @@ public class Piece {
 
 	public List<Objets> getObjets() {
 		return listeObjets;
+	}
+	
+	public List<Piece> getAdj() {
+		return piecesAdj;
 	}
 	
 	public String getNom() {

@@ -11,6 +11,7 @@ public abstract class ObjetRamassable extends Objets {
 	public String toString() {
 		String res = " - ";
 		res += super.getNom();
+		res += "\n";
 		return res;
 	}
 	

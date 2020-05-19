@@ -67,10 +67,10 @@ public class Joueur {
 	}
 
 	public static Piece StringToPiece(String nomPiece) {
-		ListIterator<Piece> it = pieceCourante.piecesAdj.listIterator();
+		ListIterator<Piece> it = pieceCourante.getAdj().listIterator();
 		while (it.hasNext()) {
 			Piece nextPiece = it.next();
-			if (nextPiece.nom.compareToIgnoreCase(nomPiece) == 0)
+			if (nextPiece.getNom().compareToIgnoreCase(nomPiece) == 0)
 				return nextPiece;
 		}
 		return null;
@@ -100,7 +100,7 @@ public class Joueur {
 
 	public static Objets StringtoObjet(String o) {
 		ListIterator<ObjetRamassable> itInv = inventaire.listIterator();
-		ListIterator<Objets> itPie = getPieceCourante().listeObjets.listIterator();
+		ListIterator<Objets> itPie = getPieceCourante().getObjets().listIterator();
 		boolean dispo = false;
 		Objets ret = null;
 		while (itInv.hasNext() && !dispo) {
