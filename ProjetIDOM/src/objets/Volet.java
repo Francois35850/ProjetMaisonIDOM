@@ -7,7 +7,7 @@ public class Volet {
 	
 	//Constructeur
 	public Volet(String nom, boolean utilisation, boolean etat_volet) {
-		super();
+		super(nom);
 		this.utilisation=utilisation;
 		this.etat_volet=etat_volet;
 	}

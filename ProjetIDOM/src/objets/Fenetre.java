@@ -13,7 +13,7 @@ public class Fenetre extends ObjetNonRamassable{
 
 	//Constructeur
 	public Fenetre(String nom, boolean utilisation, boolean etat_fenetre) {
-		super();
+		super(nom);
 		this.utilisation=utilisation;
 		this.etat_fenetre=etat_fenetre;
 	}
