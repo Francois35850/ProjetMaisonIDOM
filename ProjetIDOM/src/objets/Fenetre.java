@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import main.ObjetNonRamassable;
+
 public class Fenetre extends ObjetNonRamassable{
 
 	// scanner pour lire les commandes du joueur
