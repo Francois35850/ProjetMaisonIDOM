@@ -32,14 +32,22 @@ public class Volet extends ObjetNonRamassable {
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation() == true) {
 			System.out.println(
-					"Liste des actions possibles pour cet objet :\n  - ouvrir le volet\n  - fermer le volet\n  - retour");
+					"Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - retour");
 			String entree = input.nextLine();
-			switch (entree) {
+			switch (entree.toUpperCase()) {
 			case "OUVRIR":
-				setEtat(true);
+				if(!etat_volet) {
+					System.out.println("Vous avez ouvert le volet");
+					setEtat(true);
+				}
+				else System.out.println("Le volet est déjà ouvert");
 				break;
 			case "FERMER":
-				setEtat(false);
+				if(etat_volet) {
+					System.out.println("Vous avez fermé le volet");
+					setEtat(false);
+				}
+				else System.out.println("Le volet est déjà fermé");
 				break;
 			case "RETOUR":
 				this.setUtilisation(false);

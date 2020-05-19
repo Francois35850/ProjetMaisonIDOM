@@ -33,14 +33,22 @@ public class Fenetre extends ObjetNonRamassable{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()==true){
-			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir la fenetre/le volet\n  - fermer la fenetre/le volet\n  - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - retour");
 			String entree = input.nextLine();
-			switch (entree) {
+			switch (entree.toUpperCase()) {
 			case "OUVRIR":
-				setEtat(true);
+				if(!etat_fenetre) {
+					System.out.println("Vous avez ouvert la fenêtre");
+					setEtat(true);
+				}
+				else System.out.println("La fenêtre est déjà ouverte");
 				break;
 			case "FERMER":
-				setEtat(false);
+				if(etat_fenetre) {
+					System.out.println("Vous avez fermé la fenêtre");
+					setEtat(false);
+				}
+				else System.out.println("La fenêtre est déjà fermée");
 				break;
 			case "RETOUR" :
 				this.setUtilisation(false);
