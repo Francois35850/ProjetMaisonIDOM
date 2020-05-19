@@ -1,3 +1,6 @@
+package objets;
+
+import java.util.Scanner;
 
 public class Volet {
 	
@@ -34,7 +37,7 @@ public class Volet {
 	//fonction qui permet d'utiliser la fenetre 			
 	public void utiliserObjet() {
 		this.setUtilisation(true);
-		Scanner sc = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()==true){
 			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir le volet\n  - fermer le volet\n  - retour");
