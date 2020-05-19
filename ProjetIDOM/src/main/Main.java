@@ -74,26 +74,26 @@ public class Main {
 	private static Piscine piscine = new Piscine("piscine");
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
-	private static Fenetre fenetre_bureau = new Fenetre("fenetre_bureau", false, false);
-	private static Fenetre fenetre_salon1 = new Fenetre("fenetre__salon1", false, false); 	
-	private static Fenetre fenetre_salon2 = new Fenetre("fenetre__salon2", false, false);
-	private static Fenetre fenetre_ch1 = new Fenetre("fenetre_ch1", false, false);
-	private static Fenetre fenetre_ch2 = new Fenetre("fenetre_ch2", false, false);
-	private static Fenetre fenetre_chp = new Fenetre("fenetre_chp", false, false);
-	private static Fenetre fenetre_sallejeux = new Fenetre("fenetre_sallejeux", false, false);
-	private static Fenetre fenetre_studio = new Fenetre("fenetre_studio", false, false);
-	private static Fenetre fenetre_cuisine = new Fenetre("fenetre_cuisine", false, false);
-	private static Fenetre fenetre_sallemanger = new Fenetre("fenetre_sallemanger", false, false);
-	private static Volet volet_bureau = new Volet("volet_bureau", false, false);
-	private static Volet volet_salon1 = new Volet("volet__salon1", false, false);
-	private static Volet volet_salon2 = new Volet("volet__salon2", false, false);
-	private static Volet volet_ch1 = new Volet("volet_ch1", false, false);
-	private static Volet volet_ch2 = new Volet("volet_ch2", false, false);
-	private static Volet volet_chp = new Volet("volet_chp", false, false);
-	private static Volet volet_sallejeux = new Volet("volet_sallejeux", false, false);
-	private static Volet volet_studio = new Volet("volet_studio", false, false);
-	private static Volet volet_cuisine = new Volet("volet_cuisine", false, false);
-	private static Volet volet_sallemanger = new Volet("volet_sallemanger", false, false);
+	private static Fenetre fenetre_bureau = new Fenetre("fenetre_bureau", false);
+	private static Fenetre fenetre_salon1 = new Fenetre("fenetre__salon1", false); 	
+	private static Fenetre fenetre_salon2 = new Fenetre("fenetre__salon2", false);
+	private static Fenetre fenetre_ch1 = new Fenetre("fenetre_ch1", false);
+	private static Fenetre fenetre_ch2 = new Fenetre("fenetre_ch2", false);
+	private static Fenetre fenetre_chp = new Fenetre("fenetre_chp", false);
+	private static Fenetre fenetre_sallejeux = new Fenetre("fenetre_sallejeux", false);
+	private static Fenetre fenetre_studio = new Fenetre("fenetre_studio", false);
+	private static Fenetre fenetre_cuisine = new Fenetre("fenetre_cuisine", false);
+	private static Fenetre fenetre_sallemanger = new Fenetre("fenetre_sallemanger", false);
+	private static Volet volet_bureau = new Volet("volet_bureau", false);
+	private static Volet volet_salon1 = new Volet("volet__salon1", false);
+	private static Volet volet_salon2 = new Volet("volet__salon2", false);
+	private static Volet volet_ch1 = new Volet("volet_ch1", false);
+	private static Volet volet_ch2 = new Volet("volet_ch2", false);
+	private static Volet volet_chp = new Volet("volet_chp", false);
+	private static Volet volet_sallejeux = new Volet("volet_sallejeux", false);
+	private static Volet volet_studio = new Volet("volet_studio", false);
+	private static Volet volet_cuisine = new Volet("volet_cuisine", false);
+	private static Volet volet_sallemanger = new Volet("volet_sallemanger", false);
 	
 	
 	
