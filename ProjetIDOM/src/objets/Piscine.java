@@ -50,7 +50,7 @@ public class Piscine extends ObjetNonRamassable {
 					System.out.println("Vous effectuez un plongeon tout habillé et ressortez trempé ...");
 					System.out.println("Un maillot de bain aurait été une bonne idée ...");
 					if (secu) {
-						System.out.println("L'alarme retentie, vous avez oubliez de la désactiver \nLes chiens du quartiers se mettent à aboyer");
+						System.out.println("L'alarme retentie, vous avez oubliez de la désactiver \nLes chiens du quartier se mettent à aboyer");
 					}
 				} else {
 					System.out.println("La piscine est fermée ! Vous voulez vous casser le cou ??");
