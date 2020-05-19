@@ -39,7 +39,7 @@ public class Telephone {
 
 			case "carte": // commande pour afficher la carte
 				System.out.println("Tu veux savoir où tu es ?");
-				if (Joueur.getPieceCourante().estAuRezDeC) {
+				if (Joueur.getPieceCourante().estAuRdc()) {
 					System.out.println("|---------------------------------------------------------------------|");
 					System.out.println("|                                                                     |");
 					System.out.println("|                                                                     |");
