@@ -2,6 +2,7 @@ package objets;
 
 import java.util.Scanner;
 
+import main.Joueur;
 import main.ObjetNonRamassable;
 
 public class Piscine extends ObjetNonRamassable {
@@ -42,18 +43,37 @@ public class Piscine extends ObjetNonRamassable {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez la " + this.getNom() + ".");
 		while (this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - plongeon\n  - ouvrir\n  - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - plongeon\n  - nager\n  - ouvrir\n  - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "PLONGEON":
 				if (ouvert) {
-					System.out.println("Vous effectuez un plongeon tout habillé et ressortez trempé ...");
-					System.out.println("Un maillot de bain aurait été une bonne idée ...");
+					if(Joueur.getEtatVetements()!=3) {
+						System.out.println("Vous effectuez un plongeon tout habillé et ressortez trempé ...");
+						System.out.println("Un maillot de bain aurait été une bonne idée ...");
+					}
+					else System.out.println("Vous faites une grosse bombe au milieu de la piscine\nVous ressortez trempé...");
 					if (secu) {
 						System.out.println("L'alarme retentie, vous avez oubliez de la désactiver \nLes chiens du quartier se mettent à aboyer");
 					}
 				} else {
 					System.out.println("La piscine est fermée ! Vous voulez vous casser le cou ??");
+				}
+				break;
+			case "NAGER":
+				if (ouvert) {
+					if(Joueur.getEtatVetements()!=3) {
+						System.out.println("Vous n'avez pas la tenue adéquate pour faire quelques longueurs, allez vous changer");
+					}
+					else {
+						System.out.println("Vous faites quelques longueurs de piscine, c'est vraiment agréable sous ce beau soleil");
+						System.out.println("Vous sortez de l'eau");
+					}
+					if (secu) {
+						System.out.println("L'alarme retentie, vous avez oubliez de la désactiver \nLes chiens du quartier se mettent à aboyer");
+					}
+				} else {
+					System.out.println("La piscine est fermée ! Impossible de nager");
 				}
 				break;
 			case "OUVRIR":

@@ -11,14 +11,15 @@ public final class Enceinte extends ObjetNonRamassable {
 	private boolean allumer;
 	private boolean jouerMusique;
 	private String listMusics[] = { "Céline Dion - Pour que tu m'aimes encore", "Jul - On m'appelle l'OVNI",
-			"Michael Jackson - Billie Jean", "Mylène Farmer - Sans contrefaçon", "Patrick Sébastien - Les sardines" };
-	private int musiqueActive; // (de 1 à 7)
+			"Michael Jackson - Billie Jean", "Mylène Farmer - Sans contrefaçon", "Patrick Sébastien - Les sardines",
+			"Six Nine - Aulos", "Magic System - Zouglou Dance", "Drake - Started from the bottom" };
+	private int musiqueActive; // (de 0 à 7)
 
 	public Enceinte(String nom, boolean allumer) {
 		super(nom);
 		this.allumer = allumer;
 		this.jouerMusique = false;
-		musiqueActive = 2;
+		musiqueActive = 1;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -28,7 +29,7 @@ public final class Enceinte extends ObjetNonRamassable {
 		if (allumer) {
 			res += " : allumé";
 			if (jouerMusique)
-				res += ", musique allumée";
+				res += ", musique allumée (" + listMusics[musiqueActive] + ")";
 			else
 				res += ", musique éteinte";
 		} else
@@ -71,7 +72,7 @@ public final class Enceinte extends ObjetNonRamassable {
 					System.out.println("La musique est déjà lancée");
 				else {
 					jouerMusique = true;
-					System.out.println("Voila du bon gros Jul, parfait pour s'ambiancer un peu !");
+					System.out.println("La musique se lance avec " + listMusics[musiqueActive]);
 				}
 				break;
 			case "CHANGER MUSIQUE":
@@ -81,22 +82,86 @@ public final class Enceinte extends ObjetNonRamassable {
 					System.out.println("L'enceinte ne diffuse pas de musique");
 				else {
 					System.out.println(
-							"Quel chanteur souhaitez-vous entendre ?\n Céline Dion | Jul | Michael Jackson | Mylène Farmer | Patrick Sébastien | Six Nine | Magic System");
+							"Quel chanteur souhaitez-vous entendre ?\n Céline Dion | Jul | Michael Jackson | Mylène Farmer | Patrick Sébastien | Six Nine | Magic System | Drake");
 					String reponse = sc2.nextLine();
 					switch (reponse.toUpperCase()) {
 					case "CELINE DION":
+						if (musiqueActive == 0)
+							System.out.println("Vous écoutez déjà Céline ! Quelle voix !");
+						else {
+							musiqueActive = 0;
+							System.out.println(
+									"Vous écouter : " + listMusics[musiqueActive] + ", un régal pour les oreilles");
+						}
+						break;
 					case "JUL":
+						if (musiqueActive == 1)
+							System.out.println("Vous écoutez déjà Jujujul !");
+						else {
+							musiqueActive = 1;
+							System.out.println("Vous écouter : " + listMusics[musiqueActive]
+									+ ", quoi de mieux pour s'ambiancer ?");
+						}
+						break;
 					case "MICHAEL JACKSON":
+						if (musiqueActive == 2)
+							System.out.println("Vous écoutez déjà Michael Jackson !");
+						else {
+							musiqueActive = 2;
+							System.out.println("Vous écouter : " + listMusics[musiqueActive]
+									+ ", n'hésitez pas à lâcher un petit pas de dance");
+						}
+						break;
 					case "MYLENE FARMER":
+						if (musiqueActive == 3)
+							System.out.println("Vous écoutez déjà Mylène Farmer !");
+						else {
+							musiqueActive = 3;
+							System.out.println("Vous écouter : " + listMusics[musiqueActive]
+									+ ", vous vous surprenez même à fredonner les paroles");
+						}
+						break;
 					case "PATRICK SEBASTIEN":
+						if (musiqueActive == 4)
+							System.out.println("Vous écoutez déjà Patrick Sébastien !");
+						else {
+							musiqueActive = 4;
+							System.out.println("Vous écouter : " + listMusics[musiqueActive]
+									+ ", puis vous vous mettez à sauter...");
+						}
+						break;
 					case "SIX NINE":
+						if (musiqueActive == 5)
+							System.out.println("Vous écoutez déjà 6ix 9ine !");
+						else {
+							musiqueActive = 5;
+							System.out.println(
+									"Vous écouter : " + listMusics[musiqueActive] + ", un de ses meilleurs feat");
+						}
+						break;
 					case "MAGIC SYSTEM":
+						if (musiqueActive == 6)
+							System.out.println("Vous écoutez déjà Magic System !");
+						else {
+							musiqueActive = 6;
+							System.out.println(
+									"Vous écouter : " + listMusics[musiqueActive] + ", ça vous remonte le moral !");
+						}
+						break;
 					case "DRAKE":
+						if (musiqueActive == 7)
+							System.out.println("Vous écoutez déjà Drake !");
+						else {
+							musiqueActive = 7;
+							System.out.println("Vous écouter : " + listMusics[musiqueActive] + ", posé !");
+						}
+						break;
 					default:
 						System.out.println("Vous ne portez pas cet artiste dans votre coeur je vous rappelle...");
 						break;
 					}
 				}
+				break;
 			case "RETOUR":
 				this.setUtilisation(false);
 				System.out.println("Vous arrêtez d'utilisez l'objet");

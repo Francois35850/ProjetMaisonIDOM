@@ -71,14 +71,14 @@ public class Armoire extends ObjetNonRamassable {
 							case "PYJAMA" :
 								if(Joueur.getEtatVetements()==2) System.out.println("Vous êtes déjà en pyjama");
 								else {
-									Joueur.setEtatVetements(1);
+									Joueur.setEtatVetements(2);
 									System.out.println("Ca y est ! Vous pouvez aller faire un petit somme");
 								}
 								break;
 							case "MAILLOT DE BAIN" :
 								if(Joueur.getEtatVetements()==3) System.out.println("Vous êtes déjà en maillot de bain");
 								else {
-									Joueur.setEtatVetements(1);
+									Joueur.setEtatVetements(3);
 									System.out.println("Ca y est ! La piscine n'a qu'à bien se tenir");
 								}
 								break;
@@ -87,6 +87,10 @@ public class Armoire extends ObjetNonRamassable {
 								break;
 						}
 					}
+					break;
+				case "RETOUR":
+					this.setUtilisation(false);
+					System.out.println("Vous arrêtez d'utiliser l'objet");
 					break;
 				default :
 					System.out.println("La commande n'est pas valide");
