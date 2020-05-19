@@ -87,7 +87,7 @@ public class Telephone {
 					System.out.println("|----------------------------|       |---------------------|----------|");
 					System.out.println("|                                                          |          |");
 					System.out.println("|                                                              SDB 2  |");
-					System.out.println("|        AUDITORIUM          |       |                           +    |");
+					System.out.println("|           STUDIO           |       |                           +    |");
 					System.out.println("|                            |       |       CHAMBRE       |   WC 2   |");
 					System.out.println("|                |-----------|       |                     |----------|");
 					System.out.println("|                |           |       |      PARENTALE      |          |");

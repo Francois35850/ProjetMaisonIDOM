@@ -3,6 +3,8 @@ package objets;
 public final class Alarme {
 
 	private int code_digicode;
+
+	private int sirene;
 	
 	private int detecteur_incendie_rdc;
 	private int detecteur_incendie_r1;;
@@ -24,63 +26,65 @@ public final class Alarme {
 	private int detecteur_ouverture_sallemanger;
 	
 	private String vue_cam_couloir=
-			 "|---------------------------------------------------------------------|"+Newligne+
-		     "|              |       |    				     |       |              |"+Newligne+
-		     "|              |       |      		         |       |              |"+Newligne+
-	    	 "|              |       |                       |       |              |"+Newligne+
-		     "|              |       |                       |       |              |"+Newligne+
-		     "|              |       |     _____________     |       |              |"+Newligne+
-		     "|              |       |    |             |    |       |              |"+Newligne+
-		     "|              |       |    |             |    |       |              |"+Newligne+
-		     "|              |       |    |             |    |       |              |"+Newligne+
-		     "|              |       |    |             |    |       |              |"+Newligne+
-		     "|              |       |    |          _| |    |       |              |"+Newligne+
-		     "|              |       |    |             |    |       |              |"+Newligne+
-		     "|              |       |    |             |    |       |              |"+Newligne+
-		     "|              |       |    |             |    |       |              |"+Newligne+
-		     "|              |       |____|_____________|____|       |              |"+Newligne+
-		     "|              |      /                         \\      |              |"+Newligne+
-		     "|              |     /                           \\     |              |"+Newligne+
-		     "|              |    /                             \\    |              |"+Newligne+
-		     "|	 		     |   /							     \\   |			     |"+Newligne+
-		     "|              |  /                                 \\  |              |"+Newligne+
-		     "|              | /                                   \\ |              |"+Newligne+
-		     "|______________|/        							    \\|______________|"+Newligne+
-		     "|                          										    |"+Newligne+
-		     "|               													    |"+Newligne+
-		     "|---------------------------------------------------------------------|";;
+			 "|---------------------------------------------------------------------|"\n
+		     "|              |       |    				     |       |              |"\n
+		     "|              |       |      		         |       |              |"\n
+	    	 "|              |       |                       |       |              |"\n
+		     "|              |       |                       |       |              |"\n
+		     "|              |       |     _____________     |       |              |"\n
+		     "|              |       |    |             |    |       |              |"\n
+		     "|              |       |    |             |    |       |              |"\n
+		     "|              |       |    |             |    |       |              |"\n
+		     "|              |       |    |             |    |       |              |"\n
+		     "|              |       |    |          _| |    |       |              |"\n
+		     "|              |       |    |             |    |       |              |"\n
+		     "|              |       |    |             |    |       |              |"\n
+		     "|              |       |    |             |    |       |              |"\n
+		     "|              |       |____|_____________|____|       |              |"\n
+		     "|              |      /                         \\      |              |"\n
+		     "|              |     /                           \\     |              |"\n
+		     "|              |    /                             \\    |              |"\n
+		     "|	 		     |   /							     \\   |			     |"\n
+		     "|              |  /                                 \\  |              |"\n
+		     "|              | /                                   \\ |              |"\n
+		     "|______________|/        							    \\|______________|"\n
+		     "|                          										    |"\n
+		     "|               													    |"\n
+		     "|---------------------------------------------------------------------|";
 	private String vue_cam_jardin=
-		     "|---------------------------------------------------------------------|")+Newligne+
-			 "|                  |   / 	    	      |  ______ |                   |")+Newligne+
- 			 "|                  |  /                 |  |    | |     []_[]         |")+Newligne+  
-			 "|       /|         | /                  |  |    | |     ('v')         |")+Newligne+
-			 "|      / |         |/           |_| |_| |__|____|_|    / |||)         |")+Newligne+
-			 "|     /  |         /                                  (_=*;;          |")+Newligne+
- 			 "|    /   |        /                                                   |")+Newligne+
- 			 "|   /    |       /                                                    |")+Newligne+
- 			 "|   |    |      /               _____________________________         |")+Newligne+
-		 	 "|   |    |     /              //|   |    |    |    |    |  //        _|")+Newligne+
- 			 "|   |    |    /              // |   |    |    |    |    | //        / |")+Newligne+
- 			 "|   |   /    /              //| |   |    |    |    |    |//        /  |")+Newligne+
-			 "|   |  /    /              // | |   |    |    |    |    //        /__/|")+Newligne+
-			 "|   | /    /              //| | |   |    |    |    |   //        //   |")+Newligne+
- 			 "|   |/    /              // | | |   |    |    |    |  //        //    |")+Newligne+
- 			 "|        /              //| | | |___|____|____|____|_//    ___________|")+Newligne+
- 			 "|       /              // | | | /                   //    /  /  /  /  |")+Newligne+
- 			 "|      /              //| | | |/                   //    /  /  /  /  /|")+Newligne+
- 			 "|	    /              // | | | /                   //    /__/__/__/__/_|")+Newligne+
- 			 "|    /              //| | | |/                   //    //           //|")+Newligne+
- 			 "|   /              // | | | /                   //    //           // |")+Newligne+
- 			 "|  /              //__|_|_|/___________________//                     |")+Newligne+              
-			 "| /                         										    |")+Newligne+
-			 "|/              													    |")+Newligne+
-			 "|---------------------------------------------------------------------|");
+		     "|---------------------------------------------------------------------|"\n
+			 "|                  |   / 	    	      |  ______ |                   |"\n
+ 			 "|                  |  /                 |  |    | |     []_[]         |"\n 
+			 "|       /|         | /                  |  |    | |     ('v')         |"\n
+			 "|      / |         |/           |_| |_| |__|____|_|    / |||)         |"\n
+			 "|     /  |         /                                  (_=*;;          |"\n
+ 			 "|    /   |        /                                                   |"\n
+ 			 "|   /    |       /                                                    |"\n
+ 			 "|   |    |      /               _____________________________         |"\n
+		 	 "|   |    |     /              //|   |    |    |    |    |  //        _|"\n
+ 			 "|   |    |    /              // |   |    |    |    |    | //        / |"\n
+ 			 "|   |   /    /              //| |   |    |    |    |    |//        /  |"\n
+			 "|   |  /    /              // | |   |    |    |    |    //        /__/|"\n
+			 "|   | /    /              //| | |   |    |    |    |   //        //   |"\n
+ 			 "|   |/    /              // | | |   |    |    |    |  //        //    |"\n
+ 			 "|        /              //| | | |___|____|____|____|_//    ___________|"\n
+ 			 "|       /              // | | | /                   //    /  /  /  /  |"\n
+ 			 "|      /              //| | | |/                   //    /  /  /  /  /|"\n
+ 			 "|	    /              // | | | /                   //    /__/__/__/__/_|"\n
+ 			 "|    /              //| | | |/                   //    //           //|"\n
+ 			 "|   /              // | | | /                   //    //           // |"\n
+ 			 "|  /              //__|_|_|/___________________//                     |"\n              
+			 "| /                         										    |"\n
+			 "|/              													    |"\n
+			 "|---------------------------------------------------------------------|";
 	private String vue_cam_devantMaison="Systeme defaillant, veuillez contacter le service maintenance !";
 	
 ;
-	public Alarme(int code_digicode, int detecteur_incendie_rdc, int detecteur_incendie_r1, int detecteur_mouvement_couloirrdc,int detecteur_mouvement_couloirr1, int detecteur_mouvement_salon, int detecteur_mouvement_garage, int detecteur_ouverture_porte, int detecteur_ouverture_bureau, int detecteur_ouverture_salon, int detecteur_ouverture_ch1,  int detecteur_ouverture_ch2, int detecteur_ouverture_chp, int detecteur_ouverture_sallejeux, int detecteur_ouverture_studio,  int detecteur_ouverture_cuisine, int detecteur_ouverture_sallemanger, String vue_cam_couloir, String vue_cam_jardin, String vue_cam3) {	
+	public Alarme(int code_digicode, int sirene, int detecteur_incendie_rdc, int detecteur_incendie_r1, int detecteur_mouvement_couloirrdc,int detecteur_mouvement_couloirr1, int detecteur_mouvement_salon, int detecteur_mouvement_garage, int detecteur_ouverture_porte, int detecteur_ouverture_bureau, int detecteur_ouverture_salon, int detecteur_ouverture_ch1,  int detecteur_ouverture_ch2, int detecteur_ouverture_chp, int detecteur_ouverture_sallejeux, int detecteur_ouverture_studio,  int detecteur_ouverture_cuisine, int detecteur_ouverture_sallemanger, String vue_cam_couloir, String vue_cam_jardin, String vue_cam3) {	
 	
 	this.code_digicode=code_digicode;
+	
+	this.sirene=sirene;
 	
 	this.detecteur_incendie_rdc=detecteur_incendie_rdc;
 	this.detecteur_incendie_r1=detecteur_incendie_r1;
@@ -107,70 +111,74 @@ public final class Alarme {
 	}
 	
 	public static Alarme newAlarme () {
-		Alarme alarm = new Alarme(2020,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,vue_cam_couloir,vue_cam_couloir,vue_cam3);
+		Alarme alarm = new Alarme(2020,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,vue_cam_couloir,vue_cam_couloir,vue_cam3);
 		return alarm;
 	}
 	
 	//fonction qui retourne le code de l'alarme
-	public static int getCodeDigicode(Alarme alarm)	{return this.code_digicode;}
+	public int getCodeDigicode(Alarme alarm)	{return this.code_digicode;}
+	
+	
+	//fonction qui retourne l'état de la sirene
+	public int getSirene(Alarme alarm)	{return this.sirene;}
 	
 	
 	//fonction qui retourne l'état du détecteur incendie du rdc: 1 quand détection de fumée
-	public static int getEtat_DI_rdc(Alarme alarm) {return this.detecteur_incendie_rdc;}
+	public int getEtat_DI_rdc(Alarme alarm) {return this.detecteur_incendie_rdc;}
 
 	//fonction qui retourne l'état du détecteur incendie du r+1: 1 quand détection de fumée
-	public static int getEtat_DI_r1(Alarme alarm) {return this.detecteur_incendie_r1;}
+	public int getEtat_DI_r1(Alarme alarm) {return this.detecteur_incendie_r1;}
 	
 	
 	//fonction qui retourne l'état du détecteur de mouvement du couloir au rdc: 1 quand détection infrarouge
-	public static int getEtat_DM_couloirRdc(Alarme alarm) {return this.detecteur_mouvement_rdc;}
+	public int getEtat_DM_couloirRdc(Alarme alarm) {return this.detecteur_mouvement_rdc;}
 	
 	//fonction qui retourne l'état du détecteur de mouvement du couloir au r+1: 1 quand détection infrarouge
-	public static int getEtat_DM_couloirR1(Alarme alarm) {return this.detecteur_mouvement_r1;}
+	public int getEtat_DM_couloirR1(Alarme alarm) {return this.detecteur_mouvement_r1;}
 			
 	//fonction qui retourne l'état du détecteur de mouvement du salon: 1 quand détection infrarouge
-	public static int getEtat_DM_salon(Alarme alarm) {return this.detecteur_mouvement_salon;}
+	public int getEtat_DM_salon(Alarme alarm) {return this.detecteur_mouvement_salon;}
 	
 	//fonction qui retourne l'état du détecteur de mouvement du garage: 1 quand détection infrarouge
-	public static int getEtat_DM_garage(Alarme alarm) {return this.detecteur_mouvement_garage;}
+	public int getEtat_DM_garage(Alarme alarm) {return this.detecteur_mouvement_garage;}
 	
 	
 	//fonction qui retourne l'état du détecteur d'ouverture du garage: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_porte(Alarme alarm) {return this.detecteur_ouverture_porte;}
+	public int getEtat_DO_porte(Alarme alarm) {return this.detecteur_ouverture_porte;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture du bureau: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_bureau(Alarme alarm) {return this.detecteur_ouverture_bureau;}
+	public int getEtat_DO_bureau(Alarme alarm) {return this.detecteur_ouverture_bureau;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture du salon: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_salon(Alarme alarm) {return this.detecteur_ouverture_salon;}
+	public int getEtat_DO_salon(Alarme alarm) {return this.detecteur_ouverture_salon;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de la chambre 1: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_ch1(Alarme alarm) {return this.detecteur_ouverture_ch1;}
+	public int getEtat_DO_ch1(Alarme alarm) {return this.detecteur_ouverture_ch1;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de la chambre 2: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_ch2(Alarme alarm) {return this.detecteur_ouverture_ch2;}
+	public int getEtat_DO_ch2(Alarme alarm) {return this.detecteur_ouverture_ch2;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de la chambre parentale: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_chp(Alarme alarm) {return this.detecteur_ouverture_chp;}
+	public int getEtat_DO_chp(Alarme alarm) {return this.detecteur_ouverture_chp;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de la salle de jeux: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_sallejeux(Alarme alarm) {return this.detecteur_ouverture_sallejeux;}
+	public int getEtat_DO_sallejeux(Alarme alarm) {return this.detecteur_ouverture_sallejeux;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de l'auditorium: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_studio(Alarme alarm) {return this.detecteur_ouverture_studio;}
+	public int getEtat_DO_studio(Alarme alarm) {return this.detecteur_ouverture_studio;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de la cuisine: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_cuisine(Alarme alarm) {return this.detecteur_ouverture_cuisine;}
+	public int getEtat_DO_cuisine(Alarme alarm) {return this.detecteur_ouverture_cuisine;}
 	
 	//fonction qui retourne l'état du détecteur d'ouverture de la salle a manger: 1 quand la fenetre est ouverte
-	public static int getEtat_DO_sallemanger(Alarme alarm) {return this.detecteur_ouverture_sallemanger;}
+	public int getEtat_DO_sallemanger(Alarme alarm) {return this.detecteur_ouverture_sallemanger;}
 	
 	
 	//fonction qui retourne la vue de la caméra du couloir au rdc
-	public static String getCam_couloir(Alarme alarm) {return this.vue_cam_couloir;}
+	public String getCam_couloir(Alarme alarm) {return this.vue_cam_couloir;}
 	
 	//fonction qui retourne la vue de la caméra du jardin
-	public static String getCam_jardin(Alarme alarm) {
+	public String getCam_jardin(Alarme alarm) {
 		if() {
 			String res="";
 			res+= 
@@ -206,7 +214,7 @@ public final class Alarme {
 	}
 	
 	//fonction qui retourne la vue de la caméra de l'avant de la maison (purement scénaristique)
-	public static String getCam_devantMaison(Alarme alarm) {return this.vue_cam_devantMaison;}
+	public String getCam_devantMaison(Alarme alarm) {return this.vue_cam_devantMaison;}
 	
 	//fonction utilitaire qui retourne le dialogue pour le détecteur incendie
 	public static String affichageDI(int valeur) {
@@ -263,6 +271,8 @@ public final class Alarme {
 	System.out.println(" - Caméra devant maison : off.")
 	
 	System.out.println("Code d'activation :" + getCodeDigicode(Alarme alarm) + ".");
+	System.out.println("Etat de l'alimentation de la sirene : active.");
+	System.out.println("Etat de l'alimentation de la centrale : active.");
 		}
 			
 }
