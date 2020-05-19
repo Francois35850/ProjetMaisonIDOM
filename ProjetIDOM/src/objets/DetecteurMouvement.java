@@ -1,13 +1,14 @@
 package objets;
 
 import main.ObjetNonRamassable;
+import main.NPC;
 
 public class DetecteurMouvement extends ObjetNonRamassable {
 	
 	private boolean detection;
 	private Piece pieceCourante;
 
-	public DetecteurOuverture(String nom, boolean detection,Piece pieceCourante) {
+	public DetecteurMouvement(String nom, boolean detection,Piece pieceCourante) {
 		super(nom);
 		this.detection = detection;
 		this.pieceCourante=pieceCourante;

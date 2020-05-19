@@ -1,6 +1,7 @@
 package objets;
 
 import main.ObjetNonRamassable;
+import objet.Fenetre;
 
 public class DetecteurOuverture extends ObjetNonRamassable {
 	
