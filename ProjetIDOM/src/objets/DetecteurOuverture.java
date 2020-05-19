@@ -14,7 +14,7 @@ public class DetecteurOuverture extends ObjetNonRamassable {
 	public String etat() {
 		String res = "";
 		if(this.ouverture==true) {res+= " : détecteur ouvert";}
-		else {res += " : fdétecteur fermé";}
+		else {res += " : détecteur fermé";}
 		return res + "\n";
 	}
 	
