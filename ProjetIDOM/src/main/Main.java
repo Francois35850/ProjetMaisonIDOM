@@ -260,7 +260,7 @@ public class Main {
 						}
 					}
 					Objets cherche = Joueur.StringtoObjet(resObjet);
-					if (cherche != null && cherche.getClass()==ObjetRamassable.class) {
+					if (cherche != null && cherche instanceof ObjetRamassable) {
 						Joueur.addInventaire((ObjetRamassable) cherche);
 					} else
 						System.out.println("Cet objet n'est pas disponible ... \n");

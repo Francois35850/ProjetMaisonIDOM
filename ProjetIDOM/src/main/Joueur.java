@@ -57,7 +57,7 @@ public class Joueur {
 			res += "Dans votre inventaire, il y a : \n";
 			ListIterator<ObjetRamassable> itObjet = inventaire.listIterator();
 			while (itObjet.hasNext()) {
-				res += " - ";
+				res += "";
 				res += itObjet.next().toString();
 				res += " \n";
 			}
