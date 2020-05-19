@@ -48,7 +48,7 @@ public final class Enceinte extends ObjetNonRamassable {
 				case "JOUER MUSIQUE" :
 					if(!allumer) System.out.println("Commencez par allumer l'enceinte");
 					else if(jouerMusique) System.out.println("La musique est déjà lancée");
-					else {jouerMusique = true; System.out.println("Voila du bon gros Jul");}
+					else {jouerMusique = true; System.out.println("Voila du bon gros Jul, parfait pour s'ambiancer un peu !");}
 					break;
 				case "RETOUR" :
 					this.setUtilisation(false);

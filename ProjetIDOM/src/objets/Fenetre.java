@@ -22,7 +22,7 @@ public class Fenetre extends ObjetNonRamassable{
 	public String etat()	{
 		String res ="";
 		if(this.etat_fenetre==true) {res+=" : ouvert";}
-		else {res+=" : fermé";}
+		else {res+=" : fermée";}
 		return res + "\n";
 	}
 	
