@@ -3,6 +3,7 @@ package main;
 import java.util.*;
 import java.util.Scanner;
 
+import objets.Armoire;
 import objets.Canape;
 import objets.Enceinte;
 import objets.Fenetre;
@@ -100,6 +101,7 @@ public class Main {
 	private static Volet volet_studio = new Volet("Volet", false);
 	private static Volet volet_cuisine = new Volet("Volet", false);
 	private static Volet volet_sallemanger = new Volet("Volet", false);
+	private static Armoire armoireChambreP = new Armoire("Armoire", false);
 	
 	/**
 	 * Fonction principale main
@@ -140,7 +142,7 @@ public class Main {
 		Objets[] objCouloir = {interrupteurCouloir};
 		Objets[] objSdB2 = {interrupteurSdB2};
 		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ,fenetre_sallejeux,volet_sallejeux};
-		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp};
+		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp,armoireChambreP};
 		Objets[] objStudio = {interrupteurStudio,fenetre_studio,volet_studio};
 		Objets[] objToilettes = {interrupteurToilettes};
 		Objets[] objGrenier = {interrupteurGrenier,AnimauxGonflables};

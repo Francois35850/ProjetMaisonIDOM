@@ -8,6 +8,7 @@ public class Joueur {
 
 	private static Piece pieceCourante;
 	private static List<ObjetRamassable> inventaire;
+	private static int etatVetements; // 1 -> habillé, 2 -> pyjama, 3 -> maillot de bain
 
 	static {
 		init();
@@ -19,6 +20,7 @@ public class Joueur {
 	private static void init() {
 		pieceCourante = null;
 		inventaire = new ArrayList<ObjetRamassable>();
+		etatVetements = 2;
 	}
 
 	public static List<ObjetRamassable> getInventaire() {
@@ -31,6 +33,14 @@ public class Joueur {
 
 	public static void setPieceCourante(Piece p) {
 		pieceCourante = p;
+	}
+	
+	public static int getEtatVetements() {
+		return etatVetements;
+	}
+	
+	public static void setEtatVetements(int etat) {
+		etatVetements = etat;
 	}
 
 	public static void addInventaire(ObjetRamassable o) {
