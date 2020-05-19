@@ -2,13 +2,11 @@
 public class Volet {
 	
 	//Attributs
-	private boolean etat_volet
-	private boolean utilisation;
+	private boolean etat_volet;
 	
 	//Constructeur
-	public Volet(String nom, boolean utilisation, boolean etat_volet) {
+	public Volet(String nom, boolean etat_volet) {
 		super(nom);
-		this.utilisation=utilisation;
 		this.etat_volet=etat_volet;
 	}
 	
@@ -38,7 +36,7 @@ public class Volet {
 		this.setUtilisation(true);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
-		while(this.utilisation==true){
+		while(this.getUtilisation()==true){
 			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir le volet\n  - fermer le volet\n  - retour");
 			String entree = input.nextLine();
 			switch (entree) {

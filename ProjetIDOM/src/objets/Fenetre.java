@@ -9,12 +9,10 @@ public class Fenetre extends ObjetNonRamassable{
 	
 	//Attributs
 	private boolean etat_fenetre;
-	private boolean utilisation;
 
 	//Constructeur
-	public Fenetre(String nom, boolean utilisation, boolean etat_fenetre) {
+	public Fenetre(String nom, boolean etat_fenetre) {
 		super(nom);
-		this.utilisation=utilisation;
 		this.etat_fenetre=etat_fenetre;
 	}
 	
@@ -46,7 +44,7 @@ public class Fenetre extends ObjetNonRamassable{
 		this.setUtilisation(true);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
-		while(utilisation){
+		while(this.getUtilisation()==true){
 			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir la fenetre/le volet\n  - fermer la fenetre/le volet\n  - retour");
 			String entree = input.nextLine();
 			switch (entree) {
@@ -64,6 +62,7 @@ public class Fenetre extends ObjetNonRamassable{
 				System.out.println("La commande n'est pas valide");
 				break;
 			}
+		}
 	}
 
 	public String toString() {
