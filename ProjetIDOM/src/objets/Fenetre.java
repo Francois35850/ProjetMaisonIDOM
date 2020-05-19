@@ -33,7 +33,7 @@ public class Fenetre extends ObjetNonRamassable{
 	}
 	
 	//fonction qui retourne l'état de la fenetre 		
-	public String etat(Fenetre fenetre)	{
+	public String etat()	{
 		String res ="";
 		if(this.etat_fenetre==true) {res+=" : ouvert";}
 		else {res+=" : fermé";}
@@ -43,7 +43,7 @@ public class Fenetre extends ObjetNonRamassable{
 
 	//fonction qui permet d'utiliser la fenetre 			
 	public void utiliserObjet() {
-		utilisation=true;
+		this.setUtilisation(true);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(utilisation){

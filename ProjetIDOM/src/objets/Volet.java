@@ -26,7 +26,7 @@ public class Volet {
 		Volet volet_sallemanger = new Volet("volet_sallemanger", false, false);
 		}
 	
-	public String etat(Volet volet) {
+	public String etat() {
 		String res = "";
 		if(this.etat_volet==true) {res+=" : ouvert";}
 		else {res+=" : fermé";}
@@ -34,8 +34,8 @@ public class Volet {
 	}
 	
 	//fonction qui permet d'utiliser la fenetre 			
-	public void utiliserObjet(Volet volet) {
-		setUtilisation(true);
+	public void utiliserObjet() {
+		this.setUtilisation(true);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.utilisation==true){
