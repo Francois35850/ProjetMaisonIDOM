@@ -5,12 +5,14 @@ import java.util.Scanner;
 
 import objets.Canape;
 import objets.Enceinte;
+import objets.Fenetre;
 import objets.Frigo;
 import objets.Interrupteur;
 import objets.PanneauDeCtrl;
 import objets.Piscine;
 import objets.Telecommande;
 import objets.Television;
+import objets.Volet;
 import objetsRamassables.Gonflable;
 import objetsRamassables.LiquideVaisselle;
 
@@ -77,9 +79,7 @@ public class Main {
 	private static Piscine piscine = new Piscine("piscine");
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
-<<<<<<< HEAD
 	private static Objets Panodectrl = new PanneauDeCtrl("Panneau de Controle", piscine);
-=======
 	private static Fenetre fenetre_bureau = new Fenetre("Fenêtre", false);
 	private static Fenetre fenetre_salon1 = new Fenetre("Fenêtre sud", false); 	
 	private static Fenetre fenetre_salon2 = new Fenetre("Fenêtre est", false);
@@ -100,9 +100,6 @@ public class Main {
 	private static Volet volet_studio = new Volet("Volet", false);
 	private static Volet volet_cuisine = new Volet("Volet", false);
 	private static Volet volet_sallemanger = new Volet("Volet", false);
-	
-	
->>>>>>> branch 'master' of https://github.com/Francois35850/ProjetMaisonIDOM.git
 	
 	/**
 	 * Fonction principale main
@@ -131,20 +128,20 @@ public class Main {
 
 		// Création des listes d'objets
 		Objets[] objGarage = {interrupteurGarage};
-		Objets[] objCuisine = {interrupteurCuisine,frigo,liquideVaisselle};
+		Objets[] objCuisine = {interrupteurCuisine,frigo,liquideVaisselle,fenetre_cuisine,volet_cuisine};
 		Objets[] objBuanderie = {interrupteurBuanderie};
-		Objets[] objSalleAManger = {interrupteurSaM};
-		Objets[] objSalon = {interrupteurSalon,enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon};
+		Objets[] objSalleAManger = {interrupteurSaM,fenetre_sallemanger,volet_sallemanger};
+		Objets[] objSalon = {interrupteurSalon,enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon,fenetre_salon1,fenetre_salon2,volet_salon1,volet_salon2};
 		Objets[] objEntree = {interrupteurEntree};
-		Objets[] objChambre1 = {interrupteurChambre1};
-		Objets[] objChambre2 = {interrupteurChambre2};
+		Objets[] objChambre1 = {interrupteurChambre1,fenetre_ch1,volet_ch1};
+		Objets[] objChambre2 = {interrupteurChambre2,fenetre_ch2,volet_ch2};
 		Objets[] objSdB1 = {interrupteurSdB1};
-		Objets[] objBureau = {interrupteurBureau};
+		Objets[] objBureau = {interrupteurBureau,fenetre_bureau,volet_bureau};
 		Objets[] objCouloir = {interrupteurCouloir};
 		Objets[] objSdB2 = {interrupteurSdB2};
-		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ};
-		Objets[] objChambreParentale = {interrupteurChambreP};
-		Objets[] objStudio = {interrupteurStudio};
+		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ,fenetre_sallejeux,volet_sallejeux};
+		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp};
+		Objets[] objStudio = {interrupteurStudio,fenetre_studio,volet_studio};
 		Objets[] objToilettes = {interrupteurToilettes};
 		Objets[] objGrenier = {interrupteurGrenier,AnimauxGonflables};
 		Objets[] objDressing = {interrupteurDressing};
