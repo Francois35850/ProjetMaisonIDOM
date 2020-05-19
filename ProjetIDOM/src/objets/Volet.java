@@ -65,11 +65,8 @@ public class Volet {
 	
 	public boolean getEtat(Volet volet) {return this.etat_volet;}
 	
-	public void setUtilisation(boolean use){this.utilisation = use;}
-	
 	public void setEtat(boolean use) {this.etat_volet = use;}
 	
-	public String getNom() {return super.getNom();}
 	
 
 	
