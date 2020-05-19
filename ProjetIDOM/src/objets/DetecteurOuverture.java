@@ -5,10 +5,12 @@ import main.ObjetNonRamassable;
 public class DetecteurOuverture extends ObjetNonRamassable {
 	
 	private boolean ouverture;
+	private Fenetre fenetre;
 
-	public DetecteurOuverture(String nom, boolean ouverture) {
+	public DetecteurOuverture(String nom, boolean ouverture, Fenetre fenetre) {
 		super(nom);
 		this.ouverture = ouverture;
+		this.fenetre=fenetre;
 	}
 	
 	public String etat() {
@@ -24,8 +26,8 @@ public class DetecteurOuverture extends ObjetNonRamassable {
 		return res;
 	}
 	
-	public void setEtat(Fenetre fenetre) {
-		if(getEtat(fenetre)==true) {this.ouverture=true;}
+	public void setEtat() {
+		if(Fenetre.getEtat(this.fenetre)==true) {this.ouverture=true;}
 		else {this.ouverture=false;}
 		}
 		
