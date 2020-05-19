@@ -31,8 +31,8 @@ public class Piscine extends ObjetNonRamassable {
 			r += "et savonneuse !";
 		}
 		r += "\n";
-		if (lumiere) r+= "Une lumière tamisée est diffusée sous l'eau \n"; 
-		if (ambiance) r+= "Un dauphin et une girafe gonflables flottent sur l'eau \n"; 
+		if (lumiere) r+= "    Une lumière tamisée est diffusée sous l'eau \n"; 
+		if (ambiance) r+= "    Un dauphin et une girafe gonflables flottent sur l'eau \n"; 
 		return r;
 	}
 

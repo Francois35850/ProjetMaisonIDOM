@@ -15,7 +15,7 @@ public class Gonflable extends ObjetRamassable{
 
 	@Override
 	public void utiliserObjet() {
-		if(Joueur.getInventaire().contains(this) && Joueur.getPieceCourante().getNom().compareToIgnoreCase("jardin")==0) {
+		if(Joueur.getInventaire().contains(this) && Joueur.getPieceCourante().getNom().compareToIgnoreCase("jardin")==0 && p.getOuverture()) {
 			System.out.println("Vous jetez des animaux gonflables dans la piscine");
 			p.setAmb(true);
 			Joueur.removeInventaire(this);
