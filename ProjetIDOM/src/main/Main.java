@@ -19,6 +19,8 @@ public class Main {
 
 	// boolean pour l'état du jeu : true quand le jeu est en cours
 	private static boolean gameActive = true;
+	
+	private static int temps = 0;
 
 	// scanner pour lire les commandes du joueur
 	private static Scanner input = new Scanner(System.in);
@@ -77,8 +79,8 @@ public class Main {
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
 	private static Fenetre fenetre_bureau = new Fenetre("Fenêtre", false);
-	private static Fenetre fenetre_salon1 = new Fenetre("Fenêtre", false); 	
-	private static Fenetre fenetre_salon2 = new Fenetre("Fenêtre", false);
+	private static Fenetre fenetre_salon1 = new Fenetre("Fenêtre sud", false); 	
+	private static Fenetre fenetre_salon2 = new Fenetre("Fenêtre est", false);
 	private static Fenetre fenetre_ch1 = new Fenetre("Fenêtre", false);
 	private static Fenetre fenetre_ch2 = new Fenetre("Fenêtre", false);
 	private static Fenetre fenetre_chp = new Fenetre("Fenêtre", false);
@@ -87,8 +89,8 @@ public class Main {
 	private static Fenetre fenetre_cuisine = new Fenetre("Fenêtre", false);
 	private static Fenetre fenetre_sallemanger = new Fenetre("Fenêtre", false);
 	private static Volet volet_bureau = new Volet("Volet", false);
-	private static Volet volet_salon1 = new Volet("Volet", false);
-	private static Volet volet_salon2 = new Volet("Volet", false);
+	private static Volet volet_salon1 = new Volet("Volet sud", false);
+	private static Volet volet_salon2 = new Volet("Volet est", false);
 	private static Volet volet_ch1 = new Volet("Volet", false);
 	private static Volet volet_ch2 = new Volet("Volet", false);
 	private static Volet volet_chp = new Volet("Volet", false);
@@ -306,5 +308,7 @@ public class Main {
 		}
 
 	}
+	
+	public void ajoutTemps(int tempsSupp) {temps = temps + tempsSupp;}
 
 }
