@@ -6,12 +6,12 @@ import main.NPC;
 public class DetecteurMouvement extends ObjetNonRamassable {
 	
 	private boolean detection;
-	private Piece pieceCourante;
+	private Piece piece;
 
-	public DetecteurMouvement(String nom, boolean detection,Piece pieceCourante) {
+	public DetecteurMouvement(String nom, boolean detection,Piece piece) {
 		super(nom);
 		this.detection = detection;
-		this.pieceCourante=pieceCourante;
+		this.piece=piece;
 	}
 	
 	public String etat() {
@@ -28,7 +28,7 @@ public class DetecteurMouvement extends ObjetNonRamassable {
 	}
 	
 	public void setEtat() {
-		if(Joueur.getPieceCourante()==this.pieceCourante) {this.detection=true;}
+		if(Joueur.getPieceCourante()==this.piece) {this.detection=true;}
 		else {this.detection=false;}
 		}
 		
