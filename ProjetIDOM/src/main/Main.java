@@ -74,6 +74,28 @@ public class Main {
 	private static Piscine piscine = new Piscine("piscine");
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
+	private static Fenetre fenetre_bureau = new Fenetre("fenetre_bureau", false, false);
+	private static Fenetre fenetre_salon1 = new Fenetre("fenetre__salon1", false, false); 	
+	private static Fenetre fenetre_salon2 = new Fenetre("fenetre__salon2", false, false);
+	private static Fenetre fenetre_ch1 = new Fenetre("fenetre_ch1", false, false);
+	private static Fenetre fenetre_ch2 = new Fenetre("fenetre_ch2", false, false);
+	private static Fenetre fenetre_chp = new Fenetre("fenetre_chp", false, false);
+	private static Fenetre fenetre_sallejeux = new Fenetre("fenetre_sallejeux", false, false);
+	private static Fenetre fenetre_studio = new Fenetre("fenetre_studio", false, false);
+	private static Fenetre fenetre_cuisine = new Fenetre("fenetre_cuisine", false, false);
+	private static Fenetre fenetre_sallemanger = new Fenetre("fenetre_sallemanger", false, false);
+	private static Volet volet_bureau = new Volet("volet_bureau", false, false);
+	private static Volet volet_salon1 = new Volet("volet__salon1", false, false);
+	private static Volet volet_salon2 = new Volet("volet__salon2", false, false);
+	private static Volet volet_ch1 = new Volet("volet_ch1", false, false);
+	private static Volet volet_ch2 = new Volet("volet_ch2", false, false);
+	private static Volet volet_chp = new Volet("volet_chp", false, false);
+	private static Volet volet_sallejeux = new Volet("volet_sallejeux", false, false);
+	private static Volet volet_studio = new Volet("volet_studio", false, false);
+	private static Volet volet_cuisine = new Volet("volet_cuisine", false, false);
+	private static Volet volet_sallemanger = new Volet("volet_sallemanger", false, false);
+	
+	
 	
 	/**
 	 * Fonction principale main
@@ -102,20 +124,20 @@ public class Main {
 
 		// Création des listes d'objets
 		Objets[] objGarage = {interrupteurGarage};
-		Objets[] objCuisine = {interrupteurCuisine,frigo,liquideVaisselle};
+		Objets[] objCuisine = {interrupteurCuisine,frigo,liquideVaisselle,fenetre_cuisine,volet_cuisine};
 		Objets[] objBuanderie = {interrupteurBuanderie};
-		Objets[] objSalleAManger = {interrupteurSaM};
-		Objets[] objSalon = {interrupteurSalon,enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon};
+		Objets[] objSalleAManger = {interrupteurSaM,fenetre_sallemanger,volet_sallemanger};
+		Objets[] objSalon = {interrupteurSalon,enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon,fenetre_salon1,fenetre_salon2,volet_salon1,volet_salon2};
 		Objets[] objEntree = {interrupteurEntree};
-		Objets[] objChambre1 = {interrupteurChambre1};
-		Objets[] objChambre2 = {interrupteurChambre2};
+		Objets[] objChambre1 = {interrupteurChambre1,fenetre_ch1,volet_ch1};
+		Objets[] objChambre2 = {interrupteurChambre2,fenetre_ch2,volet_ch2};
 		Objets[] objSdB1 = {interrupteurSdB1};
-		Objets[] objBureau = {interrupteurBureau};
+		Objets[] objBureau = {interrupteurBureau,fenetre_bureau,volet_bureau};
 		Objets[] objCouloir = {interrupteurCouloir};
 		Objets[] objSdB2 = {interrupteurSdB2};
-		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ};
-		Objets[] objChambreParentale = {interrupteurChambreP};
-		Objets[] objStudio = {interrupteurStudio};
+		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ,fenetre_sallejeux,volet_sallejeux};
+		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp};
+		Objets[] objStudio = {interrupteurStudio,fenetre_studio,volet_studio};
 		Objets[] objToilettes = {interrupteurToilettes};
 		Objets[] objGrenier = {interrupteurGrenier,AnimauxGonflables};
 		Objets[] objDressing = {interrupteurDressing};

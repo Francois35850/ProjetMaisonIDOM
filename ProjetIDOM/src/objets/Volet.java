@@ -15,20 +15,6 @@ public class Volet extends ObjetNonRamassable {
 		this.etat_volet = etat_volet;
 	}
 
-	// fonction qui initialise les fenetre de la maison
-	public static void initialisationFenetreMaison() {
-		Volet volet_bureau = new Volet("volet_bureau", false, false);
-		Volet volet_salon1 = new Volet("volet__salon1", false, false);
-		Volet volet_salon2 = new Volet("volet__salon2", false, false);
-		Volet volet_ch1 = new Volet("volet_ch1", false, false);
-		Volet volet_ch2 = new Volet("volet_ch2", false, false);
-		Volet volet_chp = new Volet("volet_chp", false, false);
-		Volet volet_sallejeux = new Volet("volet_sallejeux", false, false);
-		Volet volet_studio = new Volet("volet_studio", false, false);
-		Volet volet_cuisine = new Volet("volet_cuisine", false, false);
-		Volet volet_sallemanger = new Volet("volet_sallemanger", false, false);
-	}
-
 	public String etat() {
 		String res = "";
 		if (this.etat_volet == true) {
