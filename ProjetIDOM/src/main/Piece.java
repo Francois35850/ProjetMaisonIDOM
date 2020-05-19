@@ -74,4 +74,9 @@ public class Piece {
 	public String getNom() {
 		return nom;
 	}
+	
+	public boolean estAuRdc() {
+		return estAuRezDeC;
+		
+	}
 }
