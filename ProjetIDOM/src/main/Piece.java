@@ -67,4 +67,7 @@ public class Piece {
 		return listeObjets;
 	}
 	
+	public String getNom() {
+		return nom;
+	}
 }
