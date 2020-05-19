@@ -7,6 +7,7 @@ import objets.Canape;
 import objets.Enceinte;
 import objets.Frigo;
 import objets.Interrupteur;
+import objets.PanneauDeCtrl;
 import objets.Piscine;
 import objets.Telecommande;
 import objets.Television;
@@ -74,6 +75,7 @@ public class Main {
 	private static Piscine piscine = new Piscine("piscine");
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
+	private static Objets Panodectrl = new PanneauDeCtrl("Panneau de Controle", piscine);
 	
 	/**
 	 * Fonction principale main
@@ -119,7 +121,7 @@ public class Main {
 		Objets[] objToilettes = {interrupteurToilettes};
 		Objets[] objGrenier = {interrupteurGrenier,AnimauxGonflables};
 		Objets[] objDressing = {interrupteurDressing};
-		Objets[] objJardin = {piscine};
+		Objets[] objJardin = {piscine,Panodectrl};
 
 		// Ajout des pièces adj et des objets
 		garage.ajouterPiecesAdj(adjGarage);

@@ -1,6 +1,7 @@
 package objetsRamassables;
 
 import main.Joueur;
+import main.Main;
 import main.ObjetRamassable;
 import objets.Piscine;
 

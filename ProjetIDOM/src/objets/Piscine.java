@@ -5,17 +5,17 @@ import java.util.Scanner;
 import main.ObjetNonRamassable;
 
 public class Piscine extends ObjetNonRamassable {
-	boolean ouvert;
-	boolean mousse;
-	boolean secu;
-	boolean lumiere;
-	boolean ambiance;
+	private boolean ouvert;
+	private boolean mousse;
+	private boolean secu;
+	private boolean lumiere;
+	private boolean ambiance;
 
 	public Piscine(String nom) {
 		super(nom);
 		ouvert = false;
 		mousse = false;
-		secu = false;
+		secu = true;
 		lumiere = false;
 		ambiance = false;
 	}
@@ -47,7 +47,11 @@ public class Piscine extends ObjetNonRamassable {
 			switch (input.toUpperCase()) {
 			case "PLONGEON":
 				if (ouvert) {
-					System.out.println("Vous effectuez un plongeon tout habillé et ressortez trempé ... \nUn maillot de bain aurait été une bonne idée ...");
+					System.out.println("Vous effectuez un plongeon tout habillé et ressortez trempé ...");
+					System.out.println("Un maillot de bain aurait été une bonne idée ...");
+					if (secu) {
+						System.out.println("L'alarme retentie, vous avez oubliez de la désactiver \nLes chiens du quartiers se mettent à aboyer");
+					}
 				} else {
 					System.out.println("La piscine est fermée ! Vous voulez vous casser le cou ??");
 				}
@@ -85,5 +89,14 @@ public class Piscine extends ObjetNonRamassable {
 	}
 	public void setAmb(boolean b) {
 		ambiance = b;
+	}
+	public boolean getLum() {
+		return lumiere;
+	}
+	public boolean getSecu() {
+		return secu;
+	}
+	public boolean getOuverture() {
+		return ouvert;
 	}
 }
