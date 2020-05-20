@@ -1,12 +1,15 @@
 package objets;
 
-public class Caméra extends ObjetNonRamassable{
+import main.ObjetNonRamassable;
+import main.Piece;
+
+public class Camera extends ObjetNonRamassable{
 	
 	private String vue;
 	private int etat;
 	private Piece piece;
 
-	public Caméra(String nom, String vue, int etat, Piece piece;) {
+	public Camera(String nom, String vue, int etat, Piece piece) {
 		super(nom);
 		this.vue = vue;
 		this.etat = etat;
@@ -27,5 +30,11 @@ public class Caméra extends ObjetNonRamassable{
 	}
 	
 	public Piece getPosition() {return this.piece;}
+
+	@Override
+	public void utiliserObjet() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
