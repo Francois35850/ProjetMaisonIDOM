@@ -14,7 +14,7 @@ public class LiquideVaisselle extends ObjetRamassable{
 
 	@Override
 	public void utiliserObjet() {
-		if(Joueur.getInventaire().contains(this) && Joueur.getPieceCourante().getNom().compareToIgnoreCase("jardin")==0) {
+		if(Joueur.getInventaire().contains(this) && Joueur.getPieceCourante().getNom().compareToIgnoreCase("jardin")==0 && p.getOuverture()) {
 			System.out.println("Vous videz le liquide vaisselle dans la piscine \nC'est pas vraiment à cela que ça sert mais ça fait des bulles");
 			p.setMousse(true);
 			Joueur.removeInventaire(this);
