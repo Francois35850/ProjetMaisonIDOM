@@ -324,7 +324,7 @@ public class Main {
 				}
 				break;
 			case "HEURE" :
-				System.out.println("Il est " + affichageHeure() + ", votre rendez-vous est à 18h30");
+				System.out.println("Il est " + affichageHeure() + ", Vous devez sortir de la maison avant 18h15");
 				break;
 			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().getNom().compareToIgnoreCase("entree") == 0) {
