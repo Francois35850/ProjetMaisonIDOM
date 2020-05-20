@@ -2,14 +2,13 @@ package main;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.function.Function;
 
 public class Objectifs {
 
 	List<Objectif> objectifs;
 
-	public class Objectif {
+	private class Objectif {
 
 		private String nom;
 		private Function<Integer, Boolean> succes;
