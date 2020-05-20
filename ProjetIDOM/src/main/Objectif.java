@@ -4,23 +4,14 @@ import java.util.ListIterator;
 
 public class Objectif {
 	private String nom;
-	private int longueur;
-	private List<Boolean> listeObjectifs;
+	private boolean objectif;
 	
-	public Objectif(String nom, int lon, List<Boolean> lst) {
+	public Objectif(String nom) {
 		this.nom = nom;
-		longueur = lon;
-		listeObjectifs = lst;
-	}
-	
-	public boolean ObjEstTrue() {
-		boolean realise = true;
-		ListIterator<Boolean> itObjet = listeObjectifs.listIterator();
-		while (itObjet.hasNext() && realise) {
-			boolean prochain = itObjet.next();
-			if (!prochain) realise = false;
-		}
-		return realise;
+		objectif = false;
 	}
 
+	public boolean update(){
+		return Joueur.getEtatVetements()==1&&true;
+	}
 }
