@@ -120,8 +120,8 @@ public class Main {
 	private static DetecteurMouvement detecteur_mouvement_bureau = new DetecteurMouvement("detecteur mouvement bureau",false,bureau);
 	private static DetecteurMouvement detecteur_mouvement_salon = new DetecteurMouvement("detecteur mouvement salon",false,salon);
 	private static DetecteurMouvement detecteur_mouvement_garage = new DetecteurMouvement("detecteur mouvement garage",false,garage);
-	private static DetecteurMouvement detecteur_mouvement_ch1 = new DetecteurMouvement("detecteur mouvement ch1",true,chambre1);
-	private static DetecteurMouvement detecteur_mouvement_ch2 = new DetecteurMouvement("detecteur mouvement ch2",true,chambre2);
+	private static DetecteurMouvement detecteur_mouvement_ch1 = new DetecteurMouvement("detecteur mouvement chambre David",true,chambre1);
+	private static DetecteurMouvement detecteur_mouvement_ch2 = new DetecteurMouvement("detecteur mouvement chambre Régine",true,chambre2);
 	private static DetecteurMouvement detecteur_mouvement_chp = new DetecteurMouvement("detecteur mouvement chp",true,chambre_parentale);
 	private static DetecteurMouvement detecteur_mouvement_sdb_patentale = new DetecteurMouvement("detecteur mouvement sdb patentale",false,sdb2);
 	private static DetecteurMouvement detecteur_mouvement_dressing = new DetecteurMouvement("detecteur mouvement dressing",false,dressing);
@@ -132,8 +132,8 @@ public class Main {
 	private static DetecteurOuverture detecteur_ouverture_bureau = new DetecteurOuverture("detecteur ouverture bureau", false, bureau);
 	private static DetecteurOuverture detecteur_ouverture_salon1 = new DetecteurOuverture("detecteur ouverture salon fenêtre sud", false, salon); 	
 	private static DetecteurOuverture detecteur_ouverture_salon2 = new DetecteurOuverture("detecteur ouverture salon fenêtre est", false, salon);
-	private static DetecteurOuverture detecteur_ouverture_ch1 = new DetecteurOuverture("detecteur ouverture chambre 1", false, chambre1);
-	private static DetecteurOuverture detecteur_ouverture_ch2 = new DetecteurOuverture("detecteur ouverture chambre 2", false, chambre2);
+	private static DetecteurOuverture detecteur_ouverture_ch1 = new DetecteurOuverture("detecteur ouverture chambre David", false, chambre1);
+	private static DetecteurOuverture detecteur_ouverture_ch2 = new DetecteurOuverture("detecteur ouverture chambre Régine", false, chambre2);
 	private static DetecteurOuverture detecteur_ouverture_chp = new DetecteurOuverture("detecteur ouverture chambre parentale", false,, chambre1));
 	private static DetecteurOuverture detecteur_ouverture_sallejeux = new DetecteurOuverturee("detecteur ouverture salle de jeux", false, chambre_parentale);
 	private static DetecteurOuverture detecteur_ouverture_studio = new DetecteurOuverture("detecteur ouverture studio", false, studio);
