@@ -3,6 +3,10 @@ package main;
 import java.util.*;
 import java.util.Scanner;
 
+import Main.DetecteurMouvement;
+import Main.DetecteurOuverture;
+import Main.DetecteurOuverturee;
+import Main.Piece;
 import objets.Armoire;
 import objets.Canape;
 import objets.Enceinte;
@@ -53,6 +57,7 @@ public class Main {
 	private static Piece dressing = new Piece("Dressing", false);
 	private static Piece toilettes = new Piece("Toilettes", false);
 	private static Piece jardin = new Piece("Jardin", true);
+	private static Piece devant_maison = new Piece("Exterieur maison",true);
 
 	// Ajout des objets
 	private static Objets enceinteSalon = new Enceinte("Enceinte", false);
@@ -111,6 +116,33 @@ public class Main {
 	private static Linge lingeR = new Linge("Linge sale de RÃ©gine", false, chambre2.getNom());
 	private static Linge lingeP = new Linge("Linge sale des parents", false, chambre_parentale.getNom());
 	private static LaveLinge laveLinge = new LaveLinge("Lave linge");
+	private static DetecteurMouvement detecteur_mouvement_entree = new DetecteurMouvement("detecteur mouvement entree",false,entree);
+	private static DetecteurMouvement detecteur_mouvement_bureau = new DetecteurMouvement("detecteur mouvement bureau",false,bureau);
+	private static DetecteurMouvement detecteur_mouvement_salon = new DetecteurMouvement("detecteur mouvement salon",false,salon);
+	private static DetecteurMouvement detecteur_mouvement_garage = new DetecteurMouvement("detecteur mouvement garage",false,garage);
+	private static DetecteurMouvement detecteur_mouvement_ch1 = new DetecteurMouvement("detecteur mouvement ch1",true,chambre1);
+	private static DetecteurMouvement detecteur_mouvement_ch2 = new DetecteurMouvement("detecteur mouvement ch2",true,chambre2);
+	private static DetecteurMouvement detecteur_mouvement_chp = new DetecteurMouvement("detecteur mouvement chp",true,chambre_parentale);
+	private static DetecteurMouvement detecteur_mouvement_sdb_patentale = new DetecteurMouvement("detecteur mouvement sdb patentale",false,sdb2);
+	private static DetecteurMouvement detecteur_mouvement_dressing = new DetecteurMouvement("detecteur mouvement dressing",false,dressing);
+	private static DetecteurMouvement detecteur_mouvement_cuisine = new DetecteurMouvement("detecteur mouvement cuisine",false,cuisine);
+	private static DetecteurMouvement detecteur_mouvement_studio = new DetecteurMouvement("detecteur mouvement studio",false,studio);
+	private static DetecteurMouvement detecteur_mouvement_couloir = new DetecteurMouvement("detecteur mouvement couloir",false,couloir);
+	private static DetecteurOuverture detecteur_ouverture_porte = new DetecteurOuverture("detecteur ouverture porte", false, entree);
+	private static DetecteurOuverture detecteur_ouverture_bureau = new DetecteurOuverture("detecteur ouverture bureau", false, bureau);
+	private static DetecteurOuverture detecteur_ouverture_salon1 = new DetecteurOuverture("detecteur ouverture salon fenÃªtre sud", false, salon); 	
+	private static DetecteurOuverture detecteur_ouverture_salon2 = new DetecteurOuverture("detecteur ouverture salon fenÃªtre est", false, salon);
+	private static DetecteurOuverture detecteur_ouverture_ch1 = new DetecteurOuverture("detecteur ouverture chambre 1", false, chambre1);
+	private static DetecteurOuverture detecteur_ouverture_ch2 = new DetecteurOuverture("detecteur ouverture chambre 2", false, chambre2);
+	private static DetecteurOuverture detecteur_ouverture_chp = new DetecteurOuverture("detecteur ouverture chambre parentale", false,, chambre1));
+	private static DetecteurOuverture detecteur_ouverture_sallejeux = new DetecteurOuverturee("detecteur ouverture salle de jeux", false, chambre_parentale);
+	private static DetecteurOuverture detecteur_ouverture_studio = new DetecteurOuverture("detecteur ouverture studio", false, studio);
+	private static DetecteurOuverture detecteur_ouverture_cuisine = new DetecteurOuverture("detecteur ouverture cuisine", false, cuisine);
+	private static DetecteurOuverture detecteur_ouverture_sallemanger = new DetecteurOuverture("detecteur ouverture salle à manger", false, salle_a_manger);
+	private static Caméra("caméra devant la maison","Systeme defaillant, veuillez contacter le service maintenance !",0,devant_maison);
+	private static Caméra("caméra du jardin","|---------------------------------------------------------------------|"\n"|                  |   / 	    	      |  ______ |                   |"\n"|                  |  /                 |  |    | |     []_[]         |"\n "|       /|         | /                  |  |    | |     ('v')         |"\n"|      / |         |/           |_| |_| |__|____|_|    / |||)         |"\n"|     /  |         /                                  (_=*;;          |"\n"|    /   |        /                                                   |"\n"|   /    |       /                                                    |"\n"|   |    |      /               _____________________________         |"\n"|   |    |     /              //|   |    |    |    |    |  //        _|"\n"|   |    |    /              // |   |    |    |    |    | //        / |"\n"|   |   /    /              //| |   |    |    |    |    |//        /  |"\n"|   |  /    /              // | |   |    |    |    |    //        /__/|"\n"|   | /    /              //| | |   |    |    |    |   //        //   |"\n"|   |/    /              // | | |   |    |    |    |  //        //    |"\n"|        /              //| | | |___|____|____|____|_//    ___________|"\n"|       /              // | | | /                   //    /  /  /  /  |"\n"|      /              //| | | |/                   //    /  /  /  /  /|"\n"|	    /              // | | | /                   //    /__/__/__/__/_|"\n"|    /              //| | | |/                   //    //           //|"\n"|   /              // | | | /                   //    //           // |"\n"|  /              //__|_|_|/___________________//                     |"\n              "| /                         										    |"\n"|/              													    |"\n"|---------------------------------------------------------------------|",1,jardin);
+	private static Caméra("caméra de l'entrée","|---------------------------------------------------------------------|"\n "|              |       |    				     |       |              |"\n"|              |       |      		         |       |              |"\n"|              |       |                       |       |              |"\n"|              |       |                       |       |              |"\n"|              |       |     _____________     |       |              |"\n"|              |       |    |             |    |       |              |"\n"|              |       |    |             |    |       |              |"\n"|              |       |    |             |    |       |              |"\n"|              |       |    |             |    |       |              |"\n"|              |       |    |          _| |    |       |              |"\n"|              |       |    |             |    |       |              |"\n"|              |       |    |             |    |       |              |"\n"|              |       |    |             |    |       |              |"\n"|              |       |____|_____________|____|       |              |"\n"|              |      /                         \\      |              |"\n"|              |     /                           \\     |              |"\n"|              |    /                             \\    |              |"\n"|	 		     |   /							     \\   |			     |"\n"|              |  /                                 \\  |              |"\n"|              | /                                   \\ |              |"\n"|______________|/        							    \\|______________|"\n"|                          										    |"\n"|               													    |"\n"|---------------------------------------------------------------------|",1,entree);
+
 	
 	// String de l'affichage de l'heure
 	public static String affichageHeure() {
