@@ -60,6 +60,18 @@ public class Joueur {
 			System.out.println("Vous avez utilisé l'objet " + o.getNom() + ".");
 		}
 	}
+	
+	public static void supprInv(String nomObj) {
+		boolean trouve = false;
+		ListIterator<ObjetRamassable> it = inventaire.listIterator();
+		while(it.hasNext()&&!trouve) {
+			ObjetRamassable obj = it.next();
+			if(obj.getNom().compareToIgnoreCase(nomObj)==0) {
+				removeInventaire(obj);
+				trouve = true;
+			}
+		}
+	}
 
 	public static void inventaireToString() {
 		String res = "";
@@ -87,6 +99,28 @@ public class Joueur {
 	}
 
 	public static void changerPiece(String[] piece) {
+		if (piece.length < 2) {
+			System.out.println("Aucune pièce n'a été précisée.");
+		} else {
+			String resPiece = "";
+			resPiece = piece[1];
+			if (piece.length > 2) {
+				for (int i = 2; i < piece.length; i++) {
+					resPiece += " ";
+					resPiece += piece[i];
+				}
+			}
+			Piece deplacement = StringToPiece(resPiece);
+			if (deplacement == null)
+				System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
+			else {
+				setPieceCourante(deplacement);
+				System.out.println(getPieceCourante().toString());
+			}
+		}
+	}
+	
+	public static void changerPieceCheat(String[] piece) {
 		if (piece.length < 2) {
 			System.out.println("Aucune pièce n'a été précisée.");
 		} else {

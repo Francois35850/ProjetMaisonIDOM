@@ -9,13 +9,16 @@ import objets.Enceinte;
 import objets.Fenetre;
 import objets.Frigo;
 import objets.Interrupteur;
+import objets.LaveLinge;
 import objets.PanneauDeCtrl;
 import objets.Piscine;
 import objets.Telecommande;
 import objets.Television;
 import objets.Volet;
 import objetsRamassables.Gonflable;
+import objetsRamassables.Linge;
 import objetsRamassables.LiquideVaisselle;
+import objetsRamassables.Produit;
 
 public class Main {
 
@@ -37,8 +40,8 @@ public class Main {
 	private static Piece salle_a_manger = new Piece("Salle a manger", true);
 	private static Piece buanderie = new Piece("Buanderie", true);
 	private static Piece entree = new Piece("Entree", true);
-	private static Piece chambre1 = new Piece("Chambre de Régine", true);
-	private static Piece chambre2 = new Piece("Chambre de David", true);
+	private static Piece chambre1 = new Piece("Chambre de David", true);
+	private static Piece chambre2 = new Piece("Chambre de Régine", true);
 	private static Piece chambre_parentale = new Piece("Chambre parentale", false);
 	private static Piece sdb1 = new Piece("Salle de bain", true);
 	private static Piece sdb2 = new Piece("Salle de bain", false);
@@ -103,6 +106,11 @@ public class Main {
 	private static Volet volet_cuisine = new Volet("Volet", false);
 	private static Volet volet_sallemanger = new Volet("Volet", false);
 	private static Armoire armoireDressing = new Armoire("Armoire", false);
+	private static Produit pastilleLaveLinge = new Produit("Pastille lave linge");
+	private static Linge lingeD = new Linge("Linge sale de David", false, chambre1.getNom());
+	private static Linge lingeR = new Linge("Linge sale de Régine", false, chambre2.getNom());
+	private static Linge lingeP = new Linge("Linge sale des parents", false, chambre_parentale.getNom());
+	private static LaveLinge laveLinge = new LaveLinge("Lave linge");
 	
 	// String de l'affichage de l'heure
 	public static String affichageHeure() {
@@ -129,6 +137,9 @@ public class Main {
 			heure++;
 		}
 	}
+	
+	public static int getHeure() {return heure;}
+	public static int getMinute() {return minute;}
 	
 	/**
 	 * Fonction principale main
@@ -158,18 +169,18 @@ public class Main {
 		// Création des listes d'objets
 		Objets[] objGarage = {interrupteurGarage};
 		Objets[] objCuisine = {interrupteurCuisine,frigo,liquideVaisselle,fenetre_cuisine,volet_cuisine};
-		Objets[] objBuanderie = {interrupteurBuanderie};
+		Objets[] objBuanderie = {interrupteurBuanderie,laveLinge,pastilleLaveLinge};
 		Objets[] objSalleAManger = {interrupteurSaM,fenetre_sallemanger,volet_sallemanger};
 		Objets[] objSalon = {interrupteurSalon,enceinteSalon,canapeSalon,televisionSalon,telecommandeSalon,fenetre_salon1,fenetre_salon2,volet_salon1,volet_salon2};
 		Objets[] objEntree = {interrupteurEntree};
-		Objets[] objChambre1 = {interrupteurChambre1,fenetre_ch1,volet_ch1};
-		Objets[] objChambre2 = {interrupteurChambre2,fenetre_ch2,volet_ch2};
+		Objets[] objChambre1 = {interrupteurChambre1,fenetre_ch1,volet_ch1,lingeD};
+		Objets[] objChambre2 = {interrupteurChambre2,fenetre_ch2,volet_ch2,lingeR};
 		Objets[] objSdB1 = {interrupteurSdB1};
 		Objets[] objBureau = {interrupteurBureau,fenetre_bureau,volet_bureau};
 		Objets[] objCouloir = {interrupteurCouloir};
 		Objets[] objSdB2 = {interrupteurSdB2};
 		Objets[] objSalleDeJeux = {interrupteurSdJ,televisionSalleDeJeux,telecommandeSalleDeJeux,canapeSdJ,fenetre_sallejeux,volet_sallejeux};
-		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp};
+		Objets[] objChambreParentale = {interrupteurChambreP,fenetre_chp,volet_chp,lingeP};
 		Objets[] objStudio = {interrupteurStudio,fenetre_studio,volet_studio};
 		Objets[] objToilettes = {interrupteurToilettes};
 		Objets[] objGrenier = {interrupteurGrenier,AnimauxGonflables};
