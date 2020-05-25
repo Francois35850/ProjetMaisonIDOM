@@ -67,7 +67,7 @@ public class Fenetre extends ObjetNonRamassable{
 		return res;
 	}
 	
-	public boolean getEtat(Fenetre fenetre) {return this.etat_fenetre;}
+	public boolean getEtat() {return this.etat_fenetre;}
 	
 	public void setEtat(boolean use) {this.etat_fenetre = use;}
 	

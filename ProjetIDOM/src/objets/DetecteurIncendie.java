@@ -1,5 +1,7 @@
 package objets;
 
+import java.util.Scanner;
+
 import main.ObjetNonRamassable;
 
 public class DetecteurIncendie extends ObjetNonRamassable {
@@ -20,7 +22,7 @@ public class DetecteurIncendie extends ObjetNonRamassable {
 		if (this.etat == 1) {
 			res += " : incendie en cours";
 		} else {
-			res += " : pas de fumée d�tect�e";
+			res += " : pas de fumée d�tect�e";
 		}
 		return res + "\n";
 	}
@@ -39,12 +41,12 @@ public class DetecteurIncendie extends ObjetNonRamassable {
 
 	public void getBatterie() {
 		if (this.pile == 0) {System.out.println("Batterie du détecteur incendie vide");} 
-		else {System.out.println("Batterie du détecteur incendie � :" + getPile() + "%");}
+		else {System.out.println("Batterie du détecteur incendie � :" + getPile() + "%");}
 	}
 
 	public void utiliserObjet() {
 		this.setUtilisation(true);
-		Scanner sc = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()==true){
 			System.out.println("Liste des actions possibles pour cet objet :\n  - voir pourcentage batterie\n  - changer la pile \n  - retour");
@@ -52,8 +54,8 @@ public class DetecteurIncendie extends ObjetNonRamassable {
 			switch (entree.toUpperCase()) {
 				case "VOIR POURCENTAGE BATTERIE":
 					getBatterie();
-				case "CHANGER LA PILE"
-					
+				case "CHANGER LA PILE" :
+					break;
 				case "RETOUR" :
 					this.setUtilisation(false);
 					System.out.println("Vous arrêtez d'utiliser l'objet");

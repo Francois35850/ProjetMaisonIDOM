@@ -31,7 +31,7 @@ public class DetecteurOuverture extends ObjetNonRamassable {
 	}
 
 	public void setEtat() {
-		if (Fenetre.getEtat(this.fenetre) == true) {  //TODO 
+		if (fenetre.getEtat()) {  //TODO 
 			this.ouverture = true;
 		} else {
 			this.ouverture = false;

@@ -40,8 +40,8 @@ public class DetecteurMouvement extends ObjetNonRamassable {
 		}
 	}
 
-	public boolean getEtat(DetecteurOuverture detecteurOuverture) {
-		return this.ouverture;   //TODO illias tu veux dire this.detection ?
+	public boolean getEtat() {
+		return this.detection;   //TODO illias tu veux dire this.detection ?
 	}
 
 	@Override
