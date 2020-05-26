@@ -19,6 +19,7 @@ public class Gonflable extends ObjetRamassable{
 			Main.ajoutTemps(10);
 			System.out.println("Vous gonflez les jouets pendant 10 mins");
 			System.out.println("Vous jetez les animaux gonflables dans la piscine");
+			main.Main.PPsucces7 = true;
 			p.setAmb(true);
 			Joueur.removeInventaire(this);
 		}

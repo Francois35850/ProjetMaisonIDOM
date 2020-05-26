@@ -62,7 +62,7 @@ public class Objectifs {
 			if (!it.next().estRempli())
 				return false;
 		}
-		System.out.println("Vous avez rempli tous les objectifs, vous avez terminé le jeu !");
+		System.out.println("Vous avez rempli tous les objectifs, vous pouvez sortir de la maison.");
 		return true;
 	}
 
