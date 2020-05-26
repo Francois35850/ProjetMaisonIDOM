@@ -1,6 +1,7 @@
 package objetsRamassables;
 
 import main.Joueur;
+import main.Main;
 import main.ObjetRamassable;
 import main.Objets;
 import main.Piece;
@@ -22,6 +23,7 @@ public class Linge extends ObjetRamassable{
 			System.out.println("Ce linge doit être amené au lave linge");
 		}
 		else if(Joueur.getPieceCourante().getNom().compareToIgnoreCase(piece)==0) {
+			Main.ajoutTemps(1);
 			System.out.println("Vous avez déposé le linge propre dans la pièce");
 			Objets obj[] = {this};
 			Joueur.getPieceCourante().ajouterObjets(obj);

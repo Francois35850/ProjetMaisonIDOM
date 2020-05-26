@@ -307,12 +307,12 @@ public class Main {
 			case "HELP": // commande pour afficher la liste des commandes
 				System.out.println("Liste des commandes disponibles :");
 				System.out.println("   - help : affiche cette liste");
-				System.out.println("   - aller [nom de la pièce] : déplacement dans la pièce indiquée");
+				System.out.println("   - aller [nom de la pièce] (1 min) : déplacement dans la pièce indiquée");
 				System.out.println("     possible uniquement quand la pièce demandée est accessible");
 				System.out.println("     depuis la pièce actuelle");
 				System.out.println("   - téléphone : utilise le téléphone");
 				System.out.println("   - utiliser [nom de l'objet] : utiliser un objet");
-				System.out.println("   - prendre [nom de l'objet] : prendre un objet");
+				System.out.println("   - prendre [nom de l'objet] (1 min) : prendre un objet");
 				System.out.println("   - inventaire : consulter l'inventaire");
 				System.out.println("   - infos : consulter les informations sur la pièce");
 				System.out.println("   - heure : consulter l'heure qu'il est");
@@ -360,6 +360,7 @@ public class Main {
 					}
 					Objets cherche = Joueur.StringtoObjet(resObjet);
 					if (cherche != null && cherche instanceof ObjetRamassable) {
+						ajoutTemps(1);
 						Joueur.addInventaire((ObjetRamassable) cherche);
 						Joueur.getPieceCourante().soustractObjets(cherche);
 					} else

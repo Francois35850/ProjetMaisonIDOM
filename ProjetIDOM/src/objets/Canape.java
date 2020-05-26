@@ -6,6 +6,7 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 import main.Joueur;
+import main.Main;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
 import objetsRamassables.Pile;
@@ -53,16 +54,17 @@ public final class Canape extends ObjetNonRamassable {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - s'assoir\n  - s'allonger\n  - regarder en dessous\n  - regarder sous les coussins\n  - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - s'assoir (15 mins)\n  - s'allonger(45 mins)\n  - regarder en dessous (5 mins)\n  - regarder sous les coussins (3 mins)\n  - retour");
 			String input = sc.nextLine();
 			switch(input.toUpperCase()) {
 			case "S'ASSOIR" :
-				if(!occupe) { System.out.println("Vous vous asseyez sur le canapé"); occupe = true;}
+				if(!occupe) {Main.ajoutTemps(15); System.out.println("Vous vous asseyez sur le canapé"); occupe = true;}
 				break;
 			case "S'ALLONGER" :
-				if(!occupe) { System.out.println("Vous vous allongez sur le canapé"); occupe = true;}
+				if(!occupe) {Main.ajoutTemps(45); System.out.println("Vous vous allongez sur le canapé"); occupe = true;}
 				break;
 			case "REGARDER EN DESSOUS" :
+				Main.ajoutTemps(5);
 				int indice = indiceObjet("Pile télécommande 1");
 				if(indice !=-1) {
 					Joueur.addInventaire(objetsARamasser.get(indice));
@@ -73,6 +75,7 @@ public final class Canape extends ObjetNonRamassable {
 				}
 				break;
 			case "REGARDER SOUS LES COUSSINS" :
+				Main.ajoutTemps(3);
 				int indice2 = indiceObjet("Pile télécommande 2");
 				if(indice2 !=-1) {
 					Joueur.addInventaire(objetsARamasser.get(indice2));
