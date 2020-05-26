@@ -41,7 +41,7 @@ public class Objectif {
 	}
 	
 	public void printlnDetails() {
-		if (this.details != null) {
+		if (this.details != null && !this.estRempli()) {
 		System.out.println("     Détails de l'objectif :");
 		for (String s : this.details) {
 			System.out.println("       • " + s);

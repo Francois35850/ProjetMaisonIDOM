@@ -32,7 +32,7 @@ public final class Frigo extends ObjetNonRamassable {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - prendre a manger (1 min)\n  - prendre a boire(1 min)\n  - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - prendre a manger (1 min)\n  - prendre a boire (1 min)\n  - retour");
 			String input = sc.nextLine();
 			switch(input.toUpperCase()) {
 				case "OUVRIR" : 

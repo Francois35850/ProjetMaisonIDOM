@@ -14,18 +14,20 @@ public class Objectifs {
 	private static void init() {
 		objectifs = new ArrayList<Objectif>();
 
-		objectifs.add(new Objectif("Allumer la TV du salon", false,null));
+		objectifs.add(new Objectif("Regarder un documentaire sur la télé du salon", false,null));
 
 		objectifs.add(new Objectif("Regarder ses messages", false,
-				new String[] { "Regarder son portable", "Ouvrir ses messages" }));
+				new String[] { "Regarder son portable", "Ouvrir ses messages" })); // modifier
 
-		objectifs.add(new Objectif("Mettre de la musique dans le salon", false, null));
+		objectifs.add(new Objectif("Mettre de la musique dans le salon", false, null)); //a changer
 
 		objectifs.add(new Objectif("Organiser une pool party", false,
 				new String[] { "Mettre de la musique à proximité de la piscine", "Ouvrir la piscine",
 						"Désactiver le détecteur de la piscine", "Activer les lumières de la piscine",
 						"Trouver un moyen de faire des bulles dans la piscine",
 						"Mettre des objets gonflables dans la piscine" }));
+		
+		objectifs.add(new Objectif("Laver le linge de la famille",false,new String[] {"Ramasser le linge de tout le monde","Lancer une machine","Redistribuer le linge propre"}));
 	}
 
 	private Objectifs() {

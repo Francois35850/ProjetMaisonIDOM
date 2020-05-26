@@ -81,7 +81,6 @@ public class Telecommande extends ObjetNonRamassable {
 						System.out.println("La télévision est déjà allumée");
 					else {
 						allumee = true;
-						main.Objectifs.getObjectif("Allumer la TV du salon").setSucces(true);
 						System.out.println("Vous avez allumé la télévision");
 					}
 					break;

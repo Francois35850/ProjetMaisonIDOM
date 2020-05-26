@@ -58,10 +58,10 @@ public final class Canape extends ObjetNonRamassable {
 			String input = sc.nextLine();
 			switch(input.toUpperCase()) {
 			case "S'ASSOIR" :
-				if(!occupe) {Main.ajoutTemps(15); System.out.println("Vous vous asseyez sur le canapé"); occupe = true;}
+				if(!occupe) {Main.ajoutTemps(15); System.out.println("Vous vous asseyez sur le canapé");}
 				break;
 			case "S'ALLONGER" :
-				if(!occupe) {Main.ajoutTemps(45); System.out.println("Vous vous allongez sur le canapé"); occupe = true;}
+				if(!occupe) {Main.ajoutTemps(45); System.out.println("Vous vous allongez sur le canapé");}
 				break;
 			case "REGARDER EN DESSOUS" :
 				Main.ajoutTemps(5);

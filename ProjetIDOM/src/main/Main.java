@@ -173,9 +173,11 @@ public class Main {
 			1, entree);
 	// private static DetecteurIncendie(tecteur incendie,);
 	// private static DetecteurIncendie(tecteur incendie,);
-
+	
+	//Init boolean succes
 	public static boolean PPsucces1 = false, PPsucces2 = false, PPsucces3 = false, PPsucces4 = false, PPsucces6 = false,
 			PPsucces7 = false;
+	public static boolean LPsucces1 = false, LPsucces2 = false, LPsucces3 = false;
 
 	// String de l'affichage de l'heure
 	public static String affichageHeure() {
@@ -342,9 +344,14 @@ public class Main {
 
 		// boucle du jeu
 		while (gameActive) {
+			
+			//Objectifs
 			Objectifs.getObjectif("Organiser une pool party")
 					.setSucces(PPsucces1 && PPsucces2 && PPsucces3 && PPsucces4 && PPsucces6 && PPsucces7);
-
+			Objectifs.getObjectif("Laver le linge de la famille")
+			.setSucces(LPsucces1&&LPsucces2&&LPsucces3);
+			
+			
 			// Demande de la commande
 			System.out.println("Entrez une commande ('help' pour la liste des commandes) :");
 			String entree = input.nextLine();

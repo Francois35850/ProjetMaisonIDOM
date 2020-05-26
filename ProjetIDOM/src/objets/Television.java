@@ -104,6 +104,7 @@ public class Television extends ObjetNonRamassable {
 				if (t.getChaine() == 6) {
 					System.out.println("Vous êtes sur ARTE");
 					System.out.println("Vous regardez un passionnant documentaire sur les arbres à spaghettis pendant 1 heure");
+					main.Objectifs.getObjectif("Regarder un documentaire sur la télé du salon").setSucces(true);
 					Main.ajoutTemps(60);
 				}
 				if (t.getChaine() == 7) {
