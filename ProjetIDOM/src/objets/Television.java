@@ -67,7 +67,7 @@ public class Television extends ObjetNonRamassable {
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
 			System.out.println(
-					"Liste des actions possibles pour cet objet :\n  - regarder tv (le temps va varier selon la chaine, faites attention ...)\n - retour");
+					"Liste des actions possibles pour cet objet :\n - regarder tv (le temps va varier selon la chaine, faites attention ...)\n - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "REGARDER TV":
@@ -116,6 +116,10 @@ public class Television extends ObjetNonRamassable {
 					System.out.println("Vous regardez les Marseillais à Belle-île ... \n ... \n ... \n ... \nMince, vous n'avez pas vu le temps passer ! Vous sortez d'une transe de 5 heures");
 					Main.ajoutTemps(300);
 				}
+				break;
+			case "RETOUR":
+				this.setUtilisation(false);
+				System.out.println("Vous arrêtez d'utiliser l'objet");
 				break;
 			default:
 				System.out.println("La commande n'est pas valide");
