@@ -20,7 +20,7 @@ public class Armoire extends ObjetNonRamassable {
 	public String etat() {
 		String res = "";
 		if (ouvert)
-			res += " : ouvert";
+			res += " : ouverte";
 		else
 			res += " : fermée";
 		return res + "\n";
