@@ -201,9 +201,8 @@ public class Telephone {
 				System.out.println("David - 21/05/2020 - 15h34 :\n Salut papa, Áa serait possible d'aller chez Anthony ce soir apres les cours stp ?");
 				break;
 			case "MA PETITE FEMME" :
-				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les petites voitures qu'il y a chez mes parents pour les donner au voisin. Si t'as le temps d'y passer Áa serait super. Bisous ch√©rie <3");
+				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer Áa serait super. Bisous ch√©rie <3");
 				break;
-				
 			}
 		}
 		if (choix == 2) {
