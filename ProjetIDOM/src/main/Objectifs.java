@@ -1,48 +1,42 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Function;
+import java.util.ListIterator;
 
 public class Objectifs {
 
-	List<Objectif> objectifs;
+	private static ArrayList<Objectif> objectifs;
 
-	private class Objectif {
-
-		private String nom;
-		private Function<Integer, Boolean> succes;
-
-		public Objectif(String nom, Function<Integer, Boolean> succes) {
-			this.nom = nom;
-			this.succes = succes;
-		}
-
-		public boolean estRempli() {
-			return this.succes.apply(0);
-		}
-
-		public String toString() {
-			return this.nom;
-		}
-
+	static {
+		init();
 	}
 
-	public Objectifs(String nom) {
-		this.objectifs = new ArrayList<Objectif>();
+	private static void init() {
+		objectifs = new ArrayList<Objectif>();
 
-		this.objectifs.add(new Objectif("test", (a) -> testObjectif(a)));
+		objectifs.add(new Objectif("Allumer la TV du salon", false));
 	}
 
-	public boolean allObjectifsComplets() {
-		for (Objectif o : this.objectifs) {
-			if (!o.estRempli())
+	private Objectifs() {
+	}
+
+	public static Objectif getObjectif(String nom) {
+		ListIterator<Objectif> it = objectifs.listIterator();
+		while (it.hasNext()) {
+			Objectif temp = it.next();
+			if (temp.getNom() == nom)
+				return temp;
+		}
+		return null;
+	}
+
+	public static boolean allObjectifsComplets() {
+		ListIterator<Objectif> it = objectifs.listIterator();
+		while (it.hasNext()) {
+			if (!it.next().estRempli())
 				return false;
 		}
-		return true;
-	}
-
-	private boolean testObjectif(int a) {
+		System.out.println("Vous avez rempli tous les objectifs, vous avez terminé le jeu !");
 		return true;
 	}
 
