@@ -73,7 +73,7 @@ public class Telecommande extends ObjetNonRamassable {
 			System.out.println("Vous utilisez " + this.getNom() + ".");
 			while (this.getUtilisation()) {
 				System.out.println(
-						"Liste des actions possibles pour cet objet :\n  - allumer TV\n - eteindre TV\n  - mute\n  - changer chaine\n  - retour");
+						"Liste des actions possibles pour cet objet :\n  - allumer TV\n  - eteindre TV\n  - mute\n  - changer chaine\n  - retour");
 				String input = sc.nextLine();
 				switch (input.toUpperCase()) {
 				case "ALLUMER TV":
