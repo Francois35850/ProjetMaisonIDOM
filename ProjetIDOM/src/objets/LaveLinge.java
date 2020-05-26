@@ -81,14 +81,16 @@ public final class LaveLinge extends ObjetNonRamassable {
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
 			System.out.println(
-					"Liste des actions possibles pour cet objet :\n  - lancer une machine (1h)\n  - arreter\n  - sortir le linge\n  - retour");
+					"Liste des actions possibles pour cet objet :\n  - lancer une machine (3 mins)\n  - arreter\n  - sortir le linge (5 mins)\n  - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "LANCER UNE MACHINE":
 				if(pastille && lingeD && lingeR && lingeP && !enMarche) {
 					heureLancement = Main.getHeure();
 					minuteLancement = Main.getMinute();
+					Main.ajoutTemps(3);
 					System.out.println("Vous lancez une machine avec les vêtements de la famille");
+					System.out.println("Elle sera finie dans 1h");
 					Joueur.supprInv("Pastille lave linge");
 					Joueur.supprInv("Linge sale de David");
 					Joueur.supprInv("Linge sale de Régine");
@@ -127,6 +129,7 @@ public final class LaveLinge extends ObjetNonRamassable {
 			case "SORTIR LE LINGE":
 				if(!enMarche) {
 					if(lingeInterieur) {
+						Main.ajoutTemps(5);
 						System.out.println("Vous récupérez le linge de toute la famille tout propre !");
 						System.out.println("Vous n'avez plus qu'à le ramener dans les chambres");
 						lingeInterieur = false;

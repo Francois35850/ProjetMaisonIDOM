@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import main.Main;
 import main.ObjetNonRamassable;
 
 public final class Enceinte extends ObjetNonRamassable {
@@ -45,7 +46,7 @@ public final class Enceinte extends ObjetNonRamassable {
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
 			System.out.println(
-					"Liste des actions possibles pour cet objet :\n  - allumer\n  - éteindre\n  - jouer musique\n  - changer musique\n  - retour");
+					"Liste des actions possibles pour cet objet :\n  - allumer\n  - éteindre\n  - jouer musique\n  - changer musique (2 mins)\n  - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "ALLUMER":
@@ -90,6 +91,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà Céline ! Quelle voix !");
 						else {
 							musiqueActive = 0;
+							Main.ajoutTemps(2);
 							System.out.println(
 									"Vous écouter : " + listMusics[musiqueActive] + ", un régal pour les oreilles");
 						}
@@ -99,6 +101,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà Jujujul !");
 						else {
 							musiqueActive = 1;
+							Main.ajoutTemps(2);
 							System.out.println("Vous écouter : " + listMusics[musiqueActive]
 									+ ", quoi de mieux pour s'ambiancer ?");
 						}
@@ -108,6 +111,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà Michael Jackson !");
 						else {
 							musiqueActive = 2;
+							Main.ajoutTemps(2);
 							System.out.println("Vous écouter : " + listMusics[musiqueActive]
 									+ ", n'hésitez pas à lâcher un petit pas de dance");
 						}
@@ -117,6 +121,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà Mylène Farmer !");
 						else {
 							musiqueActive = 3;
+							Main.ajoutTemps(2);
 							System.out.println("Vous écouter : " + listMusics[musiqueActive]
 									+ ", vous vous surprenez même à fredonner les paroles");
 						}
@@ -126,6 +131,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà Patrick Sébastien !");
 						else {
 							musiqueActive = 4;
+							Main.ajoutTemps(2);
 							System.out.println("Vous écouter : " + listMusics[musiqueActive]
 									+ ", puis vous vous mettez à sauter...");
 						}
@@ -135,6 +141,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà 6ix 9ine !");
 						else {
 							musiqueActive = 5;
+							Main.ajoutTemps(2);
 							System.out.println(
 									"Vous écouter : " + listMusics[musiqueActive] + ", un de ses meilleurs feat");
 						}
@@ -144,6 +151,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà Magic System !");
 						else {
 							musiqueActive = 6;
+							Main.ajoutTemps(2);
 							System.out.println(
 									"Vous écouter : " + listMusics[musiqueActive] + ", ça vous remonte le moral !");
 						}
@@ -153,6 +161,7 @@ public final class Enceinte extends ObjetNonRamassable {
 							System.out.println("Vous écoutez déjà Drake !");
 						else {
 							musiqueActive = 7;
+							Main.ajoutTemps(2);
 							System.out.println("Vous écouter : " + listMusics[musiqueActive] + ", posé !");
 						}
 						break;

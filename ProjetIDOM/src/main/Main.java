@@ -67,24 +67,24 @@ public class Main {
 	private static Objets televisionSalleDeJeux = new Television("TV");
 	private static Objets telecommandeSalon = new Telecommande("Télécommande", false, true, 0, 0);
 	private static Objets telecommandeSalleDeJeux = new Telecommande("Télécommande", false, true, 4, 2);
-	private static Objets interrupteurGarage = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurCuisine = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurSalon = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurSaM = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurBuanderie = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurEntree = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurChambre1 = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurChambre2 = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurChambreP = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurSdB1 = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurSdB2 = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurBureau = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurSdJ = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurCouloir = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurGrenier = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurStudio = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurDressing = new Interrupteur("Interrupteur", false);
-	private static Objets interrupteurToilettes = new Interrupteur("Interrupteur", false);
+	private static Objets interrupteurGarage = new Interrupteur("Interrupteur", false, garage);
+	private static Objets interrupteurCuisine = new Interrupteur("Interrupteur", false, cuisine);
+	private static Objets interrupteurSalon = new Interrupteur("Interrupteur", false, salon);
+	private static Objets interrupteurSaM = new Interrupteur("Interrupteur", false, salle_a_manger);
+	private static Objets interrupteurBuanderie = new Interrupteur("Interrupteur", false, buanderie);
+	private static Objets interrupteurEntree = new Interrupteur("Interrupteur", false, entree);
+	private static Objets interrupteurChambre1 = new Interrupteur("Interrupteur", false, chambre1);
+	private static Objets interrupteurChambre2 = new Interrupteur("Interrupteur", false, chambre2);
+	private static Objets interrupteurChambreP = new Interrupteur("Interrupteur", false, chambre_parentale);
+	private static Objets interrupteurSdB1 = new Interrupteur("Interrupteur", false, sdb1);
+	private static Objets interrupteurSdB2 = new Interrupteur("Interrupteur", false, sdb2);
+	private static Objets interrupteurBureau = new Interrupteur("Interrupteur", false, bureau);
+	private static Objets interrupteurSdJ = new Interrupteur("Interrupteur", false, salle_de_jeux);
+	private static Objets interrupteurCouloir = new Interrupteur("Interrupteur", false, couloir);
+	private static Objets interrupteurGrenier = new Interrupteur("Interrupteur", false, grenier);
+	private static Objets interrupteurStudio = new Interrupteur("Interrupteur", false, studio);
+	private static Objets interrupteurDressing = new Interrupteur("Interrupteur", false, dressing);
+	private static Objets interrupteurToilettes = new Interrupteur("Interrupteur", false, toilettes);
 	private static Piscine piscine = new Piscine("Piscine");
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
@@ -344,12 +344,12 @@ public class Main {
 			case "HELP": // commande pour afficher la liste des commandes
 				System.out.println("Liste des commandes disponibles :");
 				System.out.println("   - help : affiche cette liste");
-				System.out.println("   - aller [nom de la pièce] : déplacement dans la pièce indiquée");
+				System.out.println("   - aller [nom de la pièce] (1 min) : déplacement dans la pièce indiquée");
 				System.out.println("     possible uniquement quand la pièce demandée est accessible");
 				System.out.println("     depuis la pièce actuelle");
 				System.out.println("   - téléphone : utilise le téléphone");
 				System.out.println("   - utiliser [nom de l'objet] : utiliser un objet");
-				System.out.println("   - prendre [nom de l'objet] : prendre un objet");
+				System.out.println("   - prendre [nom de l'objet] (1 min) : prendre un objet");
 				System.out.println("   - inventaire : consulter l'inventaire");
 				System.out.println("   - infos : consulter les informations sur la pièce");
 				System.out.println("   - heure : consulter l'heure qu'il est");
@@ -398,6 +398,7 @@ public class Main {
 					}
 					Objets cherche = Joueur.StringtoObjet(resObjet);
 					if (cherche != null && cherche instanceof ObjetRamassable) {
+						ajoutTemps(1);
 						Joueur.addInventaire((ObjetRamassable) cherche);
 						Joueur.getPieceCourante().soustractObjets(cherche);
 					} else

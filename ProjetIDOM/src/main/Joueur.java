@@ -114,6 +114,7 @@ public class Joueur {
 			if (deplacement == null)
 				System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
 			else {
+				Main.ajoutTemps(1);
 				setPieceCourante(deplacement);
 				System.out.println(getPieceCourante().toString());
 			}

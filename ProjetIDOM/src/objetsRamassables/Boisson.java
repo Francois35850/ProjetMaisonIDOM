@@ -1,6 +1,7 @@
 package objetsRamassables;
 
 import main.Joueur;
+import main.Main;
 import main.ObjetRamassable;
 
 public class Boisson extends ObjetRamassable{
@@ -13,6 +14,7 @@ public class Boisson extends ObjetRamassable{
 	@Override
 	public void utiliserObjet() {
 		if(Joueur.getInventaire().contains(this)) {
+			Main.ajoutTemps(2);
 			System.out.println("Ah ça fait du bien !");
 			Joueur.removeInventaire(this);
 		}

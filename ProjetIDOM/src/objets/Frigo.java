@@ -3,9 +3,11 @@ package objets;
 import java.util.Scanner;
 
 import main.Joueur;
+import main.Main;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
 import objetsRamassables.Boisson;
+import objetsRamassables.Sandwich;
 
 public final class Frigo extends ObjetNonRamassable {
 
@@ -30,7 +32,7 @@ public final class Frigo extends ObjetNonRamassable {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - prendre à manger\n  - prendre à boire\n  - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - prendre a manger (1 min)\n  - prendre a boire(1 min)\n  - retour");
 			String input = sc.nextLine();
 			switch(input.toUpperCase()) {
 				case "OUVRIR" : 
@@ -43,11 +45,16 @@ public final class Frigo extends ObjetNonRamassable {
 					break;
 				case "PRENDRE A MANGER" :
 					if(!ouvert) System.out.println("Commencez par ouvrir le frigo.");
-					else System.out.println("Vous avez pris de quoi manger, régalez vous !");
+					else {
+						Main.ajoutTemps(1);
+						System.out.println("Vous avez pris de quoi manger, régalez vous !");
+						Joueur.addInventaire(new Sandwich("jambon beurre"));
+					}
 					break;
 				case "PRENDRE A BOIRE" :
 					if(!ouvert) System.out.println("Commencez par ouvrir le frigo.");
 					else {
+						Main.ajoutTemps(1);
 						System.out.println("Wow une bonne bière, parfait pour se désaltérer !");
 						Joueur.addInventaire(new Boisson("biere"));
 					}
