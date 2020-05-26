@@ -27,15 +27,9 @@ public static ITelephone newTelephone() {
 	else {x1="on";}
 	if (y0==0){y1="off";}
 	else {y1="on";}
-	ITelephone iphone = new ITelephone(0,0,x1,y1,enceinte_telephone);
+	ITelephone iphone = new ITelephone(0,x1,y1,enceinte_telephone);
 	return iphone;
 }
-
-//fonction qui retourne l'état de la musique sur le téléphone
-public static int getMusique(ITelephone iphone) {return iphone.mu_tel;}
-
-//fonction qui retourne le nombre d'enceintes connectées sur le téléphone
-public static int getPiece(ITelephone iphone) {return iphone.mu_nbr_piece;}
 
 //fonction qui retourne l'état de la connexion gsm
 public static String getWifi(ITelephone iphone) {return iphone.wifi;}
