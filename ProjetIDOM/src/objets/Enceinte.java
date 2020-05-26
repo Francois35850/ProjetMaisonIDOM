@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import main.Joueur;
 import main.Main;
+import main.Objectifs;
 import main.ObjetNonRamassable;
 
 public final class Enceinte extends ObjetNonRamassable {
@@ -77,6 +78,7 @@ public final class Enceinte extends ObjetNonRamassable {
 					System.out.println("La musique se lance avec " + listMusics[musiqueActive]);
 					if (Joueur.getPieceCourante().getNom() == "Salon")
 						Main.PPsucces1 = true;
+						Objectifs.getObjectif("Mettre de la musique dans le salon").setSucces(true);
 				}
 				break;
 			case "CHANGER MUSIQUE":

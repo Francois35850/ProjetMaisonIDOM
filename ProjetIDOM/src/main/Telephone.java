@@ -195,7 +195,6 @@ public class Telephone {
 	// Application musique
 	public static void Musique(int choix, ITelephone iphone) {
 		if (choix == 1) {
-			Objectifs.getObjectif("Mettre de la musique").setSucces(true);
 		}
 		if (choix == 2) {
 		}
