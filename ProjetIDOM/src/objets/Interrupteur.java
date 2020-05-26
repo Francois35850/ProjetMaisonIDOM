@@ -1,16 +1,18 @@
 package objets;
 
 import java.util.Scanner;
-
+import main.Piece;
 import main.ObjetNonRamassable;
 
 public final class Interrupteur extends ObjetNonRamassable {
 
 	private boolean allume;
+	private Piece piece;
 	
-	public Interrupteur(String nom, boolean allume) {
+	public Interrupteur(String nom, boolean allume, Piece piece) {
 		super(nom);
 		this.allume = allume;
+		this.piece = piece;
 	}
 
 	@Override
