@@ -30,6 +30,18 @@ public class Objectifs {
 		return null;
 	}
 
+	public static void listObjectifs() {
+		ListIterator<Objectif> it = objectifs.listIterator();
+		while (it.hasNext()) {
+			Objectif temp = it.next();
+			System.out.print("   - " + temp.getNom() + " : ");
+			if (temp.estRempli())
+				System.out.println("complété.");
+			else
+				System.out.println("non complété.");
+		}
+	}
+
 	public static boolean allObjectifsComplets() {
 		ListIterator<Objectif> it = objectifs.listIterator();
 		while (it.hasNext()) {

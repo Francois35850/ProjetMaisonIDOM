@@ -354,6 +354,7 @@ public class Main {
 				System.out.println("   - infos : consulter les informations sur la pièce");
 				System.out.println("   - heure : consulter l'heure qu'il est");
 				System.out.println("   - sortir : sortir de la maison depuis l'entrée");
+				System.out.println("   - objectifs : affiche la liste des objectifs");
 				System.out.println("   - quitter : ferme le jeu");
 				break;
 			case "ALLER":
@@ -416,6 +417,10 @@ public class Main {
 						System.out.println("Vous ne pouvez pas sortir habillé comme ça...");
 				} else
 					System.out.println("Vous ne pouvez sortir que depuis l'entrée");
+				break;
+			case "OBJECTIFS":
+				System.out.println("Voici la liste des objectifs :");
+				Objectifs.listObjectifs();
 				break;
 			default: // cas par défaut, cad commande invalide
 				System.out.println("Commande invalide.");
