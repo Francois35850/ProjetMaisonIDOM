@@ -5,6 +5,7 @@ import java.util.Scanner;
 import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public class Piscine extends ObjetNonRamassable {
 	private boolean ouvert;
@@ -13,8 +14,8 @@ public class Piscine extends ObjetNonRamassable {
 	private boolean lumiere;
 	private boolean ambiance;
 
-	public Piscine(String nom) {
-		super(nom);
+	public Piscine(String nom,Piece piece) {
+		super(nom,piece);
 		ouvert = false;
 		mousse = false;
 		secu = true;

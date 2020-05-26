@@ -3,12 +3,13 @@ package objets;
 import java.util.Scanner;
 
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public class PanneauDeCtrl extends ObjetNonRamassable{
 	private Piscine p;
 
-	public PanneauDeCtrl(String nom,Piscine pi) {
-		super(nom);
+	public PanneauDeCtrl(String nom,Piece piece,Piscine pi) {
+		super(nom,piece);
 		p = pi;
 	}
 

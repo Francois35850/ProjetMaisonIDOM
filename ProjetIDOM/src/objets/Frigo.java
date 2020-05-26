@@ -6,6 +6,7 @@ import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
+import main.Piece;
 import objetsRamassables.Boisson;
 import objetsRamassables.Sandwich;
 
@@ -13,8 +14,8 @@ public final class Frigo extends ObjetNonRamassable {
 
 	private boolean ouvert;
 	
-	public Frigo(String nom, boolean ouvert) {
-		super(nom);
+	public Frigo(String nom, Piece piece, boolean ouvert) {
+		super(nom,piece);
 		this.ouvert = ouvert;
 	}
 

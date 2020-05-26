@@ -9,13 +9,14 @@ import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
 import main.Objets;
+import main.Piece;
 
 public class Television extends ObjetNonRamassable {
 
 	private List<String> chaines;
 
-	public Television(String nom) {
-		super(nom);
+	public Television(String nom, Piece piece) {
+		super(nom,piece);
 		chaines = new ArrayList<String>();
 		// ajout des chaines TV de [0 à 8]
 		chaines.add("TF1");

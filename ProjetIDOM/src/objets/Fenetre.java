@@ -3,6 +3,7 @@ package objets;
 import java.util.Scanner;
 
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public class Fenetre extends ObjetNonRamassable{
 
@@ -13,8 +14,8 @@ public class Fenetre extends ObjetNonRamassable{
 	private boolean etat_fenetre;
 
 	//Constructeur
-	public Fenetre(String nom, boolean etat_fenetre) {
-		super(nom);
+	public Fenetre(String nom,Piece piece, boolean etat_fenetre) {
+		super(nom,piece);
 		this.etat_fenetre=etat_fenetre;
 	}	
 	

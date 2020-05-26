@@ -9,6 +9,7 @@ import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
+import main.Piece;
 import objetsRamassables.Pile;
 
 public final class Canape extends ObjetNonRamassable {
@@ -16,8 +17,8 @@ public final class Canape extends ObjetNonRamassable {
 	private boolean occupe;
 	private List<ObjetRamassable> objetsARamasser;
 	
-	public Canape(String nom,boolean occupe,boolean pilesARamasser) {
-		super(nom);
+	public Canape(String nom, Piece piece, boolean occupe,boolean pilesARamasser) {
+		super(nom,piece);
 		this.occupe = occupe;
 		objetsARamasser = new ArrayList<ObjetRamassable>();
 		if(pilesARamasser) {

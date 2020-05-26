@@ -3,6 +3,7 @@ package objets;
 import java.util.Scanner;
 
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public class Volet extends ObjetNonRamassable {
 
@@ -10,8 +11,8 @@ public class Volet extends ObjetNonRamassable {
 	private boolean etat_volet;
 
 	// Constructeur
-	public Volet(String nom, boolean etat_volet) {
-		super(nom);
+	public Volet(String nom,Piece piece, boolean etat_volet) {
+		super(nom, piece);
 		this.etat_volet = etat_volet;
 	}
 

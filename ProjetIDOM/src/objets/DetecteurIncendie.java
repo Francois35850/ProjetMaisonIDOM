@@ -3,6 +3,7 @@ package objets;
 import java.util.Scanner;
 
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public class DetecteurIncendie extends ObjetNonRamassable {
 
@@ -10,8 +11,8 @@ public class DetecteurIncendie extends ObjetNonRamassable {
 	private int pourcentage_pile;
 	private int pile;
 
-	public DetecteurIncendie(String nom, int etat, int pourcentage_pile, int pile) {
-		super(nom);
+	public DetecteurIncendie(String nom,Piece piece, int etat, int pourcentage_pile, int pile) {
+		super(nom,piece);
 		this.etat = etat;
 		this.pile=pile;
 		this.pourcentage_pile = pourcentage_pile;

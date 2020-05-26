@@ -5,13 +5,14 @@ import java.util.Scanner;
 import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public class Armoire extends ObjetNonRamassable {
 
 	private boolean ouvert;
 
-	public Armoire(String nom, boolean ouvert) {
-		super(nom);
+	public Armoire(String nom, Piece piece, boolean ouvert) {
+		super(nom,piece);
 		this.ouvert = ouvert;
 	}
 

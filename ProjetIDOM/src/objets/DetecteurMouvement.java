@@ -10,10 +10,9 @@ public class DetecteurMouvement extends ObjetNonRamassable {
 	private boolean detection;
 	private Piece piece;
 
-	public DetecteurMouvement(String nom, boolean detection, Piece piece) {
-		super(nom);
+	public DetecteurMouvement(String nom, Piece piece, boolean detection) {
+		super(nom,piece);
 		this.detection = detection;
-		this.piece = piece;
 	}
 
 	public String etat() {

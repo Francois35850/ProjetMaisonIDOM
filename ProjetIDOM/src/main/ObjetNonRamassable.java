@@ -2,10 +2,12 @@ package main;
 
 public abstract class ObjetNonRamassable extends Objets {
 	boolean utilisationEnCours;
+	private Piece piece;
 
-	public ObjetNonRamassable(String nom) {
+	public ObjetNonRamassable(String nom,Piece piece) {
 		super(nom);
 		utilisationEnCours = false;
+		this.piece = piece;
 	}
 
 	public abstract String etat();
@@ -21,4 +23,6 @@ public abstract class ObjetNonRamassable extends Objets {
 	public void setUtilisation(boolean use) {this.utilisationEnCours = use;}
 	
 	public String getNom() {return super.getNom();}
+	
+	public Piece getPiece() {return piece;}
 }

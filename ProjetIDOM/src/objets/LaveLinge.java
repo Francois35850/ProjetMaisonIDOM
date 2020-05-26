@@ -25,8 +25,8 @@ public final class LaveLinge extends ObjetNonRamassable {
 	private int heureLancement;
 	private int minuteLancement;
 
-	public LaveLinge(String nom) {
-		super(nom);
+	public LaveLinge(String nom,Piece piece) {
+		super(nom,piece);
 		enMarche = false;
 		pastille = false;
 		lingeD = false;
