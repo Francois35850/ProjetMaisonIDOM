@@ -30,6 +30,8 @@ public class Main {
 
 	private static int heure = 13;
 	private static int minute = 05;
+	private static int endHeure = 18;
+	private static int endMinute = 15;
 
 	// scanner pour lire les commandes du joueur
 	private static Scanner input = new Scanner(System.in);
@@ -203,6 +205,14 @@ public class Main {
 		}
 	}
 
+	public static void checkTime() {
+		if (heure == endHeure && minute >= endMinute || heure > endHeure) {
+			System.out.println(
+					"Vous êtes en retard !!! \nVous n'avez pas réussi à accomplir vos objectifs à temps ! \n G A M E  O V E R ");
+			gameActive = false;
+		}
+	}
+
 	public static int getHeure() {
 		return heure;
 	}
@@ -332,7 +342,6 @@ public class Main {
 
 		// boucle du jeu
 		while (gameActive) {
-
 			Objectifs.getObjectif("Organiser une pool party")
 					.setSucces(PPsucces1 && PPsucces2 && PPsucces3 && PPsucces4 && PPsucces6 && PPsucces7);
 
@@ -439,6 +448,7 @@ public class Main {
 				break;
 			}
 
+			checkTime();
 		}
 
 	}

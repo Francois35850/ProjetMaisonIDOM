@@ -1,20 +1,24 @@
 package main;
 
+import objets.Enceinte;
+
 public class ITelephone {
-	private int mu_tel;
-	private int mu_nbr_piece;
+	private int musique_telephone;
 	private String wifi;
 	private String gsm;
+	private Enceinte enceinte_telephone;
 	private static String utilitaire="off";
 	
-public ITelephone(int mu_tel, int mu_nbr_piece, String wifi, String gsm) {
-		this.mu_tel= mu_tel;
+public ITelephone(int musique_telephone, String wifi, String gsm, Enceinte enceinte_telephone) {
+		this.musique_telephone= musique_telephone;
 		this.mu_nbr_piece=mu_nbr_piece;
 		this.wifi=wifi;
 		this.gsm=gsm;
+		this.enceinte_telephone = enceinte_telephone;
 	}
 
-public static ITelephone newTelephone() {
+public static ITelephone newTelephone() { 
+	Enceinte enceinte_telephone = new Enceinte ("haut parleur téléphone",false);
 	String x1="";
 	String y1="";		
 	int x0=(int) Math.random();
@@ -23,11 +27,11 @@ public static ITelephone newTelephone() {
 	else {x1="on";}
 	if (y0==0){y1="off";}
 	else {y1="on";}
-	ITelephone iphone = new ITelephone(0,0,x1,y1);
+	ITelephone iphone = new ITelephone(0,0,x1,y1,enceinte_telephone);
 	return iphone;
 }
 
-//fonction qui retourne l'état de la musique sur le ttéléphone
+//fonction qui retourne l'état de la musique sur le téléphone
 public static int getMusique(ITelephone iphone) {return iphone.mu_tel;}
 
 //fonction qui retourne le nombre d'enceintes connectées sur le téléphone
