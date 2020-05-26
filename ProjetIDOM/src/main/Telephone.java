@@ -1,5 +1,7 @@
 package main;
 
+import main.Main;
+import objets.Volet;
 import java.util.Scanner;
 
 public class Telephone {
@@ -109,6 +111,10 @@ public class Telephone {
 				int choix_connexion = input.nextInt();
 				Connexion(choix_connexion, iphone);
 				break;
+				
+			case "musique": // commande pour ouvrir l'application musique
+				enceinte_telephone.utiliserObjet();
+				break;
 
 			case "course": // commande pour ouvrir l'application course
 				System.out.println("Bientot l'heure de manger ?");
@@ -124,18 +130,22 @@ public class Telephone {
 
 			case "homekit": // commande pour affiche l'application de la maison connectÃ©e
 				System.out.println("Faire son choix :");
-				System.out.println("1 - Enceintes");
-				System.out.println("2 - Lumières");
-				System.out.println("3 - Frigo");
-				System.out.println("4 - Jardin");
-				System.out.println("5 - Prises");
-				System.out.println("6 - Volets");
-				System.out.println("7 - CVC");
-				System.out.println("8 - Alarme");
-				System.out.println("9 - Home cinéma");
-				System.out.println("10 - Sam le chien");
+				System.out.println("1 - Scénarios");
+				System.out.println("2 - Volets");
+				System.out.println("3 - Alarme");
+				System.out.println("4 - Lumières");
+				System.out.println("5 - Caméra");
+				
+				
+				
 				System.out.println("11 - Quitter l'application");
 				System.out.println("12 - Quitter le tÃ©lÃ©phone");
+				
+				System.out.println("7 - CVC");
+				System.out.println("4 - Jardin");
+				System.out.println("9 - Home cinéma");
+				System.out.println("10 - Sam le chien");
+				
 				int choix_homekit = input.nextInt();
 				Homekit(choix_homekit);
 				break;
@@ -152,18 +162,8 @@ public class Telephone {
 				System.out.println("   - credits : voir les crÃ©dits");
 				break;
 
-			case "musique": // commande pour ouvrir l'application musique
-				System.out.println("Un peu de musique ?");
-				System.out.println("1 - Jouer de la musique");
-				System.out.println("2 - Se connecter à une enceinte");
-				System.out.println("3 - Se connecter à plusieurs pièces");
-				System.out.println("4 - Mettre de la musique dans toute la maison");
-				System.out.println("5 - Quitter l'application");
-				System.out.println("6 - Quitter le téléphone");
-				int choix_musique = input.nextInt();
-				Musique(choix_musique, iphone);
-				break;
-
+			
+			
 			case "messages": // commande pour ouvrir l'application message
 				System.out.println("Envie de contacter quelqu'un");
 				System.out.println("1 - Passer un appel");
@@ -173,7 +173,6 @@ public class Telephone {
 				System.out.println("5 - Quitter le tÃ©lÃ©phone");
 				int choix_message = input.nextInt();
 				Messages(choix_message, iphone);
-				Objectifs.getObjectif("Regarder ses messages").setSucces(true);
 				break;
 
 			case "credits": // commande pour ouvrir les credits
@@ -192,32 +191,11 @@ public class Telephone {
 
 	}
 
-	// Application musique
-	public static void Musique(int choix, ITelephone iphone) {
-		if (choix == 1) {
-			Objectifs.getObjectif("Mettre de la musique").setSucces(true);
-		}
-		if (choix == 2) {
-		}
-		if (choix == 3) {
-		}
-		if (choix == 4) {
-		}
-		if (choix == 5) {
-		} // break, on retourne au menu principal du tÃ©lÃ©phone
-		if (choix == 6) {
-			telActive = false;
-		}
-	}
-
 	// Application messages
 	public static void Messages(int choix, ITelephone iphone) {
 		if (choix == 1) {
 		}
-		if (choix == 2) {
-		}
-		if (choix == 3) {
-		}
+		
 		if (choix == 4) {
 		} // break, on retourne au menu principal du tÃ©lÃ©phone
 		if (choix == 5) {
@@ -228,14 +206,58 @@ public class Telephone {
 	// Application Homekit
 	public static void Homekit(int choix) {
 		if (choix == 1) {
+			System.out.println("Liste des actions possibles :"\n + "nuit"\n + "depart"\n + "salle cinema"\n);
+			String entree = input.nextLine();
+			switch (entree) {
+			case "nuit" : 
+			
+			case "depart": 
+				
+			case "salle cinema":
+			}
 		}
 		if (choix == 2) {
+			System.out.println("Etat des volets roulants :");
+			System.out.println(volet_bureau.toString());
+			System.out.println(volet_salon1.toString());
+			System.out.println(volet_salon2.toString());
+			System.out.println(volet_ch1.toString());
+			System.out.println(volet_ch2.toString());
+			System.out.println(volet_chp.toString());
+			System.out.println(volet_sallejeux.toString());
+			System.out.println(volet_studio.toString());
+			System.out.println(volet_cuisine.toString());
+			System.out.println(volet_sallemanger.toString());
 		}
 		if (choix == 3) {
+			System.out.println("Etat des détecteurs de mouvement :");
+			System.out.println(detecteur_mouvement_ch1.toString());
+			System.out.println(detecteur_mouvement_ch2.toString());
+			System.out.println(detecteur_mouvement_ch.toString());
+			System.out.println(detecteur_mouvement_sdb_patentale.toString());
+			System.out.println(detecteur_mouvement_dressing.toString());
+			System.out.println(detecteur_mouvement_cuisine.toString());
+			System.out.println(detecteur_mouvement_studio.toString());
+			System.out.println(detecteur_mouvement_couloir.toString());
+			System.out.println("Etat des détecteurs d'ouverture :");
+			System.out.println(detecteur_ouverture_bureau.toString());
+			System.out.println(detecteur_ouverture_salon1.toString());
+			System.out.println(detecteur_ouverture_salon2.toString());
+			System.out.println(detecteur_ouverture_ch1.toString());
+			System.out.println(detecteur_ouverture_ch2.toString());
+			System.out.println(detecteur_ouverture_chp.toString());
+			System.out.println(detecteur_ouverture_sallejeux.toString());
+			System.out.println(detecteur_ouverture_studio.toString());
+			System.out.println(detecteur_ouverture_cuisine.toString());
+			System.out.println(detecteur_ouverture_sallemanger.toString());	
 		}
 		if (choix == 4) {
+			System.out.println(
 		}
 		if (choix == 5) {
+			System.out.println(camera_entree.toString());
+			System.out.println(camera_jardin.toString());
+			System.out.println(camera_devant_maison.toString());
 		}
 		if (choix == 6) {
 		}
