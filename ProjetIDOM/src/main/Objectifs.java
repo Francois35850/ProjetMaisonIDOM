@@ -14,7 +14,20 @@ public class Objectifs {
 	private static void init() {
 		objectifs = new ArrayList<Objectif>();
 
-		objectifs.add(new Objectif("Allumer la TV du salon", false));
+		objectifs.add(new Objectif("Allumer la TV du salon", false,
+				new String[] { "Trouver les pile, les mettre dans la télécommande", "Allumer la TV" }));
+
+		objectifs.add(new Objectif("Regarder ses messages", false,
+				new String[] { "Regarder son portable", "Ouvrir ses messages" }));
+
+		objectifs.add(new Objectif("Mettre de la musique", false, new String[] { "Regarder son portable" }));
+
+		objectifs.add(new Objectif("Organiser une pool party", false,
+				new String[] { "Mettre de la musique sur les enceintes", "Ouvrir la piscine avec le remote controller",
+						"Désactiver le détecteur de la piscine", "Activer les lumières de la piscine",
+						"Trouver du liquide vaisselle",
+						"Mettre le liquide vaisselle dans la piscine pour faire des bulles",
+						"Mettre des objets gonflables dans la piscine" }));
 	}
 
 	private Objectifs() {
@@ -39,6 +52,7 @@ public class Objectifs {
 				System.out.println("complété.");
 			else
 				System.out.println("non complété.");
+			temp.printlnDetails();
 		}
 	}
 
@@ -48,7 +62,7 @@ public class Objectifs {
 			if (!it.next().estRempli())
 				return false;
 		}
-		System.out.println("Vous avez rempli tous les objectifs, vous avez terminé le jeu !");
+		System.out.println("Vous avez rempli tous les objectifs, vous pouvez sortir de la maison.");
 		return true;
 	}
 

@@ -19,6 +19,7 @@ public class LiquideVaisselle extends ObjetRamassable{
 			Main.ajoutTemps(5);
 			System.out.println("Vous videz le liquide vaisselle dans la piscine \nC'est pas vraiment à cela que ça sert mais ça fait des bulles");
 			System.out.println("Cela vous a pris 5 minutes");
+			main.Main.PPsucces6 = true;
 			p.setMousse(true);
 			Joueur.removeInventaire(this);
 		}

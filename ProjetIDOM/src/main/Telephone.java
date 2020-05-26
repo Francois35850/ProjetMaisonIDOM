@@ -173,6 +173,7 @@ public class Telephone {
 				System.out.println("5 - Quitter le tÃ©lÃ©phone");
 				int choix_message = input.nextInt();
 				Messages(choix_message, iphone);
+				Objectifs.getObjectif("Regarder ses messages").setSucces(true);
 				break;
 
 			case "credits": // commande pour ouvrir les credits
@@ -194,6 +195,7 @@ public class Telephone {
 	// Application musique
 	public static void Musique(int choix, ITelephone iphone) {
 		if (choix == 1) {
+			Objectifs.getObjectif("Mettre de la musique").setSucces(true);
 		}
 		if (choix == 2) {
 		}

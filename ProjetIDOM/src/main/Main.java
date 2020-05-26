@@ -172,6 +172,9 @@ public class Main {
 	// private static DetecteurIncendie(tecteur incendie,);
 	// private static DetecteurIncendie(tecteur incendie,);
 
+	public static boolean PPsucces1 = false, PPsucces2 = false, PPsucces3 = false, PPsucces4 = false, PPsucces6 = false,
+			PPsucces7 = false;
+
 	// String de l'affichage de l'heure
 	public static String affichageHeure() {
 		if (minute < 10)
@@ -329,6 +332,10 @@ public class Main {
 
 		// boucle du jeu
 		while (gameActive) {
+
+			Objectifs.getObjectif("Organiser une pool party")
+					.setSucces(PPsucces1 && PPsucces2 && PPsucces3 && PPsucces4 && PPsucces6 && PPsucces7);
+
 			// Demande de la commande
 			System.out.println("Entrez une commande ('help' pour la liste des commandes) :");
 			String entree = input.nextLine();
@@ -411,9 +418,13 @@ public class Main {
 			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().getNom().compareToIgnoreCase("entree") == 0) {
 					if (Joueur.getEtatVetements() == 1) {
-						System.out.println("Vous êtes sorti de la maison");
-						gameActive = false;
-						System.out.println("Jeu terminé");
+						if (Objectifs.allObjectifsComplets()) {
+							System.out.println("Vous êtes sorti de la maison");
+							gameActive = false;
+							System.out.println("Jeu terminé");
+						} else {
+							System.out.println("Vous n'avez pas rempli tous les objectifs.");
+						}
 					} else
 						System.out.println("Vous ne pouvez pas sortir habillé comme ça...");
 				} else
@@ -428,8 +439,6 @@ public class Main {
 				break;
 			}
 
-			if (Objectifs.allObjectifsComplets())
-				gameActive = false;
 		}
 
 	}

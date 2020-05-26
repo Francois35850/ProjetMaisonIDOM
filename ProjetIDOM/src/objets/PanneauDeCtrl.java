@@ -30,6 +30,7 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 				p.setLum(!p.getLum());
 				if (p.getLum()) {
 					System.out.println("Vous allumez la lumière de la piscine");
+					main.Main.PPsucces4 = true;
 				}
 				else System.out.println("Vous eteignez la lumière de la piscine");
 				break;
@@ -38,6 +39,7 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 					System.out.println("La piscine est déjà ouverte");
 				}
 				else System.out.println("Vous ouvrez la piscine");
+				main.Main.PPsucces2 = true;
 				p.setOuverture(true);
 				break;
 			case "ALARME":
@@ -46,6 +48,7 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 					System.out.println("Vous activez l'alarme de la piscine");
 				}
 				else System.out.println("Vous désactivez l'alarme de la piscine");
+				main.Main.PPsucces3 = true;
 				break;
 			case "RETOUR":
 				this.setUtilisation(false);
