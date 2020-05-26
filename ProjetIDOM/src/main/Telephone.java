@@ -14,6 +14,7 @@ public class Telephone {
 
 	// telephone pour les fonctions
 	private static ITelephone iphone;
+	private static Enceinte enceinte_telephone;
 
 	/**
 	 * Fonction principale tÃ©lÃ©phone
@@ -116,18 +117,6 @@ public class Telephone {
 				enceinte_telephone.utiliserObjet();
 				break;
 
-			case "course": // commande pour ouvrir l'application course
-				System.out.println("Bientot l'heure de manger ?");
-				System.out.println("1 - Aller faire ses courses tout seul");
-				System.out.println("2 - Commander et aller retirer ses courses au drive");
-				System.out.println("3 - Se faire livrer ses courses");
-				System.out.println("4 - Regarder ses points de fidÃ©litÃ©");
-				System.out.println("5 - Quitter l'application");
-				System.out.println("6 - Quitter le tÃ©lÃ©phone");
-				int choix_course = input.nextInt();
-				Course(choix_course);
-				break;
-
 			case "homekit": // commande pour affiche l'application de la maison connectÃ©e
 				System.out.println("Faire son choix :");
 				System.out.println("1 - Scénarios");
@@ -156,7 +145,6 @@ public class Telephone {
 				System.out.println("   - connexion : affiche les options de connexion");
 				System.out.println("   - musique : ouvrir l'application musique");
 				System.out.println("   - messages : ouvrir l'application message");
-				System.out.println("   - course : ouvrir l'application d'IntermarchÃ©");
 				System.out.println("   - quitter : revenir en arriere ou quitter ");
 				System.out.println("   - homekit : affiche l'application de votre maison connectÃ©e ");
 				System.out.println("   - credits : voir les crÃ©dits");
@@ -206,14 +194,48 @@ public class Telephone {
 	// Application Homekit
 	public static void Homekit(int choix) {
 		if (choix == 1) {
-			System.out.println("Liste des actions possibles :"\n + "nuit"\n + "depart"\n + "salle cinema"\n);
+			System.out.println("Liste des actions possibles :"\n + "nuit\n depart\n" + "salle cinema"\n);
 			String entree = input.nextLine();
 			switch (entree) {
 			case "nuit" : 
+				interrupteurGarage.setLumiere(false);
+				interrupteurSalon.setLumiere(false);
+				interrupteurCuisine.setLumiere(false);
+				interrupteurSaM.setLumiere(false);
+				interrupteurBuanderie.setLumiere(false);
+				interrupteurEntree.setLumiere(false);
+				interrupteurChambre1.setLumiere(false);
+				interrupteurChambre2.setLumiere(false);
+				interrupteurChambreP.setLumiere(false);
+				interrupteurSdB1.setLumiere(false);
+				interrupteurSdB2.setLumiere(false);
+				interrupteurBureau.setLumiere(false);
+				interrupteurSdJ.setLumiere(false);
+				interrupteurCouloir.setLumiere(false);
+				interrupteurGrenier.setLumiere(false);
+				interrupteurStudio.setLumiere(false);
+				interrupteurDressing.setLumiere(false);
+				interrupteurToilettes.setLumiere(false);
+				volet_bureau.setEtat(false);
+				volet_salon1.setEtat(false);
+				volet_salon2.setEtat(false);
+				volet_ch1.setEtat(false);
+				volet_ch2.setEtat(false);
+				volet_chp.setEtat(false);
+				volet_studio.setEtat(false);
+				volet_sallejeux.setEtat(false);
+				volet_cuisine.setEtat(false);
+				volet_sallemanger.setEtat(false);
+				System.out.println("Vous vous trouvez dans le noir complet, Bonne nuit");
+				break;
 			
 			case "depart": 
 				
+				break;
+				
 			case "salle cinema":
+				
+				break;
 			}
 		}
 		if (choix == 2) {
@@ -252,7 +274,25 @@ public class Telephone {
 			System.out.println(detecteur_ouverture_sallemanger.toString());	
 		}
 		if (choix == 4) {
-			System.out.println(
+			System.out.println("Etat des lumières :");
+			System.out.println(interrupteurGarage.toString());
+			System.out.println(interrupteurCuisine.toString());
+			System.out.println(interrupteurSalon.toString());
+			System.out.println(interrupteurSaM.toString());
+			System.out.println(interrupteurBuanderie.toString());
+			System.out.println(interrupteurEntree.toString());
+			System.out.println(interrupteurChambre1.toString());
+			System.out.println(interrupteurChambre2.toString());
+			System.out.println(interrupteurChambreP.toString());
+			System.out.println(interrupteurSdB1.toString());
+			System.out.println(interrupteurSdB2.toString());
+			System.out.println(interrupteurBureau.toString());
+			System.out.println(interrupteurSdJ.toString());
+			System.out.println(interrupteurCouloir.toString());
+			System.out.println(interrupteurGrenier.toString());
+		    System.out.println(interrupteurStudio.toString());
+			System.out.println(interrupteurDressing.toString());
+			System.out.println(interrupteurToilettes.toString());
 		}
 		if (choix == 5) {
 			System.out.println(camera_entree.toString());
@@ -298,22 +338,5 @@ public class Telephone {
 		return null;
 	}
 
-	// Application course
-	public static void Course(int choix) {
-		if (choix == 1) {
-			System.out.println("Besoin d'aide ?");
-		}
-		if (choix == 2) {
-		}
-		if (choix == 3) {
-		}
-		if (choix == 4) {
-		}
-		if (choix == 5) {
-		} // break, on retourne au menu principal du tÃ©lÃ©phone
-		if (choix == 6) {
-			telActive = false;
-		}
-	}
 
 }
