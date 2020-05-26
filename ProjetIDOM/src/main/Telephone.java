@@ -1,6 +1,9 @@
 package main;
 
 import main.Main;
+import objets.DetecteurMouvement;
+import objets.DetecteurOuverture
+import objets.Camera;
 import objets.Volet;
 import java.util.Scanner;
 
@@ -127,11 +130,11 @@ public class Telephone {
 				
 				
 				
-				System.out.println("11 - Quitter l'application");
-				System.out.println("12 - Quitter le tÃ©lÃ©phone");
+				System.out.println("6 - Quitter l'application");
+				System.out.println("7 - Quitter le tÃ©lÃ©phone");
 				
-				System.out.println("7 - CVC");
-				System.out.println("4 - Jardin");
+				//System.out.println("7 - CVC");
+				//System.out.println("4 - Jardin");
 				System.out.println("9 - Home cinéma");
 				System.out.println("10 - Sam le chien");
 				
@@ -154,11 +157,10 @@ public class Telephone {
 			
 			case "messages": // commande pour ouvrir l'application message
 				System.out.println("Envie de contacter quelqu'un");
-				System.out.println("1 - Passer un appel");
+				System.out.println("1 - Regarder ses messages");
 				System.out.println("2 - Faire un coronapéro");
-				System.out.println("3 - Envoyer un message");
-				System.out.println("4 - Quitter l'application");
-				System.out.println("5 - Quitter le tÃ©lÃ©phone");
+				System.out.println("3 - Quitter l'application");
+				System.out.println("4 - Quitter le tÃ©lÃ©phone");
 				int choix_message = input.nextInt();
 				Messages(choix_message, iphone);
 				break;
@@ -182,11 +184,32 @@ public class Telephone {
 	// Application messages
 	public static void Messages(int choix, ITelephone iphone) {
 		if (choix == 1) {
+			System.out.println("Choisissez le message souhaité :");
+			System.out.println(" Boulot - 26/05/2020 - La mission de cet...");
+			System.out.println(" Régine - 24/05/2020 - ");
+			System.out.println(" David - 21/05/2020 - Salut papa, �a se...");
+			System.out.println(" Ma petite femme - 20/05/2020 - Il faudrait aller...");
+			String entree2 = input.nextLine();
+			switch (entree2.toUpperCase()) {
+			case "BOULOT" :
+				System.out.println("Boulot - 26/05/2020 - 13h12 :\n La mission de cet aprem se fera � . La bas il y a déja la cliente qui d'attend vers 14h30.");
+				break;
+			case "REGINE" :
+				System.out.println("Régine - 24/05/2020 - :/n ");
+				break;	
+			case "DAVID" :
+				System.out.println("David - 21/05/2020 - 15h34 :\n Salut papa, �a serait possible d'aller chez Anthony ce soir apres les cours stp ?");
+				break;
+			case "MA PETITE FEMME" :
+				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
+				break;
+			}
 		}
-		
-		if (choix == 4) {
+		if (choix == 2) {
+		}
+		if (choix == 3) {
 		} // break, on retourne au menu principal du tÃ©lÃ©phone
-		if (choix == 5) {
+		if (choix == 4) {
 			telActive = false;
 		}
 	}
@@ -195,8 +218,8 @@ public class Telephone {
 	public static void Homekit(int choix) {
 		if (choix == 1) {
 			System.out.println("Liste des actions possibles :"\n + "nuit\n depart\n" + "salle cinema"\n);
-			String entree = input.nextLine();
-			switch (entree) {
+			String entree1 = input.nextLine();
+			switch (entree1) {
 			case "nuit" : 
 				interrupteurGarage.setLumiere(false);
 				interrupteurSalon.setLumiere(false);
@@ -231,10 +254,11 @@ public class Telephone {
 			
 			case "depart": 
 				
+				System.out.println("L'alarme est active, vous pouvez partir en toute sérénité");
 				break;
 				
 			case "salle cinema":
-				
+				System.out.println("La salle de jeux est maintenant prete, votre film vous attend déja");
 				break;
 			}
 		}
@@ -300,18 +324,8 @@ public class Telephone {
 			System.out.println(camera_devant_maison.toString());
 		}
 		if (choix == 6) {
-		}
-		if (choix == 7) {
-		}
-		if (choix == 8) {
-		}
-		if (choix == 9) {
-		}
-		if (choix == 10) {
-		}
-		if (choix == 11) {
 		} // break, on retourne au menu principal du tÃ©lÃ©phone
-		if (choix == 12) {
+		if (choix == 7) {
 			telActive = false;
 		}
 	}
