@@ -267,10 +267,10 @@ public class Main {
 		Objets[] objGarage = { interrupteurGarage };
 		Objets[] objCuisine = { interrupteurCuisine, frigo, liquideVaisselle, fenetre_cuisine, volet_cuisine };
 		Objets[] objBuanderie = { interrupteurBuanderie, laveLinge, pastilleLaveLinge };
-		Objets[] objSalleAManger = { interrupteurSaM, fenetre_sallemanger, volet_sallemanger, commode_SaM};
+		Objets[] objSalleAManger = { interrupteurSaM, fenetre_sallemanger, volet_sallemanger, commode_SaM };
 		Objets[] objSalon = { interrupteurSalon, enceinteSalon, canapeSalon, televisionSalon, telecommandeSalon,
 				fenetre_salon1, fenetre_salon2, volet_salon1, volet_salon2 };
-		Objets[] objEntree = { interrupteurEntree,commode_entree};
+		Objets[] objEntree = { interrupteurEntree, commode_entree };
 		Objets[] objChambre1 = { interrupteurChambre1, fenetre_ch1, volet_ch1, lingeD };
 		Objets[] objChambre2 = { interrupteurChambre2, fenetre_ch2, volet_ch2, lingeR };
 		Objets[] objSdB1 = { interrupteurSdB1, douche_sdb1 };
@@ -453,7 +453,8 @@ public class Main {
 				if (Joueur.getPieceCourante().getNom().compareToIgnoreCase("entree") == 0) {
 					if (Joueur.getEtatVetements() == 1) {
 						if (Objectifs.allObjectifsComplets()) {
-							System.out.println("Vous avez accompli tout ce que vous aviez à faire avant de sortir \nEt vous êtes à l'heure !\nVous sortez de la maison\nAprès seulement quelques pas dehors, vous recevez un message indiquant : 'Le confinement vient d'être déclaré, il est nécessaire de rester chez soi'\nVous n'aviez pas tellement envie d'aller à ce rendez-vous de toute manière ...\nVous franchissez la porte d'entrée dans l'autre sens");
+							System.out.println(
+									"Vous avez accompli tout ce que vous aviez à faire avant de sortir \nEt vous êtes à l'heure !\nVous sortez de la maison\nAprès seulement quelques pas dehors, vous recevez un message indiquant : 'Le confinement vient d'être déclaré, il est nécessaire de rester chez soi'\nVous n'aviez pas tellement envie d'aller à ce rendez-vous de toute manière ...\nVous franchissez la porte d'entrée dans l'autre sens");
 							gameActive = false;
 							System.out.println("Jeu terminé");
 						} else {
