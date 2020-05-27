@@ -1,14 +1,11 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.ListIterator;
-
 public class Objectif {
 
 	private String nom;
 	private boolean succes, displayed;
 	private String[] details;
-	
+
 	public Objectif(String nom, boolean succes, String[] details) {
 		this.nom = nom;
 		this.succes = succes;
@@ -39,13 +36,13 @@ public class Objectif {
 			System.out.println("Vous avez rempli l'objectif : " + this.toString() + " !");
 		this.displayed = true;
 	}
-	
+
 	public void printlnDetails() {
 		if (this.details != null && !this.estRempli()) {
-		System.out.println("     Détails de l'objectif :");
-		for (String s : this.details) {
-			System.out.println("       • " + s);
-		}
+			System.out.println("     Détails de l'objectif :");
+			for (String s : this.details) {
+				System.out.println("       • " + s);
+			}
 		}
 	}
 
