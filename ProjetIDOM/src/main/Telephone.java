@@ -182,7 +182,7 @@ public class Telephone {
 	}
 
 	// Application messages
-	public static void Messages(int choix, ITelephone iphone) {
+	public static void Messages(int choix) {
 		if (choix == 1) {
 			System.out.println("Choisissez le message souhaité :");
 			System.out.println(" Boulot - 26/05/2020 - La mission de cet...");
