@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import main.Joueur;
 import main.Main;
+import main.Objectifs;
 import main.ObjetNonRamassable;
 import main.Piece;
 
