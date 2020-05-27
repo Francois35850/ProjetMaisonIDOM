@@ -13,7 +13,7 @@ public class Volet extends ObjetNonRamassable {
 	// Constructeur
 	public Volet(String nom,Piece piece, boolean etat_volet) {
 		super(nom, piece);
-		this.etat_volet = etat_volet;
+		this.etat_volet = etat_volet; //true = ouvert
 	}
 
 	public String etat() {
@@ -67,7 +67,7 @@ public class Volet extends ObjetNonRamassable {
 		return res;
 	}
 
-	public boolean getEtat(Volet volet) {
+	public boolean getEtat() {
 		return this.etat_volet;
 	}
 

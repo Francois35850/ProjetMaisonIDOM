@@ -42,5 +42,8 @@ public final class Interrupteur extends ObjetNonRamassable {
 	public void setLumiere(boolean lum) {
 		allume = lum;
 	}
+	public boolean getLumiere() {
+		return allume;
+	}
 
 }

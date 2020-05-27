@@ -1,6 +1,9 @@
 package main;
 import java.util.*;
 
+import objets.Interrupteur;
+import objets.Volet;
+
 public class Piece {
 	private String nom;
 	private Boolean estAuRezDeC;
@@ -78,5 +81,21 @@ public class Piece {
 	public boolean estAuRdc() {
 		return estAuRezDeC;
 		
+	}
+	
+	public boolean estEclaire() {
+		ListIterator<Objets> itObjet = listeObjets.listIterator();
+		boolean interrupt = false;
+		boolean volet = false;
+		while (itObjet.hasNext() && !interrupt && !volet) {
+			Objets nxt = itObjet.next();
+			if (nxt instanceof Interrupteur && !interrupt) {
+				interrupt = ((Interrupteur) nxt).getLumiere();
+			}
+			if (nxt instanceof Volet && !volet) {
+				volet = ((Volet) nxt).getEtat();
+			}
+		}
+		return interrupt&&volet;
 	}
 }
