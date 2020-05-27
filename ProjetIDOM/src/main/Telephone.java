@@ -318,6 +318,7 @@ public class Telephone {
 		    System.out.println(interrupteurStudio.toString());
 			System.out.println(interrupteurDressing.toString());
 			System.out.println(interrupteurToilettes.toString());
+			System.out.println("Voulez vous modifier les tats ?\n);
 		}
 		if (choix == 5) {
 			System.out.println(camera_entree.toString());
