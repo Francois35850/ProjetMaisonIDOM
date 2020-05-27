@@ -2,9 +2,10 @@ package main;
 
 import main.Main;
 import objets.DetecteurMouvement;
-import objets.DetecteurOuverture
+import objets.DetecteurOuverture;
 import objets.Camera;
 import objets.Volet;
+import objets.Enceinte;
 import java.util.Scanner;
 
 public class Telephone {
@@ -162,7 +163,7 @@ public class Telephone {
 				System.out.println("3 - Quitter l'application");
 				System.out.println("4 - Quitter le tÃ©lÃ©phone");
 				int choix_message = input.nextInt();
-				Messages(choix_message, iphone);
+				Messages(choix_message);
 				break;
 
 			case "credits": // commande pour ouvrir les credits
@@ -195,7 +196,7 @@ public class Telephone {
 				System.out.println("Boulot - 26/05/2020 - 13h12 :\n La mission de cet aprem se fera � . La bas il y a déja la cliente qui d'attend vers 14h30.");
 				break;
 			case "REGINE" :
-				System.out.println("Régine - 24/05/2020 - :/n ");
+				System.out.println("Régine - 24/05/2020 - 3h02 :/n Tuu peux vnir me chetcher ? jme sen pas bizen");
 				break;	
 			case "DAVID" :
 				System.out.println("David - 21/05/2020 - 15h34 :\n Salut papa, �a serait possible d'aller chez Anthony ce soir apres les cours stp ?");
@@ -217,7 +218,7 @@ public class Telephone {
 	// Application Homekit
 	public static void Homekit(int choix) {
 		if (choix == 1) {
-			System.out.println("Liste des actions possibles :"\n + "nuit\n depart\n" + "salle cinema"\n);
+			System.out.println("Liste des actions possibles :\n" + "nuit\n depart\n salle cinema\n");
 			String entree1 = input.nextLine();
 			switch (entree1) {
 			case "nuit" : 
@@ -317,6 +318,7 @@ public class Telephone {
 		    System.out.println(interrupteurStudio.toString());
 			System.out.println(interrupteurDressing.toString());
 			System.out.println(interrupteurToilettes.toString());
+			System.out.println("Voulez vous modifier les tats ?\n);
 		}
 		if (choix == 5) {
 			System.out.println(camera_entree.toString());
