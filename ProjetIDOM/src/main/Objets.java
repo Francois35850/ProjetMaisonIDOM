@@ -13,4 +13,8 @@ public abstract class Objets {
 	public String getNom() {
 		return this.nom;
 	}
+	
+	public void setNom(String newNom) {
+		this.nom = newNom;
+	}
 }

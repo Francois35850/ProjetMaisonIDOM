@@ -18,10 +18,13 @@ public class Instrument extends ObjetNonRamassable {
 
 	@Override
 	public String etat() {
-		if(!corde) return "\n";
+		if (!corde)
+			return "\n";
 		else {
-			if(accorde) return " : accordé\n";
-			else return " : accordé\n";
+			if (accorde)
+				return " : accordé\n";
+			else
+				return " : accordé\n";
 		}
 	}
 
@@ -37,16 +40,26 @@ public class Instrument extends ObjetNonRamassable {
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "JOUER":
-				if (this.getNom().compareToIgnoreCase("Guitare") == 0)
-					System.out.println("Vous jouez comme un dieu !");
-				else
-					System.out.println("Il n'est jamais trop tard pour prendre des cours...");
-				Main.ajoutTemps(15);
+				if (corde && accorde || !corde) {
+					if (this.getNom().compareToIgnoreCase("Guitare") == 0)
+						System.out.println("Vous jouez comme un dieu !");
+					else
+						System.out.println("Il n'est jamais trop tard pour prendre des cours...");
+					Main.ajoutTemps(15);
+				}
+				else {
+					System.out.println("Vous commencez à jouer mais vous rendez rapidement compte que cet instrument n'est pas accordé !");
+					Main.ajoutTemps(2);
+				}
 				break;
 			case "ACCORDER":
-				if (corde&&accorde) System.out.println("Cet instrument est déjà accordé");
-				else if(corde&&!accorde) {System.out.println("Vous accordez cet instrument"); Main.ajoutTemps(5);}
-				else System.out.println("Cet instrument n'est pas accordable");
+				if (corde && accorde)
+					System.out.println("Cet instrument est déjà accordé");
+				else if (corde && !accorde) {
+					System.out.println("Vous accordez cet instrument");
+					Main.ajoutTemps(5);
+				} else
+					System.out.println("Cet instrument n'est pas accordable");
 				break;
 			case "S'ENREGISTRER":
 				System.out.println("Vous enregistrez quelques notes mais sans grande conviction...");

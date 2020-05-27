@@ -5,12 +5,15 @@ import java.util.Scanner;
 
 import objets.DetecteurMouvement;
 import objets.DetecteurOuverture;
+import objets.Douche;
 import objets.Armoire;
 import objets.Camera;
 import objets.Canape;
+import objets.Commode;
 import objets.Enceinte;
 import objets.Fenetre;
 import objets.Frigo;
+import objets.Instrument;
 import objets.Interrupteur;
 import objets.LaveLinge;
 import objets.PanneauDeCtrl;
@@ -61,32 +64,33 @@ public class Main {
 	private static Piece devant_maison = new Piece("Exterieur maison", true);
 
 	// Ajout des objets
-	private static Objets enceinteSalon = new Enceinte("Enceinte", salon, false);
-	private static Objets frigo = new Frigo("Frigo", cuisine, false);
-	private static Objets canapeSalon = new Canape("Canapé", salon, false, true);
-	private static Objets canapeSdJ = new Canape("Canapé", salle_de_jeux, false, false);
-	private static Objets televisionSalon = new Television("TV", salon);
-	private static Objets televisionSalleDeJeux = new Television("TV", salle_de_jeux);
-	private static Objets telecommandeSalon = new Telecommande("Télécommande", salon, false, true, 0, 0);
-	private static Objets telecommandeSalleDeJeux = new Telecommande("Télécommande", salle_de_jeux, false, true, 4, 2);
-	private static Objets interrupteurGarage = new Interrupteur("Interrupteur", garage, false);
-	private static Objets interrupteurCuisine = new Interrupteur("Interrupteur", cuisine, false);
-	private static Objets interrupteurSalon = new Interrupteur("Interrupteur", salon, false);
-	private static Objets interrupteurSaM = new Interrupteur("Interrupteur", salle_a_manger, false);
-	private static Objets interrupteurBuanderie = new Interrupteur("Interrupteur", buanderie, false);
-	private static Objets interrupteurEntree = new Interrupteur("Interrupteur", entree, false);
-	private static Objets interrupteurChambre1 = new Interrupteur("Interrupteur", chambre1, false);
-	private static Objets interrupteurChambre2 = new Interrupteur("Interrupteur", chambre2, false);
-	private static Objets interrupteurChambreP = new Interrupteur("Interrupteur", chambre_parentale, false);
-	private static Objets interrupteurSdB1 = new Interrupteur("Interrupteur", sdb1, false);
-	private static Objets interrupteurSdB2 = new Interrupteur("Interrupteur", sdb2, false);
-	private static Objets interrupteurBureau = new Interrupteur("Interrupteur", bureau, false);
-	private static Objets interrupteurSdJ = new Interrupteur("Interrupteur", salle_de_jeux, false);
-	private static Objets interrupteurCouloir = new Interrupteur("Interrupteur", couloir, false);
-	private static Objets interrupteurGrenier = new Interrupteur("Interrupteur", grenier, false);
-	private static Objets interrupteurStudio = new Interrupteur("Interrupteur", studio, false);
-	private static Objets interrupteurDressing = new Interrupteur("Interrupteur", dressing, false);
-	private static Objets interrupteurToilettes = new Interrupteur("Interrupteur", toilettes, false);
+	private static Enceinte enceinteSalon = new Enceinte("Enceinte", salon, false);
+	private static Frigo frigo = new Frigo("Frigo", cuisine, false);
+	private static Canape canapeSalon = new Canape("Canapé", salon, false, true);
+	private static Canape canapeSdJ = new Canape("Canapé", salle_de_jeux, false, false);
+	private static Television televisionSalon = new Television("TV", salon);
+	private static Television televisionSalleDeJeux = new Television("TV", salle_de_jeux);
+	private static Telecommande telecommandeSalon = new Telecommande("Télécommande", salon, false, true, 0, 0);
+	private static Telecommande telecommandeSalleDeJeux = new Telecommande("Télécommande", salle_de_jeux, false, true,
+			4, 2);
+	private static Interrupteur interrupteurGarage = new Interrupteur("Interrupteur", garage, false);
+	private static Interrupteur interrupteurCuisine = new Interrupteur("Interrupteur", cuisine, false);
+	private static Interrupteur interrupteurSalon = new Interrupteur("Interrupteur", salon, false);
+	private static Interrupteur interrupteurSaM = new Interrupteur("Interrupteur", salle_a_manger, false);
+	private static Interrupteur interrupteurBuanderie = new Interrupteur("Interrupteur", buanderie, false);
+	private static Interrupteur interrupteurEntree = new Interrupteur("Interrupteur", entree, false);
+	private static Interrupteur interrupteurChambre1 = new Interrupteur("Interrupteur", chambre1, false);
+	private static Interrupteur interrupteurChambre2 = new Interrupteur("Interrupteur", chambre2, false);
+	private static Interrupteur interrupteurChambreP = new Interrupteur("Interrupteur", chambre_parentale, false);
+	private static Interrupteur interrupteurSdB1 = new Interrupteur("Interrupteur", sdb1, false);
+	private static Interrupteur interrupteurSdB2 = new Interrupteur("Interrupteur", sdb2, false);
+	private static Interrupteur interrupteurBureau = new Interrupteur("Interrupteur", bureau, false);
+	private static Interrupteur interrupteurSdJ = new Interrupteur("Interrupteur", salle_de_jeux, false);
+	private static Interrupteur interrupteurCouloir = new Interrupteur("Interrupteur", couloir, false);
+	private static Interrupteur interrupteurGrenier = new Interrupteur("Interrupteur", grenier, false);
+	private static Interrupteur interrupteurStudio = new Interrupteur("Interrupteur", studio, false);
+	private static Interrupteur interrupteurDressing = new Interrupteur("Interrupteur", dressing, false);
+	private static Interrupteur interrupteurToilettes = new Interrupteur("Interrupteur", toilettes, false);
 	private static Piscine piscine = new Piscine("Piscine", jardin);
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
@@ -117,6 +121,17 @@ public class Main {
 	private static Linge lingeR = new Linge("Linge sale de Régine", false, chambre2.getNom());
 	private static Linge lingeP = new Linge("Linge sale des parents", false, chambre_parentale.getNom());
 	private static LaveLinge laveLinge = new LaveLinge("Lave linge", buanderie);
+	private static Douche douche_sdb1 = new Douche("Douche", sdb1);
+	private static Douche douche_sdb2 = new Douche("Douche", sdb2);
+	private static Instrument piano = new Instrument("Piano", studio, false, true);
+	private static Instrument guitare = new Instrument("Guitare", studio, true, false);
+	private static Instrument basse = new Instrument("Basse", studio, true, true);
+	private static Instrument batterie = new Instrument("Batterie", studio, false, true);
+	private static Instrument violon = new Instrument("Violon", studio, true, false);
+	private static Commode commode_entree = new Commode("Commode", entree);
+	private static Commode commode_SaM = new Commode("Commode", salle_a_manger);
+
+	// Création des détecteurs
 	private static DetecteurMouvement detecteur_mouvement_entree = new DetecteurMouvement("Détecteur mouvement entree",
 			entree, false);
 	private static DetecteurMouvement detecteur_mouvement_bureau = new DetecteurMouvement("Détecteur mouvement bureau",
@@ -174,17 +189,17 @@ public class Main {
 	// private static DetecteurIncendie(tecteur incendie,);
 	// private static DetecteurIncendie(tecteur incendie,);
 
-	// Init boolean succes
+	// Initialisation boolean succes
 	public static boolean PPsucces1 = false, PPsucces2 = false, PPsucces3 = false, PPsucces4 = false, PPsucces6 = false,
 			PPsucces7 = false;
 	public static boolean LPsucces1 = false, LPsucces2 = false, LPsucces3 = false;
 
 	// String de l'affichage de l'heure
-	public static String affichageHeure() {
-		if (minute < 10)
-			return heure + "h0" + minute;
+	public static String affichageHeure(int heu, int min) {
+		if (min < 10)
+			return heu + "h0" + min;
 		else
-			return heure + "h" + minute;
+			return heu + "h" + min;
 	}
 
 	// ajouter du temps (en minute)
@@ -252,20 +267,21 @@ public class Main {
 		Objets[] objGarage = { interrupteurGarage };
 		Objets[] objCuisine = { interrupteurCuisine, frigo, liquideVaisselle, fenetre_cuisine, volet_cuisine };
 		Objets[] objBuanderie = { interrupteurBuanderie, laveLinge, pastilleLaveLinge };
-		Objets[] objSalleAManger = { interrupteurSaM, fenetre_sallemanger, volet_sallemanger };
+		Objets[] objSalleAManger = { interrupteurSaM, fenetre_sallemanger, volet_sallemanger, commode_SaM};
 		Objets[] objSalon = { interrupteurSalon, enceinteSalon, canapeSalon, televisionSalon, telecommandeSalon,
 				fenetre_salon1, fenetre_salon2, volet_salon1, volet_salon2 };
-		Objets[] objEntree = { interrupteurEntree };
+		Objets[] objEntree = { interrupteurEntree,commode_entree};
 		Objets[] objChambre1 = { interrupteurChambre1, fenetre_ch1, volet_ch1, lingeD };
 		Objets[] objChambre2 = { interrupteurChambre2, fenetre_ch2, volet_ch2, lingeR };
-		Objets[] objSdB1 = { interrupteurSdB1 };
+		Objets[] objSdB1 = { interrupteurSdB1, douche_sdb1 };
 		Objets[] objBureau = { interrupteurBureau, fenetre_bureau, volet_bureau };
 		Objets[] objCouloir = { interrupteurCouloir };
-		Objets[] objSdB2 = { interrupteurSdB2 };
+		Objets[] objSdB2 = { interrupteurSdB2, douche_sdb2 };
 		Objets[] objSalleDeJeux = { interrupteurSdJ, televisionSalleDeJeux, telecommandeSalleDeJeux, canapeSdJ,
 				fenetre_sallejeux, volet_sallejeux };
 		Objets[] objChambreParentale = { interrupteurChambreP, fenetre_chp, volet_chp, lingeP };
-		Objets[] objStudio = { interrupteurStudio, fenetre_studio, volet_studio };
+		Objets[] objStudio = { interrupteurStudio, fenetre_studio, volet_studio, guitare, piano, violon, batterie,
+				basse };
 		Objets[] objToilettes = { interrupteurToilettes };
 		Objets[] objGrenier = { interrupteurGrenier, AnimauxGonflables };
 		Objets[] objDressing = { interrupteurDressing, armoireDressing };
@@ -333,12 +349,15 @@ public class Main {
 
 		// Message de lancement du jeu
 		System.out.println("Bonjour !");
-		System.out.println("Vous venez de vous réveiller, il est déjà " + affichageHeure() + "...");
+		System.out.println("Vous venez de vous réveiller, il est déjà " + affichageHeure(heure, minute) + "...");
 		System.out.println(
-				"Il va falloir se dépêcher, vous avez un rendez-vous à 18h30 et il vous faut partir de chez vous avant 18h15.");
+				"Il va falloir se dépêcher, vous avez un rendez-vous et il vous faut partir de chez vous avant "
+						+ affichageHeure(endHeure, endMinute));
 		System.out.println(
 				"Mais vous avez encore beaucoup à faire avant de sortir ! Voici la liste des tâches que vous devez accomplir :");
 		System.out.println();
+		System.out.println("Voici la liste des objectifs :");
+		Objectifs.listObjectifs();
 		System.out.println(Joueur.getPieceCourante().toString());
 		System.out.println(" ");
 
@@ -427,7 +446,8 @@ public class Main {
 				}
 				break;
 			case "HEURE":
-				System.out.println("Il est " + affichageHeure() + ", Vous devez sortir de la maison avant 18h15");
+				System.out.println("Il est " + affichageHeure(heure, minute) + ", Vous devez sortir de la maison avant "
+						+ affichageHeure(endHeure, endMinute));
 				break;
 			case "SORTIR": // commande pour sortir de la maison depuis l'entrée
 				if (Joueur.getPieceCourante().getNom().compareToIgnoreCase("entree") == 0) {
