@@ -96,6 +96,6 @@ public class Piece {
 				volet = ((Volet) nxt).getEtat();
 			}
 		}
-		return interrupt&&volet;
+		return interrupt||volet;
 	}
 }

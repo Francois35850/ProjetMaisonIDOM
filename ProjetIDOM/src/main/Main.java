@@ -438,9 +438,12 @@ public class Main {
 					}
 					Objets cherche = Joueur.StringtoObjet(resObjet);
 					if (cherche != null && cherche instanceof ObjetRamassable) {
+						if (Joueur.getPieceCourante().estEclaire()) {
 						ajoutTemps(1);
 						Joueur.addInventaire((ObjetRamassable) cherche);
 						Joueur.getPieceCourante().soustractObjets(cherche);
+						}
+						else System.out.println("Vous savez que l'objet est dans cette pièce mais vous ne le voyez pas, il fait trop sombre ...");
 					} else
 						System.out.println("Cet objet n'est pas disponible ... \n");
 				}
