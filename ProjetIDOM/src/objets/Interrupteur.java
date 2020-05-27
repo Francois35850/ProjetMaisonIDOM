@@ -7,12 +7,10 @@ import main.ObjetNonRamassable;
 public final class Interrupteur extends ObjetNonRamassable {
 
 	private boolean allume;
-	private Piece piece;
 	
-	public Interrupteur(String nom, boolean allume, Piece piece) {
-		super(nom);
+	public Interrupteur(String nom,Piece piece, boolean allume) {
+		super(nom,piece);
 		this.allume = allume;
-		this.piece = piece;
 	}
 
 	@Override

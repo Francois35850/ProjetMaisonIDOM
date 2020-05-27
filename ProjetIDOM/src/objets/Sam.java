@@ -1,11 +1,12 @@
 package objets;
 
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public final class Sam extends ObjetNonRamassable {
 
-	public Sam(String nom) {
-		super(nom);
+	public Sam(String nom,Piece piece) {
+		super(nom,piece);
 		// TODO Auto-generated constructor stub
 	}
 

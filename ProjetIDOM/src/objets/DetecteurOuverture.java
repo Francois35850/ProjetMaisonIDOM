@@ -1,6 +1,7 @@
 package objets;
 
 import main.ObjetNonRamassable;
+import main.Piece;
 import objets.Fenetre;
 
 public class DetecteurOuverture extends ObjetNonRamassable {
@@ -8,8 +9,8 @@ public class DetecteurOuverture extends ObjetNonRamassable {
 	private boolean ouverture;
 	private Fenetre fenetre;
 
-	public DetecteurOuverture(String nom, boolean ouverture, Fenetre fenetre) {
-		super(nom);
+	public DetecteurOuverture(String nom,Piece piece, boolean ouverture, Fenetre fenetre) {
+		super(nom,piece);
 		this.ouverture = ouverture;
 		this.fenetre = fenetre;
 	}

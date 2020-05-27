@@ -7,6 +7,7 @@ import java.util.Scanner;
 import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
+import main.Piece;
 
 public final class Enceinte extends ObjetNonRamassable {
 
@@ -17,8 +18,8 @@ public final class Enceinte extends ObjetNonRamassable {
 			"Six Nine - Aulos", "Magic System - Zouglou Dance", "Drake - Started from the bottom" };
 	private int musiqueActive; // (de 0 à 7)
 
-	public Enceinte(String nom, boolean allumer) {
-		super(nom);
+	public Enceinte(String nom,Piece piece, boolean allumer) {
+		super(nom,piece);
 		this.allumer = allumer;
 		this.jouerMusique = false;
 		musiqueActive = 1;

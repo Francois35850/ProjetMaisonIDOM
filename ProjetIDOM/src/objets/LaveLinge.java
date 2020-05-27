@@ -25,8 +25,8 @@ public final class LaveLinge extends ObjetNonRamassable {
 	private int heureLancement;
 	private int minuteLancement;
 
-	public LaveLinge(String nom) {
-		super(nom);
+	public LaveLinge(String nom,Piece piece) {
+		super(nom,piece);
 		enMarche = false;
 		pastille = false;
 		lingeD = false;
@@ -107,10 +107,10 @@ public final class LaveLinge extends ObjetNonRamassable {
 						System.out.println("La machine est déjà en marche");
 					}
 					else {
-						if(!lingeD) System.out.println("Vous avez oublié de prendre une pastille pour le lave linge");
+						if(!pastille) System.out.println("Vous avez oublié de prendre une pastille pour le lave linge");
 						if(!lingeD) System.out.println("Pensez à prendre le linge sale de David");
-						if(!lingeD) System.out.println("Pensez à prendre le linge sale de Régine");
-						if(!lingeD) System.out.println("Pensez à prendre le linge sale des parents");
+						if(!lingeR) System.out.println("Pensez à prendre le linge sale de Régine");
+						if(!lingeP) System.out.println("Pensez à prendre le linge sale des parents");
 					}
 				}
 				break;

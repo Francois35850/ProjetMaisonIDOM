@@ -9,13 +9,14 @@ import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
 import main.Objets;
+import main.Piece;
 
 public class Television extends ObjetNonRamassable {
 
 	private List<String> chaines;
 
-	public Television(String nom) {
-		super(nom);
+	public Television(String nom, Piece piece) {
+		super(nom,piece);
 		chaines = new ArrayList<String>();
 		// ajout des chaines TV de [0 à 8]
 		chaines.add("TF1");
@@ -104,6 +105,7 @@ public class Television extends ObjetNonRamassable {
 				if (t.getChaine() == 6) {
 					System.out.println("Vous êtes sur ARTE");
 					System.out.println("Vous regardez un passionnant documentaire sur les arbres à spaghettis pendant 1 heure");
+					main.Objectifs.getObjectif("Regarder un documentaire sur la télé du salon").setSucces(true);
 					Main.ajoutTemps(60);
 				}
 				if (t.getChaine() == 7) {

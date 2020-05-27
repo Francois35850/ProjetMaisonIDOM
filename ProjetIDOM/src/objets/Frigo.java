@@ -6,6 +6,7 @@ import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
+import main.Piece;
 import objetsRamassables.Boisson;
 import objetsRamassables.Sandwich;
 
@@ -13,8 +14,8 @@ public final class Frigo extends ObjetNonRamassable {
 
 	private boolean ouvert;
 	
-	public Frigo(String nom, boolean ouvert) {
-		super(nom);
+	public Frigo(String nom, Piece piece, boolean ouvert) {
+		super(nom,piece);
 		this.ouvert = ouvert;
 	}
 
@@ -32,7 +33,7 @@ public final class Frigo extends ObjetNonRamassable {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - prendre a manger (1 min)\n  - prendre a boire(1 min)\n  - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - prendre a manger (1 min)\n  - prendre a boire (1 min)\n  - retour");
 			String input = sc.nextLine();
 			switch(input.toUpperCase()) {
 				case "OUVRIR" : 

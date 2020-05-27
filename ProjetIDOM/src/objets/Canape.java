@@ -9,6 +9,7 @@ import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
+import main.Piece;
 import objetsRamassables.Pile;
 
 public final class Canape extends ObjetNonRamassable {
@@ -16,8 +17,8 @@ public final class Canape extends ObjetNonRamassable {
 	private boolean occupe;
 	private List<ObjetRamassable> objetsARamasser;
 	
-	public Canape(String nom,boolean occupe,boolean pilesARamasser) {
-		super(nom);
+	public Canape(String nom, Piece piece, boolean occupe,boolean pilesARamasser) {
+		super(nom,piece);
 		this.occupe = occupe;
 		objetsARamasser = new ArrayList<ObjetRamassable>();
 		if(pilesARamasser) {
@@ -58,10 +59,10 @@ public final class Canape extends ObjetNonRamassable {
 			String input = sc.nextLine();
 			switch(input.toUpperCase()) {
 			case "S'ASSOIR" :
-				if(!occupe) {Main.ajoutTemps(15); System.out.println("Vous vous asseyez sur le canapé"); occupe = true;}
+				if(!occupe) {Main.ajoutTemps(15); System.out.println("Vous vous asseyez sur le canapé");}
 				break;
 			case "S'ALLONGER" :
-				if(!occupe) {Main.ajoutTemps(45); System.out.println("Vous vous allongez sur le canapé"); occupe = true;}
+				if(!occupe) {Main.ajoutTemps(45); System.out.println("Vous vous allongez sur le canapé");}
 				break;
 			case "REGARDER EN DESSOUS" :
 				Main.ajoutTemps(5);

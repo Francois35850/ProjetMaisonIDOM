@@ -7,13 +7,11 @@ public class Camera extends ObjetNonRamassable {
 
 	private String vue;
 	private int etat;
-	private Piece piece;
 
-	public Camera(String nom, String vue, int etat, Piece piece) {
-		super(nom);
+	public Camera(String nom, Piece piece, String vue, int etat) {
+		super(nom,piece);
 		this.vue = vue;
 		this.etat = etat;
-		this.piece = piece;
 	}
 
 	public String etat() {
@@ -33,7 +31,7 @@ public class Camera extends ObjetNonRamassable {
 	}
 
 	public Piece getPosition() {
-		return this.piece;
+		return super.getPiece();
 	}
 
 	@Override

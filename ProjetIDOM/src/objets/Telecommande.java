@@ -14,8 +14,8 @@ public class Telecommande extends ObjetNonRamassable {
 	private boolean sonActive;
 	private int chaineActive;
 
-	public Telecommande(String nom, boolean allumee, boolean sonActive, int chaineActive, int nombrePiles) {
-		super(nom);
+	public Telecommande(String nom,Piece piece, boolean allumee, boolean sonActive, int chaineActive, int nombrePiles) {
+		super(nom,piece);
 		this.nombrePiles = nombrePiles;
 		this.allumee = allumee;
 		this.sonActive = sonActive;
@@ -81,7 +81,6 @@ public class Telecommande extends ObjetNonRamassable {
 						System.out.println("La télévision est déjà allumée");
 					else {
 						allumee = true;
-						main.Objectifs.getObjectif("Allumer la TV du salon").setSucces(true);
 						System.out.println("Vous avez allumé la télévision");
 					}
 					break;
