@@ -453,7 +453,7 @@ public class Main {
 				if (Joueur.getPieceCourante().getNom().compareToIgnoreCase("entree") == 0) {
 					if (Joueur.getEtatVetements() == 1) {
 						if (Objectifs.allObjectifsComplets()) {
-							System.out.println("Vous êtes sorti de la maison");
+							System.out.println("Vous avez accompli tout ce que vous aviez à faire avant de sortir \nEt vous êtes à l'heure !\nVous sortez de la maison\nAprès seulement quelques pas dehors, vous recevez un message indiquant : 'Le confinement vient d'être déclaré, il est nécessaire de rester chez soi'\nVous n'aviez pas tellement envie d'aller à ce rendez-vous de toute manière ...\nVous franchissez la porte d'entrée dans l'autre sens");
 							gameActive = false;
 							System.out.println("Jeu terminé");
 						} else {
