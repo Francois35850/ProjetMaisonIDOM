@@ -204,6 +204,9 @@ public class Telephone {
 			case "MA PETITE FEMME" :
 				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
 				break;
+			default: // cas par dÃ©faut, cad commande invalide
+				System.out.println("La commande n'est pas valide");
+				break;
 			}
 		}
 		if (choix == 2) {
@@ -260,6 +263,9 @@ public class Telephone {
 				
 			case "salle cinema":
 				System.out.println("La salle de jeux est maintenant prete, votre film vous attend déja");
+				break;
+			default: // cas par dÃ©faut, cad commande invalide
+				System.out.println("La commande n'est pas valide");
 				break;
 			}
 		}
@@ -318,7 +324,80 @@ public class Telephone {
 		    System.out.println(interrupteurStudio.toString());
 			System.out.println(interrupteurDressing.toString());
 			System.out.println(interrupteurToilettes.toString());
-			System.out.println("Voulez vous modifier les tats ?\n);
+			System.out.println("Voulez vous modifier les états ?\n oui\n non\n");
+			String entree3 = input.nextLine();
+			switch (entree3) {
+			case "oui" : 
+				System.out.println("Choisissez une piece");
+				System.out.println("Liste des pieces disponibles :\n RDC :\n salon\n garage\n cuisine\n salle a manger\n buanderie\n entree\n chambre1\n chambre2\n sdb1\n bureau\n R+1 :\n chambre parentale\n sdb2\n studio\n  salle de jeux\n dressing\n toilettes\n grenier\n couloir\n");
+				String entree4 = input.nextLine();
+				switch (entree4) {
+				//RDC
+				case "salon" :
+					interrupteurSalon.setLumiere(!interrupteurSalon.getLumiere());
+					break;
+				case "garage" : 
+					interrupteurGarage.setLumiere(!interrupteurGarage.getLumiere());
+					break;
+				case "cuisine" : 
+					interrupteurCuisine.setLumiere(!interrupteurCuisine.getLumiere());
+					break;
+				case "salle a manger" : 
+					interrupteurSaM.setLumiere(!interrupteurSaM.getLumiere());
+					break;
+				case "cuisine" : 
+					interrupteurCuisine.setLumiere(!interrupteurCuisine.getLumiere());
+					break;
+				case "sdb1" : 
+					interrupteurSdB1.setLumiere(!interrupteurSdB1.getLumiere());
+					break;
+				case "buanderie" : 
+					interrupteurBuanderie.setLumiere(!interrupteurBuanderie.getLumiere());
+					break;
+				case "entree" : 
+					interrupteurEntree.setLumiere(!interrupteurEntree.getLumiere());
+					break;
+				case "chambre1" : 
+					interrupteurChambre1.setLumiere(!interrupteurChambre1.getLumiere());
+					break;
+				case "chambre2" : 
+					interrupteurChambre2.setLumiere(!interrupteurChambre2.getLumiere());
+					break;
+				//R+1	
+				case "chambre parentale" : 
+					interrupteurChambreP.setLumiere(!interrupteurChambreP.getLumiere());
+					break;
+				case "sdb2" : 
+					interrupteurSdB2.setLumiere(!interrupteurSdB2.getLumiere());
+					break;
+				case "salle de jeux" : 
+					interrupteurSdJ.setLumiere(!interrupteurSdJ.getLumiere());
+					break;
+				case "studio" : 
+					interrupteurStudio.setLumiere(!interrupteurStudio.getLumiere());
+					break;
+				case "grenier" : 
+					interrupteurGrenier.setLumiere(!interrupteurGrenier.getLumiere());
+					break;
+				case "couloir" : 
+					interrupteurCouloir.setLumiere(!interrupteurCouloir.getLumiere());
+					break;
+				case "toilettes" : 
+					interrupteurToilettes.setLumiere(!interrupteurToilettes.getLumiere());
+					break;
+				case "dressing" : 
+					interrupteurDressing.setLumiere(!interrupteurDressing.getLumiere());
+					break;
+				default: // cas par dÃ©faut, cad commande invalide
+					System.out.println("La commande n'est pas valide");
+					break;
+				}
+				
+			case "non" : 
+				break;
+			default: // cas par dÃ©faut, cad commande invalide
+				System.out.println("La commande n'est pas valide");
+				break;
 		}
 		if (choix == 5) {
 			System.out.println(camera_entree.toString());
