@@ -188,21 +188,21 @@ public class Telephone {
 			System.out.println("Choisissez le message souhaité :");
 			System.out.println(" Boulot - 26/05/2020 - La mission de cet...");
 			System.out.println(" Régine - 24/05/2020 - ");
-			System.out.println(" David - 21/05/2020 - Salut papa, �a se...");
+			System.out.println(" David - 21/05/2020 - Salut papa, �a se...");
 			System.out.println(" Ma petite femme - 20/05/2020 - Il faudrait aller...");
 			String entree2 = input.nextLine();
 			switch (entree2.toUpperCase()) {
 			case "BOULOT" :
-				System.out.println("Boulot - 26/05/2020 - 13h12 :\n La mission de cet aprem se fera � . La bas il y a déja la cliente qui d'attend vers 14h30.");
+				System.out.println("Boulot - 26/05/2020 - 13h12 :\n La mission de cet aprem se fera � . La bas il y a déja la cliente qui d'attend vers 14h30.");
 				break;
 			case "REGINE" :
 				System.out.println("Régine - 24/05/2020 - 3h02 :/n Tuu peux vnir me chetcher ? jme sen pas bizen");
 				break;	
 			case "DAVID" :
-				System.out.println("David - 21/05/2020 - 15h34 :\n Salut papa, �a serait possible d'aller chez Anthony ce soir apres les cours stp ?");
+				System.out.println("David - 21/05/2020 - 15h34 :\n Salut papa, �a serait possible d'aller chez Anthony ce soir apres les cours stp ?");
 				break;
 			case "MA PETITE FEMME" :
-				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
+				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
 				break;
 			default: // cas par dÃ©faut, cad commande invalide
 				System.out.println("La commande n'est pas valide");
