@@ -1,6 +1,5 @@
 package main;
 
-import java.util.*;
 import java.util.Scanner;
 
 import objets.DetecteurMouvement;
@@ -92,7 +91,7 @@ public class Main {
 	public static Interrupteur interrupteurStudio = new Interrupteur("Interrupteur", studio, false);
 	public static Interrupteur interrupteurDressing = new Interrupteur("Interrupteur", dressing, false);
 	public static Interrupteur interrupteurToilettes = new Interrupteur("Interrupteur", toilettes, false);
-	private static Piscine piscine = new Piscine("Piscine", jardin);
+	public static Piscine piscine = new Piscine("Piscine", jardin);
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
 	private static Objets Panodectrl = new PanneauDeCtrl("Panneau de Controle", jardin, piscine);

@@ -110,7 +110,7 @@ public class Telephone {
 				System.out.println("1 - Auto (Gère les volets en fonction de l'heure de la journée)");
 				System.out.println("2 - Etat des volets");
 				System.out.println("3 - Etat des lumières");
-				System.out.println("4 - Contrôle piscine");
+				System.out.println("4 - AquaControl");
 				System.out.println("5 - Caméra");
 				System.out.println("6 - Quitter l'application");
 				System.out.println("7 - Quitter le téléphone");
@@ -352,11 +352,55 @@ public class Telephone {
 			}
 			
 		} else if (choix.compareTo("4")==0) {
-			
+			boolean utilise = true;
+			@SuppressWarnings("resource")
+			Scanner sc = new Scanner(System.in);
+			while (utilise) {
+				System.out.println("Liste des actions possibles sur la piscine :\n - lumiere\n - ouvrir\n - alarme\n - retour");
+				String input = sc.nextLine();
+				switch (input.toUpperCase()) {
+				case "LUMIERE":
+					Main.piscine.setLum(!Main.piscine.getLum());
+					if (Main.piscine.getLum()) {
+						System.out.println("Vous allumez la lumière de la piscine");
+						main.Main.PPsucces4 = true;
+					}
+					else {
+						System.out.println("Vous eteignez la lumière de la piscine");
+						main.Main.PPsucces4 = false;
+					}
+					break;
+				case "OUVRIR":
+					if (Main.piscine.getOuverture()) {
+						System.out.println("La piscine est déjà ouverte");
+					}
+					else System.out.println("Vous ouvrez la piscine");
+					main.Main.PPsucces2 = true;
+					Main.piscine.setOuverture(true);
+					break;
+				case "ALARME":
+					Main.piscine.setSecu(!Main.piscine.getSecu());
+					if (Main.piscine.getSecu()) {
+						System.out.println("Vous activez l'alarme de la piscine");
+						main.Main.PPsucces3 = false;
+					}
+					else System.out.println("Vous désactivez l'alarme de la piscine");
+					main.Main.PPsucces3 = true;
+					break;
+				case "RETOUR":
+					utilise = false;
+					System.out.println("Vous quittez l'appli");
+					break;
+				default:
+					System.out.println("La commande n'est pas valide");
+					break;
+				}
+			}
 		} else if (choix.compareTo("5")==0) {
 			System.out.println(Main.camera_entree.toString());
 			System.out.println(Main.camera_jardin.toString());
 			System.out.println(Main.camera_devant_maison.toString());
+			System.out.println("\nVos caméras ont l'air d'être mal en point et ça fait seulement 6 mois que vous les avez mises en place ...\nVous n'auriez peut-être pas dû acheter de l'entrée de gamme");
 		} else if (choix.compareTo("6")==0) {
 		} // break, on retourne au menu principal du tÃ©lÃ©phone
 		else if (choix.compareTo("7")==0) {
