@@ -18,7 +18,7 @@ public class Camera extends ObjetNonRamassable {
 		if (this.etat == 1) {
 			res += " : caméra en fonctionnement";
 		} else {
-			res += " : caméra deffectueuse";
+			res += " : caméra défectueuse";
 		}
 		return res + "\n";
 	}

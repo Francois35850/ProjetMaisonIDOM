@@ -222,6 +222,10 @@ public class Main {
 			heure++;
 		}
 	}
+	
+	public static boolean isDay() {
+			return heure>8&&heure<21;
+	}
 
 	public static void checkTime() {
 		if (heure == endHeure && minute >= endMinute || heure > endHeure) {

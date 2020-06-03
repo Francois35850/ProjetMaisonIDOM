@@ -8,7 +8,7 @@ import main.Piece;
 public class Volet extends ObjetNonRamassable {
 
 	// Attributs
-	private boolean etat_volet;
+	private boolean etat_volet; //true = ouvert
 
 	// Constructeur
 	public Volet(String nom,Piece piece, boolean etat_volet) {
@@ -64,7 +64,7 @@ public class Volet extends ObjetNonRamassable {
 
 	public String toString() {
 		String res = "";
-		res += " - " + super.getNom() + " " + this.etat();
+		res += " - " + super.getNom() + " (" + super.getPiece().getNom() + ") " + this.etat();
 		return res;
 	}
 

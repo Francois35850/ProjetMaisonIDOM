@@ -35,7 +35,7 @@ public final class Interrupteur extends ObjetNonRamassable {
 	
 	public String toString() {
 		String res = "";
-		res += " - " + super.getNom() + " " + this.etat();
+		res += " - " + super.getNom() + "  (" + super.getPiece().getNom() + ") " + this.etat();
 		return res;
 	}
 	
