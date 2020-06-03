@@ -25,7 +25,7 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez la " + this.getNom() + ".");
 		while (this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n - lumiere\n - ouvrir\n - alarme\n - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n - lumiere\n - ouvrir (5 mins)\n - alarme\n - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "LUMIERE":
@@ -40,9 +40,11 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 				if (p.getOuverture()) {
 					System.out.println("La piscine est déjà ouverte");
 				}
-				else System.out.println("Vous ouvrez la piscine");
+				else {System.out.println("Vous ouvrez la piscine");
+				main.Main.ajoutTemps(5);
 				main.Main.PPsucces2 = true;
 				p.setOuverture(true);
+				}
 				break;
 			case "ALARME":
 				p.setSecu(!p.getSecu());
