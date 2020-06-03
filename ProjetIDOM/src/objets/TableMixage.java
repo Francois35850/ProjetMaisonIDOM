@@ -25,15 +25,15 @@ public class TableMixage extends ObjetNonRamassable {
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
 			System.out.println(
-					"Liste des actions possibles pour cet objet :\n  - faire un mixage (25 mins)\n  - écouter (4 mins)\n  - retour");
+					"Liste des actions possibles pour cet objet :\n  - faire un mix (25 mins)\n  - écouter (4 mins)\n  - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
-			case "FAIRE UN MIXAGE":
+			case "FAIRE UN MIX":
 				System.out.println("Vous n'arrivez pas à la cheville du DJ de votre dernier camping...");
 				Main.ajoutTemps(25);
 				break;
 			case "ECOUTER":
-				System.out.println("Vous écoutez votre dernier mixage, c'était vraiment pas bon...");
+				System.out.println("Vous écoutez votre dernier mix, c'était vraiment pas bon...");
 				Main.ajoutTemps(25);
 				break;
 			case "RETOUR":

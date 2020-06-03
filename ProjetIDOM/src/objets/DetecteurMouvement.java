@@ -3,7 +3,6 @@ package objets;
 import main.ObjetNonRamassable;
 import main.Piece;
 import main.Joueur;
-import main.NPC;
 
 public class DetecteurMouvement extends ObjetNonRamassable {
 
