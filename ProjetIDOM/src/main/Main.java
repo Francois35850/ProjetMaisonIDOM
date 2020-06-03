@@ -115,6 +115,7 @@ public class Main {
 	public static Volet volet_studio = new Volet("Volet", studio, false);
 	public static Volet volet_cuisine = new Volet("Volet", cuisine, true);
 	public static Volet volet_sallemanger = new Volet("Volet", salle_a_manger, true);
+	public static Volet volet_grenier = new Volet("Volet", grenier, true);
 	private static Armoire armoireDressing = new Armoire("Armoire", dressing, false);
 	private static Produit pastilleLaveLinge = new Produit("Pastille lave linge");
 	private static Linge lingeD = new Linge("Linge sale de David", false, chambre1.getNom());
@@ -156,8 +157,6 @@ public class Main {
 			studio, false);
 	public static DetecteurMouvement detecteur_mouvement_couloir = new DetecteurMouvement("Détecteur mouvement couloir",
 			couloir, false);
-	// private static DetecteurOuverture detecteur_ouverture_porte = new
-	// DetecteurOuverture("Détecteur ouverture porte", false, entree);
 	public static DetecteurOuverture detecteur_ouverture_bureau = new DetecteurOuverture("Détecteur ouverture bureau",
 			bureau, false, fenetre_bureau);
 	public static DetecteurOuverture detecteur_ouverture_salon1 = new DetecteurOuverture(
@@ -270,10 +269,12 @@ public class Main {
 		}
 	}
 
+	// savoir si c'est le jour (gestion des volets)
 	public static boolean isDay() {
 		return heure > 8 && heure < 21;
 	}
 
+	// verifier si l'heure de fin est dépassée
 	public static void checkTime() {
 		if (heure == endHeure && minute >= endMinute || heure > endHeure) {
 			System.out.println(

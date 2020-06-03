@@ -197,6 +197,7 @@ public class Telephone {
 				Main.volet_bureau.setEtat(true);
 				Main.volet_salon1.setEtat(true);
 				Main.volet_salon2.setEtat(true);
+				Main.volet_grenier.setEtat(true);
 				Main.volet_ch1.setEtat(true);
 				Main.volet_ch2.setEtat(true);
 				Main.volet_chp.setEtat(true);
@@ -210,6 +211,7 @@ public class Telephone {
 				Main.volet_bureau.setEtat(false);
 				Main.volet_salon1.setEtat(false);
 				Main.volet_salon2.setEtat(false);
+				Main.volet_grenier.setEtat(false);
 				Main.volet_ch1.setEtat(false);
 				Main.volet_ch2.setEtat(false);
 				Main.volet_chp.setEtat(false);
