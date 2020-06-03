@@ -9,6 +9,11 @@ public abstract class ObjetNonRamassable extends Objets {
 		utilisationEnCours = false;
 		this.piece = piece;
 	}
+	
+	public ObjetNonRamassable(String nom) {
+		super(nom);
+		utilisationEnCours = false;
+	}
 
 	public abstract String etat();
 

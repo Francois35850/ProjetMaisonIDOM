@@ -27,6 +27,14 @@ public final class Enceinte extends ObjetNonRamassable {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Enceinte(String nom, boolean allumer) {
+		super(nom);
+		this.allumer = allumer;
+		this.jouerMusique = false;
+		musiqueActive = 1;
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public String etat() {
 		String res = "";
