@@ -64,7 +64,8 @@ public class Main {
 	private static Piece devant_maison = new Piece("Exterieur maison", true);
 
 	// Ajout des objets
-	private static Enceinte enceinteSalon = new Enceinte("Enceinte", salon, false);
+	public static Enceinte enceinteSalon = new Enceinte("Enceinte", salon, false);
+	public static Enceinte enceinteSdj = new Enceinte("Enceinte", salle_de_jeux, false);
 	private static Frigo frigo = new Frigo("Frigo", cuisine, false);
 	private static Canape canapeSalon = new Canape("Canapé", salon, false, true);
 	private static Canape canapeSdJ = new Canape("Canapé", salle_de_jeux, false, false);
@@ -73,24 +74,24 @@ public class Main {
 	private static Telecommande telecommandeSalon = new Telecommande("Télécommande", salon, false, true, 0, 0);
 	private static Telecommande telecommandeSalleDeJeux = new Telecommande("Télécommande", salle_de_jeux, false, true,
 			4, 2);
-	private static Interrupteur interrupteurGarage = new Interrupteur("Interrupteur", garage, false);
-	private static Interrupteur interrupteurCuisine = new Interrupteur("Interrupteur", cuisine, false);
-	private static Interrupteur interrupteurSalon = new Interrupteur("Interrupteur", salon, false);
-	private static Interrupteur interrupteurSaM = new Interrupteur("Interrupteur", salle_a_manger, false);
-	private static Interrupteur interrupteurBuanderie = new Interrupteur("Interrupteur", buanderie, false);
-	private static Interrupteur interrupteurEntree = new Interrupteur("Interrupteur", entree, false);
-	private static Interrupteur interrupteurChambre1 = new Interrupteur("Interrupteur", chambre1, false);
-	private static Interrupteur interrupteurChambre2 = new Interrupteur("Interrupteur", chambre2, false);
-	private static Interrupteur interrupteurChambreP = new Interrupteur("Interrupteur", chambre_parentale, false);
-	private static Interrupteur interrupteurSdB1 = new Interrupteur("Interrupteur", sdb1, false);
-	private static Interrupteur interrupteurSdB2 = new Interrupteur("Interrupteur", sdb2, false);
-	private static Interrupteur interrupteurBureau = new Interrupteur("Interrupteur", bureau, false);
-	private static Interrupteur interrupteurSdJ = new Interrupteur("Interrupteur", salle_de_jeux, false);
-	private static Interrupteur interrupteurCouloir = new Interrupteur("Interrupteur", couloir, false);
-	private static Interrupteur interrupteurGrenier = new Interrupteur("Interrupteur", grenier, false);
-	private static Interrupteur interrupteurStudio = new Interrupteur("Interrupteur", studio, false);
-	private static Interrupteur interrupteurDressing = new Interrupteur("Interrupteur", dressing, false);
-	private static Interrupteur interrupteurToilettes = new Interrupteur("Interrupteur", toilettes, false);
+	public static Interrupteur interrupteurGarage = new Interrupteur("Interrupteur", garage, false);
+	public static Interrupteur interrupteurCuisine = new Interrupteur("Interrupteur", cuisine, false);
+	public static Interrupteur interrupteurSalon = new Interrupteur("Interrupteur", salon, false);
+	public static Interrupteur interrupteurSaM = new Interrupteur("Interrupteur", salle_a_manger, false);
+	public static Interrupteur interrupteurBuanderie = new Interrupteur("Interrupteur", buanderie, false);
+	public static Interrupteur interrupteurEntree = new Interrupteur("Interrupteur", entree, false);
+	public static Interrupteur interrupteurChambre1 = new Interrupteur("Interrupteur", chambre1, false);
+	public static Interrupteur interrupteurChambre2 = new Interrupteur("Interrupteur", chambre2, false);
+	public static Interrupteur interrupteurChambreP = new Interrupteur("Interrupteur", chambre_parentale, false);
+	public static Interrupteur interrupteurSdB1 = new Interrupteur("Interrupteur", sdb1, false);
+	public static Interrupteur interrupteurSdB2 = new Interrupteur("Interrupteur", sdb2, false);
+	public static Interrupteur interrupteurBureau = new Interrupteur("Interrupteur", bureau, false);
+	public static Interrupteur interrupteurSdJ = new Interrupteur("Interrupteur", salle_de_jeux, false);
+	public static Interrupteur interrupteurCouloir = new Interrupteur("Interrupteur", couloir, false);
+	public static Interrupteur interrupteurGrenier = new Interrupteur("Interrupteur", grenier, false);
+	public static Interrupteur interrupteurStudio = new Interrupteur("Interrupteur", studio, false);
+	public static Interrupteur interrupteurDressing = new Interrupteur("Interrupteur", dressing, false);
+	public static Interrupteur interrupteurToilettes = new Interrupteur("Interrupteur", toilettes, false);
 	private static Piscine piscine = new Piscine("Piscine", jardin);
 	private static Objets liquideVaisselle = new LiquideVaisselle("Liquide Vaisselle", piscine);
 	private static Objets AnimauxGonflables = new Gonflable("Animaux Gonflables", piscine);
@@ -105,16 +106,16 @@ public class Main {
 	private static Fenetre fenetre_studio = new Fenetre("Fenêtre", studio, false);
 	private static Fenetre fenetre_cuisine = new Fenetre("Fenêtre", cuisine, false);
 	private static Fenetre fenetre_sallemanger = new Fenetre("Fenêtre", salle_a_manger, false);
-	private static Volet volet_bureau = new Volet("Volet", bureau, false);
-	private static Volet volet_salon1 = new Volet("Volet sud", salon, false);
-	private static Volet volet_salon2 = new Volet("Volet est", salon, false);
-	private static Volet volet_ch1 = new Volet("Volet", chambre1, false);
-	private static Volet volet_ch2 = new Volet("Volet", chambre2, false);
-	private static Volet volet_chp = new Volet("Volet", chambre_parentale, false);
-	private static Volet volet_sallejeux = new Volet("Volet", salle_de_jeux, false);
-	private static Volet volet_studio = new Volet("Volet", studio, false);
-	private static Volet volet_cuisine = new Volet("Volet", cuisine, false);
-	private static Volet volet_sallemanger = new Volet("Volet", salle_a_manger, false);
+	public static Volet volet_bureau = new Volet("Volet", bureau, false);
+	public static Volet volet_salon1 = new Volet("Volet sud", salon, true);
+	public static Volet volet_salon2 = new Volet("Volet est", salon, true);
+	public static Volet volet_ch1 = new Volet("Volet", chambre1, false);
+	public static Volet volet_ch2 = new Volet("Volet", chambre2, false);
+	public static Volet volet_chp = new Volet("Volet", chambre_parentale, false);
+	public static Volet volet_sallejeux = new Volet("Volet", salle_de_jeux, false);
+	public static Volet volet_studio = new Volet("Volet", studio, false);
+	public static Volet volet_cuisine = new Volet("Volet", cuisine, true);
+	public static Volet volet_sallemanger = new Volet("Volet", salle_a_manger, true);
 	private static Armoire armoireDressing = new Armoire("Armoire", dressing, false);
 	private static Produit pastilleLaveLinge = new Produit("Pastille lave linge");
 	private static Linge lingeD = new Linge("Linge sale de David", false, chambre1.getNom());
@@ -132,58 +133,58 @@ public class Main {
 	private static Commode commode_SaM = new Commode("Commode", salle_a_manger);
 
 	// Création des détecteurs
-	private static DetecteurMouvement detecteur_mouvement_entree = new DetecteurMouvement("Détecteur mouvement entree",
+	public static DetecteurMouvement detecteur_mouvement_entree = new DetecteurMouvement("Détecteur mouvement entree",
 			entree, false);
-	private static DetecteurMouvement detecteur_mouvement_bureau = new DetecteurMouvement("Détecteur mouvement bureau",
+	public static DetecteurMouvement detecteur_mouvement_bureau = new DetecteurMouvement("Détecteur mouvement bureau",
 			bureau, false);
-	private static DetecteurMouvement detecteur_mouvement_salon = new DetecteurMouvement("Détecteur mouvement salon",
+	public static DetecteurMouvement detecteur_mouvement_salon = new DetecteurMouvement("Détecteur mouvement salon",
 			salon, false);
-	private static DetecteurMouvement detecteur_mouvement_garage = new DetecteurMouvement("Détecteur mouvement garage",
+	public static DetecteurMouvement detecteur_mouvement_garage = new DetecteurMouvement("Détecteur mouvement garage",
 			garage, false);
-	private static DetecteurMouvement detecteur_mouvement_ch1 = new DetecteurMouvement(
+	public static DetecteurMouvement detecteur_mouvement_ch1 = new DetecteurMouvement(
 			"Détecteur mouvement chambre David", chambre1, true);
-	private static DetecteurMouvement detecteur_mouvement_ch2 = new DetecteurMouvement(
+	public static DetecteurMouvement detecteur_mouvement_ch2 = new DetecteurMouvement(
 			"Détecteur mouvement chambre Régine", chambre2, true);
-	private static DetecteurMouvement detecteur_mouvement_chp = new DetecteurMouvement("Détecteur mouvement chp",
+	public static DetecteurMouvement detecteur_mouvement_chp = new DetecteurMouvement("Détecteur mouvement chp",
 			chambre_parentale, true);
-	private static DetecteurMouvement detecteur_mouvement_sdb_patentale = new DetecteurMouvement(
+	public static DetecteurMouvement detecteur_mouvement_sdb_patentale = new DetecteurMouvement(
 			"Détecteur mouvement sdb patentale", sdb2, false);
-	private static DetecteurMouvement detecteur_mouvement_dressing = new DetecteurMouvement(
+	public static DetecteurMouvement detecteur_mouvement_dressing = new DetecteurMouvement(
 			"Détecteur mouvement dressing", dressing, false);
-	private static DetecteurMouvement detecteur_mouvement_cuisine = new DetecteurMouvement(
+	public static DetecteurMouvement detecteur_mouvement_cuisine = new DetecteurMouvement(
 			"Détecteur mouvement cuisine", cuisine, false);
-	private static DetecteurMouvement detecteur_mouvement_studio = new DetecteurMouvement("Détecteur mouvement studio",
+	public static DetecteurMouvement detecteur_mouvement_studio = new DetecteurMouvement("Détecteur mouvement studio",
 			studio, false);
-	private static DetecteurMouvement detecteur_mouvement_couloir = new DetecteurMouvement(
+	public static DetecteurMouvement detecteur_mouvement_couloir = new DetecteurMouvement(
 			"Détecteur mouvement couloir", couloir, false);
 	// private static DetecteurOuverture detecteur_ouverture_porte = new
 	// DetecteurOuverture("Détecteur ouverture porte", false, entree);
-	private static DetecteurOuverture detecteur_ouverture_bureau = new DetecteurOuverture("Détecteur ouverture bureau",
+	public static DetecteurOuverture detecteur_ouverture_bureau = new DetecteurOuverture("Détecteur ouverture bureau",
 			bureau, false, fenetre_bureau);
-	private static DetecteurOuverture detecteur_ouverture_salon1 = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_salon1 = new DetecteurOuverture(
 			"Détecteur ouverture salon fenêtre sud", salon, false, fenetre_salon1);
-	private static DetecteurOuverture detecteur_ouverture_salon2 = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_salon2 = new DetecteurOuverture(
 			"Détecteur ouverture salon fenêtre est", salon, false, fenetre_salon2);
-	private static DetecteurOuverture detecteur_ouverture_ch1 = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_ch1 = new DetecteurOuverture(
 			"Détecteur ouverture chambre David", chambre1, false, fenetre_ch1);
-	private static DetecteurOuverture detecteur_ouverture_ch2 = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_ch2 = new DetecteurOuverture(
 			"Détecteur ouverture chambre Régine", chambre2, false, fenetre_ch2);
-	private static DetecteurOuverture detecteur_ouverture_chp = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_chp = new DetecteurOuverture(
 			"Détecteur ouverture chambre parentale", chambre_parentale, false, fenetre_chp);
-	private static DetecteurOuverture detecteur_ouverture_sallejeux = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_sallejeux = new DetecteurOuverture(
 			"Détecteur ouverture salle de jeux", salle_de_jeux, false, fenetre_sallejeux);
-	private static DetecteurOuverture detecteur_ouverture_studio = new DetecteurOuverture("Détecteur ouverture studio",
+	public static DetecteurOuverture detecteur_ouverture_studio = new DetecteurOuverture("Détecteur ouverture studio",
 			studio, false, fenetre_studio);
-	private static DetecteurOuverture detecteur_ouverture_cuisine = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_cuisine = new DetecteurOuverture(
 			"Détecteur ouverture cuisine", cuisine, false, fenetre_cuisine);
-	private static DetecteurOuverture detecteur_ouverture_sallemanger = new DetecteurOuverture(
+	public static DetecteurOuverture detecteur_ouverture_sallemanger = new DetecteurOuverture(
 			"Détecteur ouverture salle à manger", salle_a_manger, false, fenetre_sallemanger);
-	private static Camera camera_devant_maison = new Camera("Caméra devant la maison", devant_maison,
+	public static Camera camera_devant_maison = new Camera("Caméra devant la maison", devant_maison,
 			"Systeme defaillant, veuillez contacter le service maintenance !", 0);
-	private static Camera camera_jardin = new Camera("Caméra du jardin", jardin,
+	public static Camera camera_jardin = new Camera("Caméra du jardin", jardin,
 			"|---------------------------------------------------------------------|\n|                  |   / 	    	      |  ______ |                   |\n|                  |  /                 |  |    | |     []_[]         |\n |       /|         | /                  |  |    | |     ('v')         |\n|      / |         |/           |_| |_| |__|____|_|    / |||)         |\n|     /  |         /                                  (_=*;;          |\n|    /   |        /                                                   |\n|   /    |       /                                                    |\n|   |    |      /               _____________________________         |\n|   |    |     /              //|   |    |    |    |    |  //        _|\n|   |    |    /              // |   |    |    |    |    | //        / |\n|   |   /    /              //| |   |    |    |    |    |//        /  |\n|   |  /    /              // | |   |    |    |    |    //        /__/|\n|   | /    /              //| | |   |    |    |    |   //        //   |\n|   |/    /              // | | |   |    |    |    |  //        //    |\n|        /              //| | | |___|____|____|____|_//    ___________|\n|       /              // | | | /                   //    /  /  /  /  |\n|      /              //| | | |/                   //    /  /  /  /  /|\n|	    /              // | | | /                   //    /__/__/__/__/_|\n|    /              //| | | |/                   //    //           //|\n|   /              // | | | /                   //    //           // |\n|  /              //__|_|_|/___________________//                     |\n              | /                         										    |\n|/              													    |\n|---------------------------------------------------------------------|",
 			1);
-	private static Camera camera_entree = new Camera("Caméra de l'entrée", entree,
+	public static Camera camera_entree = new Camera("Caméra de l'entrée", entree,
 			"|---------------------------------------------------------------------|\n |              |       |    				     |       |              |\n|              |       |      		         |       |              |\n|              |       |                       |       |              |\n|              |       |                       |       |              |\n|              |       |     _____________     |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |          _| |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |____|_____________|____|       |              |\n|              |      /                         \\      |              |\n|              |     /                           \\     |              |\n|              |    /                             \\    |              |\n|	 		     |   /							     \\   |			     |\n|              |  /                                 \\  |              |\n|              | /                                   \\ |              |\n|______________|/        							    \\|______________|\n|                          										    |\n|               													    |\n|---------------------------------------------------------------------|",
 			1);
 	// private static DetecteurIncendie(tecteur incendie,);
@@ -278,7 +279,7 @@ public class Main {
 		Objets[] objCouloir = { interrupteurCouloir };
 		Objets[] objSdB2 = { interrupteurSdB2, douche_sdb2 };
 		Objets[] objSalleDeJeux = { interrupteurSdJ, televisionSalleDeJeux, telecommandeSalleDeJeux, canapeSdJ,
-				fenetre_sallejeux, volet_sallejeux };
+				fenetre_sallejeux, volet_sallejeux ,enceinteSdj};
 		Objets[] objChambreParentale = { interrupteurChambreP, fenetre_chp, volet_chp, lingeP };
 		Objets[] objStudio = { interrupteurStudio, fenetre_studio, volet_studio, guitare, piano, violon, batterie,
 				basse };

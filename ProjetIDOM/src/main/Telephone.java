@@ -14,7 +14,7 @@ public class Telephone {
 	private static boolean telActive = false;
 
 	// scanner pour lire les commandes du joueur
-	private static Scanner input = new Scanner(System.in);
+	private static Scanner in1 = new Scanner(System.in);
 
 	// telephone pour les fonctions
 	private static ITelephone iphone;
@@ -34,7 +34,7 @@ public class Telephone {
 
 			// Demande de la commande
 			System.out.println("Menu du téléphone ('help' pour la liste des commandes) :");
-			String entree = input.nextLine();
+			String entree = in1.nextLine();
 
 			// code en fonction de la commande
 			switch (entree) {
@@ -105,20 +105,15 @@ public class Telephone {
 				}
 				break;
 
-			case "connexion": // commande pour voir l'Ã©tat des connexions
-				System.out.println("Problemes de connexion ?");
-				System.out.println("1 - Voir l'Ã©tat de la connexion wifi");
-				System.out.println("2 - Changer l'Ã©tat de la connexion wifi");
-				System.out.println("3 - Voir l'Ã©tat de la connexion gsm");
-				System.out.println("4 - Changer l'Ã©tat de la connexion gsm");
-				System.out.println("5 - Quitter l'application");
-				System.out.println("6 - Quitter le téléphone");
-				int choix_connexion = input.nextInt();
-				Connexion(choix_connexion, iphone);
-				break;
-				
-			case "musique": // commande pour ouvrir l'application musique
-				enceinte_telephone.utiliserObjet();
+			case "musique": 
+				String nomPiece = Joueur.getPieceCourante().getNom();
+				if(nomPiece.compareToIgnoreCase("Salon")==0) {
+					Main.enceinteSalon.utiliserObjet();
+				}
+				else if(nomPiece.compareToIgnoreCase("Salle de jeux")==0) {
+					Main.enceinteSdj.utiliserObjet();
+				}
+				else System.out.println("Il n'y a pas d'enceinte dans cette pièce");
 				break;
 
 			case "homekit": // commande pour affiche l'application de la maison connectÃ©e
@@ -128,49 +123,33 @@ public class Telephone {
 				System.out.println("3 - Alarme");
 				System.out.println("4 - Lumières");
 				System.out.println("5 - Caméra");
-				
-				
-				
 				System.out.println("6 - Quitter l'application");
-				System.out.println("7 - Quitter le tÃ©lÃ©phone");
-				
-				//System.out.println("7 - CVC");
-				//System.out.println("4 - Jardin");
-				System.out.println("9 - Home cinéma");
-				System.out.println("10 - Sam le chien");
-				
-				int choix_homekit = input.nextInt();
+				System.out.println("7 - Quitter le téléphone");
+				Scanner hmk = new Scanner(System.in);
+				int choix_homekit = hmk.nextInt();
 				Homekit(choix_homekit);
+				break;
+
+			case "messages": // commande pour ouvrir l'application message
+				System.out.println("Envie de contacter quelqu'un");
+				System.out.println("1 - Regarder ses messages");
+				System.out.println("2 - Quitter l'application");
+				System.out.println("3 - Quitter le téléphone");
+				Scanner msg = new Scanner(System.in);
+				int choix_message = msg.nextInt();
+				Messages(choix_message);
 				break;
 
 			case "help": // commande pour afficher la liste des commandes
 				System.out.println("Besoin d'aide ?");
 				System.out.println("   - carte : affiche la carte");
-				System.out.println("   - connexion : affiche les options de connexion");
 				System.out.println("   - musique : ouvrir l'application musique");
 				System.out.println("   - messages : ouvrir l'application message");
-				System.out.println("   - quitter : revenir en arriere ou quitter ");
 				System.out.println("   - homekit : affiche l'application de votre maison connectÃ©e ");
-				System.out.println("   - credits : voir les crÃ©dits");
+				System.out.println("   - quitter : revenir en arriere ou quitter ");
 				break;
 
-			
-			
-			case "messages": // commande pour ouvrir l'application message
-				System.out.println("Envie de contacter quelqu'un");
-				System.out.println("1 - Regarder ses messages");
-				System.out.println("2 - Faire un coronapéro");
-				System.out.println("3 - Quitter l'application");
-				System.out.println("4 - Quitter le tÃ©lÃ©phone");
-				int choix_message = input.nextInt();
-				Messages(choix_message);
-				break;
-
-			case "credits": // commande pour ouvrir les credits
-				System.out.println("");
-				break;
-
-			default: // cas par dÃ©faut, cad commande invalide
+			default: 
 				System.out.println("La commande n'est pas valide");
 				break;
 
@@ -188,21 +167,25 @@ public class Telephone {
 			System.out.println("Choisissez le message souhaité :");
 			System.out.println(" Boulot - 26/05/2020 - La mission de cet...");
 			System.out.println(" Régine - 24/05/2020 - ");
-			System.out.println(" David - 21/05/2020 - Salut papa, �a se...");
+			System.out.println(" David - 21/05/2020 - Salut papa, ça se...");
 			System.out.println(" Ma petite femme - 20/05/2020 - Il faudrait aller...");
-			String entree2 = input.nextLine();
+			Scanner in2 = new Scanner(System.in);
+			String entree2 = in2.nextLine();
 			switch (entree2.toUpperCase()) {
-			case "BOULOT" :
-				System.out.println("Boulot - 26/05/2020 - 13h12 :\n La mission de cet aprem se fera � . La bas il y a déja la cliente qui d'attend vers 14h30.");
+			case "BOULOT":
+				System.out.println(
+						"Boulot - 26/05/2020 - 13h12 :\n La mission de cet aprem se fera � . La bas il y a déja la cliente qui t'attend vers 14h30.");
 				break;
-			case "REGINE" :
+			case "REGINE":
 				System.out.println("Régine - 24/05/2020 - 3h02 :/n Tuu peux vnir me chetcher ? jme sen pas bizen");
-				break;	
-			case "DAVID" :
-				System.out.println("David - 21/05/2020 - 15h34 :\n Salut papa, �a serait possible d'aller chez Anthony ce soir apres les cours stp ?");
 				break;
-			case "MA PETITE FEMME" :
-				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
+			case "DAVID":
+				System.out.println(
+						"David - 21/05/2020 - 15h34 :\n Salut papa, ça serait possible d'aller chez Anthony ce soir apres les cours stp ?");
+				break;
+			case "MA PETITE FEMME":
+				System.out.println(
+						"Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
 				break;
 			default: // cas par dÃ©faut, cad commande invalide
 				System.out.println("La commande n'est pas valide");
@@ -210,10 +193,8 @@ public class Telephone {
 			}
 		}
 		if (choix == 2) {
-		}
-		if (choix == 3) {
 		} // break, on retourne au menu principal du tÃ©lÃ©phone
-		if (choix == 4) {
+		if (choix == 3) {
 			telActive = false;
 		}
 	}
@@ -221,217 +202,188 @@ public class Telephone {
 	// Application Homekit
 	public static void Homekit(int choix) {
 		if (choix == 1) {
-			System.out.println("Liste des actions possibles :\n" + "nuit\n depart\n salle cinema\n");
-			String entree1 = input.nextLine();
+			System.out.println("Liste des actions possibles :\n" + " nuit (éteind les lumières)\n");
+			Scanner in3 = new Scanner(System.in);
+			String entree1 = in3.nextLine();
 			switch (entree1) {
-			case "nuit" : 
-				interrupteurGarage.setLumiere(false);
-				interrupteurSalon.setLumiere(false);
-				interrupteurCuisine.setLumiere(false);
-				interrupteurSaM.setLumiere(false);
-				interrupteurBuanderie.setLumiere(false);
-				interrupteurEntree.setLumiere(false);
-				interrupteurChambre1.setLumiere(false);
-				interrupteurChambre2.setLumiere(false);
-				interrupteurChambreP.setLumiere(false);
-				interrupteurSdB1.setLumiere(false);
-				interrupteurSdB2.setLumiere(false);
-				interrupteurBureau.setLumiere(false);
-				interrupteurSdJ.setLumiere(false);
-				interrupteurCouloir.setLumiere(false);
-				interrupteurGrenier.setLumiere(false);
-				interrupteurStudio.setLumiere(false);
-				interrupteurDressing.setLumiere(false);
-				interrupteurToilettes.setLumiere(false);
-				volet_bureau.setEtat(false);
-				volet_salon1.setEtat(false);
-				volet_salon2.setEtat(false);
-				volet_ch1.setEtat(false);
-				volet_ch2.setEtat(false);
-				volet_chp.setEtat(false);
-				volet_studio.setEtat(false);
-				volet_sallejeux.setEtat(false);
-				volet_cuisine.setEtat(false);
-				volet_sallemanger.setEtat(false);
+			case "nuit":
+				Main.interrupteurGarage.setLumiere(false);
+				Main.interrupteurSalon.setLumiere(false);
+				Main.interrupteurCuisine.setLumiere(false);
+				Main.interrupteurSaM.setLumiere(false);
+				Main.interrupteurBuanderie.setLumiere(false);
+				Main.interrupteurEntree.setLumiere(false);
+				Main.interrupteurChambre1.setLumiere(false);
+				Main.interrupteurChambre2.setLumiere(false);
+				Main.interrupteurChambreP.setLumiere(false);
+				Main.interrupteurSdB1.setLumiere(false);
+				Main.interrupteurSdB2.setLumiere(false);
+				Main.interrupteurBureau.setLumiere(false);
+				Main.interrupteurSdJ.setLumiere(false);
+				Main.interrupteurCouloir.setLumiere(false);
+				Main.interrupteurGrenier.setLumiere(false);
+				Main.interrupteurStudio.setLumiere(false);
+				Main.interrupteurDressing.setLumiere(false);
+				Main.interrupteurToilettes.setLumiere(false);
+				Main.volet_bureau.setEtat(false);
+				Main.volet_salon1.setEtat(false);
+				Main.volet_salon2.setEtat(false);
+				Main.volet_ch1.setEtat(false);
+				Main.volet_ch2.setEtat(false);
+				Main.volet_chp.setEtat(false);
+				Main.volet_studio.setEtat(false);
+				Main.volet_sallejeux.setEtat(false);
+				Main.volet_cuisine.setEtat(false);
+				Main.volet_sallemanger.setEtat(false);
 				System.out.println("Vous vous trouvez dans le noir complet, Bonne nuit");
 				break;
-			
-			case "depart": 
-				
-				System.out.println("L'alarme est active, vous pouvez partir en toute sérénité");
-				break;
-				
-			case "salle cinema":
-				System.out.println("La salle de jeux est maintenant prete, votre film vous attend déja");
-				break;
-			default: // cas par dÃ©faut, cad commande invalide
+			default:
 				System.out.println("La commande n'est pas valide");
 				break;
 			}
 		}
 		if (choix == 2) {
 			System.out.println("Etat des volets roulants :");
-			System.out.println(volet_bureau.toString());
-			System.out.println(volet_salon1.toString());
-			System.out.println(volet_salon2.toString());
-			System.out.println(volet_ch1.toString());
-			System.out.println(volet_ch2.toString());
-			System.out.println(volet_chp.toString());
-			System.out.println(volet_sallejeux.toString());
-			System.out.println(volet_studio.toString());
-			System.out.println(volet_cuisine.toString());
-			System.out.println(volet_sallemanger.toString());
+			System.out.println(Main.volet_bureau.toString());
+			System.out.println(Main.volet_salon1.toString());
+			System.out.println(Main.volet_salon2.toString());
+			System.out.println(Main.volet_ch1.toString());
+			System.out.println(Main.volet_ch2.toString());
+			System.out.println(Main.volet_chp.toString());
+			System.out.println(Main.volet_sallejeux.toString());
+			System.out.println(Main.volet_studio.toString());
+			System.out.println(Main.volet_cuisine.toString());
+			System.out.println(Main.volet_sallemanger.toString());
 		}
 		if (choix == 3) {
 			System.out.println("Etat des détecteurs de mouvement :");
-			System.out.println(detecteur_mouvement_ch1.toString());
-			System.out.println(detecteur_mouvement_ch2.toString());
-			System.out.println(detecteur_mouvement_ch.toString());
-			System.out.println(detecteur_mouvement_sdb_patentale.toString());
-			System.out.println(detecteur_mouvement_dressing.toString());
-			System.out.println(detecteur_mouvement_cuisine.toString());
-			System.out.println(detecteur_mouvement_studio.toString());
-			System.out.println(detecteur_mouvement_couloir.toString());
+			System.out.println(Main.detecteur_mouvement_ch1.toString());
+			System.out.println(Main.detecteur_mouvement_ch2.toString());
+			System.out.println(Main.detecteur_mouvement_chp.toString());
+			System.out.println(Main.detecteur_mouvement_sdb_patentale.toString());
+			System.out.println(Main.detecteur_mouvement_dressing.toString());
+			System.out.println(Main.detecteur_mouvement_cuisine.toString());
+			System.out.println(Main.detecteur_mouvement_studio.toString());
+			System.out.println(Main.detecteur_mouvement_couloir.toString());
 			System.out.println("Etat des détecteurs d'ouverture :");
-			System.out.println(detecteur_ouverture_bureau.toString());
-			System.out.println(detecteur_ouverture_salon1.toString());
-			System.out.println(detecteur_ouverture_salon2.toString());
-			System.out.println(detecteur_ouverture_ch1.toString());
-			System.out.println(detecteur_ouverture_ch2.toString());
-			System.out.println(detecteur_ouverture_chp.toString());
-			System.out.println(detecteur_ouverture_sallejeux.toString());
-			System.out.println(detecteur_ouverture_studio.toString());
-			System.out.println(detecteur_ouverture_cuisine.toString());
-			System.out.println(detecteur_ouverture_sallemanger.toString());	
+			System.out.println(Main.detecteur_ouverture_bureau.toString());
+			System.out.println(Main.detecteur_ouverture_salon1.toString());
+			System.out.println(Main.detecteur_ouverture_salon2.toString());
+			System.out.println(Main.detecteur_ouverture_ch1.toString());
+			System.out.println(Main.detecteur_ouverture_ch2.toString());
+			System.out.println(Main.detecteur_ouverture_chp.toString());
+			System.out.println(Main.detecteur_ouverture_sallejeux.toString());
+			System.out.println(Main.detecteur_ouverture_studio.toString());
+			System.out.println(Main.detecteur_ouverture_cuisine.toString());
+			System.out.println(Main.detecteur_ouverture_sallemanger.toString());
 		}
 		if (choix == 4) {
 			System.out.println("Etat des lumières :");
-			System.out.println(interrupteurGarage.toString());
-			System.out.println(interrupteurCuisine.toString());
-			System.out.println(interrupteurSalon.toString());
-			System.out.println(interrupteurSaM.toString());
-			System.out.println(interrupteurBuanderie.toString());
-			System.out.println(interrupteurEntree.toString());
-			System.out.println(interrupteurChambre1.toString());
-			System.out.println(interrupteurChambre2.toString());
-			System.out.println(interrupteurChambreP.toString());
-			System.out.println(interrupteurSdB1.toString());
-			System.out.println(interrupteurSdB2.toString());
-			System.out.println(interrupteurBureau.toString());
-			System.out.println(interrupteurSdJ.toString());
-			System.out.println(interrupteurCouloir.toString());
-			System.out.println(interrupteurGrenier.toString());
-		    System.out.println(interrupteurStudio.toString());
-			System.out.println(interrupteurDressing.toString());
-			System.out.println(interrupteurToilettes.toString());
+			System.out.println(Main.interrupteurGarage.toString());
+			System.out.println(Main.interrupteurCuisine.toString());
+			System.out.println(Main.interrupteurSalon.toString());
+			System.out.println(Main.interrupteurSaM.toString());
+			System.out.println(Main.interrupteurBuanderie.toString());
+			System.out.println(Main.interrupteurEntree.toString());
+			System.out.println(Main.interrupteurChambre1.toString());
+			System.out.println(Main.interrupteurChambre2.toString());
+			System.out.println(Main.interrupteurChambreP.toString());
+			System.out.println(Main.interrupteurSdB1.toString());
+			System.out.println(Main.interrupteurSdB2.toString());
+			System.out.println(Main.interrupteurBureau.toString());
+			System.out.println(Main.interrupteurSdJ.toString());
+			System.out.println(Main.interrupteurCouloir.toString());
+			System.out.println(Main.interrupteurGrenier.toString());
+			System.out.println(Main.interrupteurStudio.toString());
+			System.out.println(Main.interrupteurDressing.toString());
+			System.out.println(Main.interrupteurToilettes.toString());
 			System.out.println("Voulez vous modifier les états ?\n oui\n non\n");
-			String entree3 = input.nextLine();
+			Scanner in4 = new Scanner(System.in);
+			String entree3 = in4.nextLine();
 			switch (entree3) {
-			case "oui" : 
+			case "oui":
 				System.out.println("Choisissez une piece");
-				System.out.println("Liste des pieces disponibles :\n RDC :\n salon\n garage\n cuisine\n salle a manger\n buanderie\n entree\n chambre1\n chambre2\n sdb1\n bureau\n R+1 :\n chambre parentale\n sdb2\n studio\n  salle de jeux\n dressing\n toilettes\n grenier\n couloir\n");
-				String entree4 = input.nextLine();
+				System.out.println(
+						"Liste des pieces disponibles :\n RDC :\n salon\n garage\n cuisine\n salle a manger\n buanderie\n entree\n chambre1\n chambre2\n sdb1\n bureau\n R+1 :\n chambre parentale\n sdb2\n studio\n  salle de jeux\n dressing\n toilettes\n grenier\n couloir\n");
+				Scanner in5 = new Scanner(System.in);
+				String entree4 = in5.nextLine();
 				switch (entree4) {
-				//RDC
-				case "salon" :
-					interrupteurSalon.setLumiere(!interrupteurSalon.getLumiere());
+				// RDC
+				case "salon":
+					Main.interrupteurSalon.setLumiere(!Main.interrupteurSalon.getLumiere());
 					break;
-				case "garage" : 
-					interrupteurGarage.setLumiere(!interrupteurGarage.getLumiere());
+				case "garage":
+					Main.interrupteurGarage.setLumiere(!Main.interrupteurGarage.getLumiere());
 					break;
-				case "cuisine" : 
-					interrupteurCuisine.setLumiere(!interrupteurCuisine.getLumiere());
+				case "cuisine":
+					Main.interrupteurCuisine.setLumiere(!Main.interrupteurCuisine.getLumiere());
 					break;
-				case "salle a manger" : 
-					interrupteurSaM.setLumiere(!interrupteurSaM.getLumiere());
+				case "salle a manger":
+					Main.interrupteurSaM.setLumiere(!Main.interrupteurSaM.getLumiere());
 					break;
-				case "cuisine" : 
-					interrupteurCuisine.setLumiere(!interrupteurCuisine.getLumiere());
+				case "sdb1":
+					Main.interrupteurSdB1.setLumiere(!Main.interrupteurSdB1.getLumiere());
 					break;
-				case "sdb1" : 
-					interrupteurSdB1.setLumiere(!interrupteurSdB1.getLumiere());
+				case "buanderie":
+					Main.interrupteurBuanderie.setLumiere(!Main.interrupteurBuanderie.getLumiere());
 					break;
-				case "buanderie" : 
-					interrupteurBuanderie.setLumiere(!interrupteurBuanderie.getLumiere());
+				case "entree":
+					Main.interrupteurEntree.setLumiere(!Main.interrupteurEntree.getLumiere());
 					break;
-				case "entree" : 
-					interrupteurEntree.setLumiere(!interrupteurEntree.getLumiere());
+				case "chambre1":
+					Main.interrupteurChambre1.setLumiere(!Main.interrupteurChambre1.getLumiere());
 					break;
-				case "chambre1" : 
-					interrupteurChambre1.setLumiere(!interrupteurChambre1.getLumiere());
+				case "chambre2":
+					Main.interrupteurChambre2.setLumiere(!Main.interrupteurChambre2.getLumiere());
 					break;
-				case "chambre2" : 
-					interrupteurChambre2.setLumiere(!interrupteurChambre2.getLumiere());
+				// R+1
+				case "chambre parentale":
+					Main.interrupteurChambreP.setLumiere(!Main.interrupteurChambreP.getLumiere());
 					break;
-				//R+1	
-				case "chambre parentale" : 
-					interrupteurChambreP.setLumiere(!interrupteurChambreP.getLumiere());
+				case "sdb2":
+					Main.interrupteurSdB2.setLumiere(!Main.interrupteurSdB2.getLumiere());
 					break;
-				case "sdb2" : 
-					interrupteurSdB2.setLumiere(!interrupteurSdB2.getLumiere());
+				case "salle de jeux":
+					Main.interrupteurSdJ.setLumiere(!Main.interrupteurSdJ.getLumiere());
 					break;
-				case "salle de jeux" : 
-					interrupteurSdJ.setLumiere(!interrupteurSdJ.getLumiere());
+				case "studio":
+					Main.interrupteurStudio.setLumiere(!Main.interrupteurStudio.getLumiere());
 					break;
-				case "studio" : 
-					interrupteurStudio.setLumiere(!interrupteurStudio.getLumiere());
+				case "grenier":
+					Main.interrupteurGrenier.setLumiere(!Main.interrupteurGrenier.getLumiere());
 					break;
-				case "grenier" : 
-					interrupteurGrenier.setLumiere(!interrupteurGrenier.getLumiere());
+				case "couloir":
+					Main.interrupteurCouloir.setLumiere(!Main.interrupteurCouloir.getLumiere());
 					break;
-				case "couloir" : 
-					interrupteurCouloir.setLumiere(!interrupteurCouloir.getLumiere());
+				case "toilettes":
+					Main.interrupteurToilettes.setLumiere(!Main.interrupteurToilettes.getLumiere());
 					break;
-				case "toilettes" : 
-					interrupteurToilettes.setLumiere(!interrupteurToilettes.getLumiere());
-					break;
-				case "dressing" : 
-					interrupteurDressing.setLumiere(!interrupteurDressing.getLumiere());
+				case "dressing":
+					Main.interrupteurDressing.setLumiere(!Main.interrupteurDressing.getLumiere());
 					break;
 				default: // cas par dÃ©faut, cad commande invalide
 					System.out.println("La commande n'est pas valide");
 					break;
 				}
-				
-			case "non" : 
+
+			case "non":
 				break;
 			default: // cas par dÃ©faut, cad commande invalide
 				System.out.println("La commande n'est pas valide");
 				break;
-		}
-		if (choix == 5) {
-			System.out.println(camera_entree.toString());
-			System.out.println(camera_jardin.toString());
-			System.out.println(camera_devant_maison.toString());
-		}
-		if (choix == 6) {
-		} // break, on retourne au menu principal du tÃ©lÃ©phone
-		if (choix == 7) {
-			telActive = false;
+			}
+			if (choix == 5) {
+				System.out.println(Main.camera_entree.toString());
+				System.out.println(Main.camera_jardin.toString());
+				System.out.println(Main.camera_devant_maison.toString());
+			}
+			if (choix == 6) {
+			} // break, on retourne au menu principal du tÃ©lÃ©phone
+			if (choix == 7) {
+				telActive = false;
+			} else
+				System.out.println("Choix non disponible");
 		}
 	}
-
-	// Application connexion
-	public static String Connexion(int choix, ITelephone iphone) {
-		if (choix == 1) {
-			return ITelephone.getWifi(iphone);
-		}
-		if (choix == 2) {
-			return ITelephone.setWifi(iphone);
-		}
-		if (choix == 3) {
-			return ITelephone.getGsm(iphone);
-		}
-		if (choix == 4) {
-			return ITelephone.setGsm(iphone);
-		}
-		if (choix == 5) {
-		} // break, on retourne au menu principal du tÃ©lÃ©phone
-		if (choix == 6) {
-			telActive = false;
-		}
-		return null;
-	}
-
 
 }
