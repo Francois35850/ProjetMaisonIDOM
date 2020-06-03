@@ -45,6 +45,8 @@ public class TableMixage extends ObjetNonRamassable {
 				break;
 			}
 		}
+		sc.close();
+		sc2.close();
 	}
 
 }

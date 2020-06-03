@@ -102,7 +102,7 @@ public class Piscine extends ObjetNonRamassable {
 				break;
 			}
 		}
-		
+		sc.close();
 	}
 	
 	public void setMousse(boolean b) {

@@ -39,12 +39,11 @@ public class DetecteurMouvement extends ObjetNonRamassable {
 	}
 
 	public boolean getEtat() {
-		return this.detection;   //TODO illias tu veux dire this.detection ?
+		return this.detection;   
 	}
 
 	@Override
 	public void utiliserObjet() {
-		// TODO Auto-generated method stub
 
 	}
 

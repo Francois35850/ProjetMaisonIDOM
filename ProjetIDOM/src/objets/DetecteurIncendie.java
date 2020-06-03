@@ -66,7 +66,7 @@ public class DetecteurIncendie extends ObjetNonRamassable {
 					break;
 			}
 		}
-
+		input.close();
 	}
 	
 }

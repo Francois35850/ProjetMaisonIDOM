@@ -59,6 +59,7 @@ public class Volet extends ObjetNonRamassable {
 				break;
 			}
 		}
+		input.close();
 	}
 
 	public String toString() {
