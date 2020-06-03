@@ -21,10 +21,11 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 	@Override
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez la " + this.getNom() + ".");
 		while (this.getUtilisation()) {
-			System.out.println("Liste des actions possibles pour cet objet :\n  - lumiere\n - ouvrir\n - alarme\n - retour");
+			System.out.println("Liste des actions possibles pour cet objet :\n - lumiere\n - ouvrir\n - alarme\n - retour");
 			String input = sc.nextLine();
 			switch (input.toUpperCase()) {
 			case "LUMIERE":
@@ -60,7 +61,6 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 				break;
 			}
 		}
-		sc.close();
 	}
 
 }

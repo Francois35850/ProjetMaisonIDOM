@@ -29,8 +29,8 @@ public class Armoire extends ObjetNonRamassable {
 	@Override
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		Scanner sc2 = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
 			System.out.println(
@@ -61,7 +61,7 @@ public class Armoire extends ObjetNonRamassable {
 					}
 					else {
 						System.out.println("Quels vêtements voulez-vous enfiler ?\n  Tenue classique | Pyjama | Maillot de bain");
-						String reponse = sc2.nextLine();
+						String reponse = sc.nextLine();
 						switch(reponse.toUpperCase()) {
 							case "TENUE CLASSIQUE" :
 								if(Joueur.getEtatVetements()==1) System.out.println("Vous êtes déjà habillé comme ça");
@@ -102,8 +102,6 @@ public class Armoire extends ObjetNonRamassable {
 					break;
 			}
 		}
-		sc.close();
-		sc2.close();
 	}
 
 }

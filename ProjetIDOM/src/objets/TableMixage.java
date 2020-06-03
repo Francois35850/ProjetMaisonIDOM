@@ -20,8 +20,8 @@ public class TableMixage extends ObjetNonRamassable {
 	@Override
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		Scanner sc2 = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
 			System.out.println(
@@ -45,8 +45,6 @@ public class TableMixage extends ObjetNonRamassable {
 				break;
 			}
 		}
-		sc.close();
-		sc2.close();
 	}
 
 }

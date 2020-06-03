@@ -29,6 +29,7 @@ public class Volet extends ObjetNonRamassable {
 	// fonction qui permet d'utiliser la fenetre
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation() == true) {
@@ -59,7 +60,6 @@ public class Volet extends ObjetNonRamassable {
 				break;
 			}
 		}
-		input.close();
 	}
 
 	public String toString() {

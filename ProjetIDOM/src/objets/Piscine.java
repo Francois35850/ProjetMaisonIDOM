@@ -42,6 +42,7 @@ public class Piscine extends ObjetNonRamassable {
 	@Override
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez la " + this.getNom() + ".");
 		while (this.getUtilisation()) {
@@ -102,7 +103,6 @@ public class Piscine extends ObjetNonRamassable {
 				break;
 			}
 		}
-		sc.close();
 	}
 	
 	public void setMousse(boolean b) {

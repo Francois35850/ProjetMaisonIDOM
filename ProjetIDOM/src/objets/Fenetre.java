@@ -31,7 +31,6 @@ public class Fenetre extends ObjetNonRamassable{
 	//fonction qui permet d'utiliser la fenetre 			
 	public void utiliserObjet() {
 		this.setUtilisation(true);
-		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()==true){
 			System.out.println("Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - retour");
@@ -60,7 +59,6 @@ public class Fenetre extends ObjetNonRamassable{
 				break;
 			}
 		}
-		sc.close();
 	}
 
 	public String toString() {

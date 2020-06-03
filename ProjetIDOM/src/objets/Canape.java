@@ -52,6 +52,7 @@ public final class Canape extends ObjetNonRamassable {
 	@Override
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()) {
@@ -95,7 +96,6 @@ public final class Canape extends ObjetNonRamassable {
 				break;
 			}
 		}
-		sc.close();
 	}
 
 	

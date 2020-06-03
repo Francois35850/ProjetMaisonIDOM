@@ -50,8 +50,8 @@ public final class Enceinte extends ObjetNonRamassable {
 	@Override
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		Scanner sc2 = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
 			System.out.println(
@@ -96,7 +96,7 @@ public final class Enceinte extends ObjetNonRamassable {
 				else {
 					System.out.println(
 							"Quel chanteur souhaitez-vous entendre ?\n Céline Dion | Jul | Michael Jackson | Mylène Farmer | Patrick Sébastien | Six Nine | Magic System | Drake");
-					String reponse = sc2.nextLine();
+					String reponse = sc.nextLine();
 					switch (reponse.toUpperCase()) {
 					case "CELINE DION":
 						if (musiqueActive == 0)
@@ -192,8 +192,6 @@ public final class Enceinte extends ObjetNonRamassable {
 				break;
 			}
 		}
-		sc.close();
-		sc2.close();
 	}
 
 }

@@ -75,6 +75,7 @@ public final class LaveLinge extends ObjetNonRamassable {
 	public void utiliserObjet() {
 		checkUtilisation();
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
@@ -152,7 +153,6 @@ public final class LaveLinge extends ObjetNonRamassable {
 				break;
 			}
 		}
-		sc.close();
 	}
 
 }

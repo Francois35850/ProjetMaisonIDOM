@@ -68,6 +68,7 @@ public class Telecommande extends ObjetNonRamassable {
 		verificationPiles();
 		if (nombrePiles == 2) {
 			this.setUtilisation(true);
+			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Vous utilisez " + this.getNom() + ".");
 			while (this.getUtilisation()) {
@@ -109,6 +110,7 @@ public class Telecommande extends ObjetNonRamassable {
 						System.out.println("Commencez par allumer la télévision");
 					else {
 						System.out.print("Entrez le numéro de la chaîne (entre 1 et 9) : ");
+						@SuppressWarnings("resource")
 						Scanner sc2 = new Scanner(System.in);
 						int newChaine = sc2.nextInt();
 						if (newChaine < 10 && newChaine > 0) {
@@ -116,7 +118,6 @@ public class Telecommande extends ObjetNonRamassable {
 							System.out.println("Vous avez mis la " + newChaine);
 						} else
 							System.out.println("Vous n'avez pas accès à cette chaîne...");
-						sc2.close();
 					}
 					break;
 				case "RETOUR":
@@ -128,7 +129,6 @@ public class Telecommande extends ObjetNonRamassable {
 					break;
 				}
 			}
-			sc.close();
 		} else if (nombrePiles == 1) {
 			System.out.println("Il vous manque encore 1 pile pour pouvoir utiliser la télécommande...");
 		} else {

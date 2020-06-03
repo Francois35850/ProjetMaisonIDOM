@@ -47,6 +47,7 @@ public class DetecteurIncendie extends ObjetNonRamassable {
 
 	public void utiliserObjet() {
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() +".");
 		while(this.getUtilisation()==true){
@@ -66,7 +67,6 @@ public class DetecteurIncendie extends ObjetNonRamassable {
 					break;
 			}
 		}
-		input.close();
 	}
 	
 }

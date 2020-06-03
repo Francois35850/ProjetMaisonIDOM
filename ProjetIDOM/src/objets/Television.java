@@ -64,6 +64,7 @@ public class Television extends ObjetNonRamassable {
 		int indT = indiceTelecommande(Joueur.getPieceCourante().getObjets());
 		Telecommande t = (Telecommande) Joueur.getPieceCourante().getObjets().get(indT);
 		this.setUtilisation(true);
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation()) {
@@ -128,7 +129,6 @@ public class Television extends ObjetNonRamassable {
 				break;
 			}
 		}
-		sc.close();
 	}
 
 }
