@@ -102,6 +102,8 @@ public class Armoire extends ObjetNonRamassable {
 					break;
 			}
 		}
+		sc.close();
+		sc2.close();
 	}
 
 }

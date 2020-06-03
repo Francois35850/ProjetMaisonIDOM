@@ -10,7 +10,6 @@ import main.ObjetRamassable;
 import main.Objets;
 import main.Piece;
 import objetsRamassables.Linge;
-import objetsRamassables.Produit;
 
 public final class LaveLinge extends ObjetNonRamassable {
 
@@ -35,7 +34,6 @@ public final class LaveLinge extends ObjetNonRamassable {
 		lingeInterieur = false;
 		heureLancement = -1;
 		minuteLancement = -1;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -154,7 +152,7 @@ public final class LaveLinge extends ObjetNonRamassable {
 				break;
 			}
 		}
-
+		sc.close();
 	}
 
 }

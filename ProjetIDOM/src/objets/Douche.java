@@ -59,7 +59,8 @@ public class Douche extends ObjetNonRamassable {
 					break;
 			}
 		}
-
+		sc.close();
+		sc2.close();
 	}
 
 }

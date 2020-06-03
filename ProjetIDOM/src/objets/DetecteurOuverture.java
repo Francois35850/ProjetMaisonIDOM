@@ -2,7 +2,6 @@ package objets;
 
 import main.ObjetNonRamassable;
 import main.Piece;
-import objets.Fenetre;
 
 public class DetecteurOuverture extends ObjetNonRamassable {
 
@@ -32,7 +31,7 @@ public class DetecteurOuverture extends ObjetNonRamassable {
 	}
 
 	public void setEtat() {
-		if (fenetre.getEtat()) {  //TODO 
+		if (fenetre.getEtat()) { 
 			this.ouverture = true;
 		} else {
 			this.ouverture = false;
@@ -45,7 +44,6 @@ public class DetecteurOuverture extends ObjetNonRamassable {
 
 	@Override
 	public void utiliserObjet() {
-		// TODO Auto-generated method stub
 
 	}
 }

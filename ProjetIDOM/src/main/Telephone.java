@@ -178,14 +178,13 @@ public class Telephone {
 				break;
 			case "REGINE":
 				System.out.println("Régine - 24/05/2020 - 3h02 :/n Tuu peux vnir me chetcher ? jme sen pas bizen");
-				break;
+				break;	
 			case "DAVID":
 				System.out.println(
 						"David - 21/05/2020 - 15h34 :\n Salut papa, ça serait possible d'aller chez Anthony ce soir apres les cours stp ?");
 				break;
-			case "MA PETITE FEMME":
-				System.out.println(
-						"Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
+			case "MA PETITE FEMME" :
+				System.out.println("Ma petite femme - 20/05/2020 - 16h23 :\n Il faudrait aller chercher les pots de fleurs qu'il y a chez mes parents pour les donner au voisin ? Si t'as le temps d'y passer �a serait super. Bisous chérie <3");
 				break;
 			default: // cas par dÃ©faut, cad commande invalide
 				System.out.println("La commande n'est pas valide");

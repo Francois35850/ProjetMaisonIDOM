@@ -1,7 +1,6 @@
 package objets;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 import main.Joueur;
@@ -24,7 +23,6 @@ public final class Enceinte extends ObjetNonRamassable {
 		this.allumer = allumer;
 		this.jouerMusique = false;
 		musiqueActive = 1;
-		// TODO Auto-generated constructor stub
 	}
 
 	public Enceinte(String nom, boolean allumer) {
@@ -32,7 +30,7 @@ public final class Enceinte extends ObjetNonRamassable {
 		this.allumer = allumer;
 		this.jouerMusique = false;
 		musiqueActive = 1;
-		// TODO Auto-generated constructor stub
+
 	}
 	
 	@Override
@@ -194,7 +192,8 @@ public final class Enceinte extends ObjetNonRamassable {
 				break;
 			}
 		}
-
+		sc.close();
+		sc2.close();
 	}
 
 }

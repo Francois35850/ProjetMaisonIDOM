@@ -60,7 +60,7 @@ public class PanneauDeCtrl extends ObjetNonRamassable{
 				break;
 			}
 		}
-		
+		sc.close();
 	}
 
 }

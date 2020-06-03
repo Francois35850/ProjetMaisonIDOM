@@ -128,6 +128,7 @@ public class Television extends ObjetNonRamassable {
 				break;
 			}
 		}
+		sc.close();
 	}
 
 }

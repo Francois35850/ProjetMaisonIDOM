@@ -1,6 +1,6 @@
 package objets;
 
-import java.util.Scanner;
+
 import main.Piece;
 import main.ObjetNonRamassable;
 

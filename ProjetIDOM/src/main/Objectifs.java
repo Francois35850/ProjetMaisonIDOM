@@ -16,11 +16,6 @@ public class Objectifs {
 
 		objectifs.add(new Objectif("Regarder un documentaire sur la télé du salon", false, null));
 
-		objectifs.add(new Objectif("Regarder ses messages", false,
-				new String[] { "Regarder son portable", "Ouvrir ses messages" })); // modifier
-
-		objectifs.add(new Objectif("Mettre de la musique dans le salon", false, null)); // a changer
-
 		objectifs.add(new Objectif("Organiser une pool party", false,
 				new String[] { "Mettre de la musique à proximité de la piscine", "Ouvrir la piscine",
 						"Désactiver le détecteur de la piscine", "Activer les lumières de la piscine",

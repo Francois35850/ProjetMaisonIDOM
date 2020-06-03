@@ -95,6 +95,7 @@ public final class Canape extends ObjetNonRamassable {
 				break;
 			}
 		}
+		sc.close();
 	}
 
 	

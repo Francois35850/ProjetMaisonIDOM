@@ -4,7 +4,6 @@ import main.Joueur;
 import main.Main;
 import main.ObjetRamassable;
 import main.Objets;
-import main.Piece;
 
 public class Linge extends ObjetRamassable{
 

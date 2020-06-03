@@ -60,6 +60,7 @@ public class Fenetre extends ObjetNonRamassable{
 				break;
 			}
 		}
+		sc.close();
 	}
 
 	public String toString() {

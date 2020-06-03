@@ -4,7 +4,6 @@ import java.util.*;
 import main.Joueur;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
-import main.Objets;
 import main.Piece;
 
 public class Telecommande extends ObjetNonRamassable {
@@ -117,6 +116,7 @@ public class Telecommande extends ObjetNonRamassable {
 							System.out.println("Vous avez mis la " + newChaine);
 						} else
 							System.out.println("Vous n'avez pas accès à cette chaîne...");
+						sc2.close();
 					}
 					break;
 				case "RETOUR":
@@ -128,6 +128,7 @@ public class Telecommande extends ObjetNonRamassable {
 					break;
 				}
 			}
+			sc.close();
 		} else if (nombrePiles == 1) {
 			System.out.println("Il vous manque encore 1 pile pour pouvoir utiliser la télécommande...");
 		} else {

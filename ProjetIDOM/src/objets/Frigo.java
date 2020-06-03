@@ -5,7 +5,6 @@ import java.util.Scanner;
 import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
-import main.ObjetRamassable;
 import main.Piece;
 import objetsRamassables.Boisson;
 import objetsRamassables.Sandwich;
@@ -69,7 +68,7 @@ public final class Frigo extends ObjetNonRamassable {
 					break;
 			}
 		}
-		
+		sc.close();
 	}
 
 }

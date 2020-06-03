@@ -9,7 +9,6 @@ import main.Joueur;
 import main.Main;
 import main.ObjetNonRamassable;
 import main.ObjetRamassable;
-import main.Objets;
 import main.Piece;
 import objetsRamassables.Bouteille;
 import objetsRamassables.Cle;
@@ -178,6 +177,7 @@ public class Commode extends ObjetNonRamassable {
 				break;
 			}
 		}
+		sc.close();
 	}
 
 }
