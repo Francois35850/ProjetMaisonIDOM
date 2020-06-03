@@ -221,16 +221,16 @@ public class Telephone {
 			}
 		} else if (choix.compareTo("2")==0) {
 			System.out.println("Etat des volets roulants :");
-			System.out.println(Main.volet_bureau.toString());
-			System.out.println(Main.volet_salon1.toString());
-			System.out.println(Main.volet_salon2.toString());
-			System.out.println(Main.volet_ch1.toString());
-			System.out.println(Main.volet_ch2.toString());
-			System.out.println(Main.volet_chp.toString());
-			System.out.println(Main.volet_sallejeux.toString());
-			System.out.println(Main.volet_studio.toString());
-			System.out.println(Main.volet_cuisine.toString());
-			System.out.println(Main.volet_sallemanger.toString());
+			System.out.print(Main.volet_bureau.toString());
+			System.out.print(Main.volet_salon1.toString());
+			System.out.print(Main.volet_salon2.toString());
+			System.out.print(Main.volet_ch1.toString());
+			System.out.print(Main.volet_ch2.toString());
+			System.out.print(Main.volet_chp.toString());
+			System.out.print(Main.volet_sallejeux.toString());
+			System.out.print(Main.volet_studio.toString());
+			System.out.print(Main.volet_cuisine.toString());
+			System.out.print(Main.volet_sallemanger.toString());
 			
 //		} else if (choix.compareTo("3")==0) {
 //			System.out.println("Etat des détecteurs de mouvement :");

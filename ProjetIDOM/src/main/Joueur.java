@@ -81,7 +81,6 @@ public class Joueur {
 			while (itObjet.hasNext()) {
 				res += "";
 				res += itObjet.next().toString();
-				res += " \n";
 			}
 			System.out.println(res);
 		} else
