@@ -2,6 +2,7 @@ package objets;
 
 import java.util.Scanner;
 
+import main.Main;
 import main.ObjetNonRamassable;
 import main.Piece;
 
@@ -34,12 +35,13 @@ public class Volet extends ObjetNonRamassable {
 		System.out.println("Vous utilisez " + this.getNom() + ".");
 		while (this.getUtilisation() == true) {
 			System.out.println(
-					"Liste des actions possibles pour cet objet :\n  - ouvrir\n  - fermer\n  - retour");
+					"Liste des actions possibles pour cet objet :\n  - ouvrir (1 min)\n  - fermer (1 min)\n  - retour");
 			String entree = input.nextLine();
 			switch (entree.toUpperCase()) {
 			case "OUVRIR":
 				if(!etat_volet) {
 					System.out.println("Vous avez ouvert le volet");
+					Main.ajoutTemps(1);
 					setEtat(true);
 				}
 				else System.out.println("Le volet est déjà ouvert");
@@ -47,6 +49,7 @@ public class Volet extends ObjetNonRamassable {
 			case "FERMER":
 				if(etat_volet) {
 					System.out.println("Vous avez fermé le volet");
+					Main.ajoutTemps(1);
 					setEtat(false);
 				}
 				else System.out.println("Le volet est déjà fermé");
