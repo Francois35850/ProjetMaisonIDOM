@@ -151,12 +151,12 @@ public class Main {
 			"Détecteur mouvement sdb patentale", sdb2, false);
 	public static DetecteurMouvement detecteur_mouvement_dressing = new DetecteurMouvement(
 			"Détecteur mouvement dressing", dressing, false);
-	public static DetecteurMouvement detecteur_mouvement_cuisine = new DetecteurMouvement(
-			"Détecteur mouvement cuisine", cuisine, false);
+	public static DetecteurMouvement detecteur_mouvement_cuisine = new DetecteurMouvement("Détecteur mouvement cuisine",
+			cuisine, false);
 	public static DetecteurMouvement detecteur_mouvement_studio = new DetecteurMouvement("Détecteur mouvement studio",
 			studio, false);
-	public static DetecteurMouvement detecteur_mouvement_couloir = new DetecteurMouvement(
-			"Détecteur mouvement couloir", couloir, false);
+	public static DetecteurMouvement detecteur_mouvement_couloir = new DetecteurMouvement("Détecteur mouvement couloir",
+			couloir, false);
 	// private static DetecteurOuverture detecteur_ouverture_porte = new
 	// DetecteurOuverture("Détecteur ouverture porte", false, entree);
 	public static DetecteurOuverture detecteur_ouverture_bureau = new DetecteurOuverture("Détecteur ouverture bureau",
@@ -175,17 +175,65 @@ public class Main {
 			"Détecteur ouverture salle de jeux", salle_de_jeux, false, fenetre_sallejeux);
 	public static DetecteurOuverture detecteur_ouverture_studio = new DetecteurOuverture("Détecteur ouverture studio",
 			studio, false, fenetre_studio);
-	public static DetecteurOuverture detecteur_ouverture_cuisine = new DetecteurOuverture(
-			"Détecteur ouverture cuisine", cuisine, false, fenetre_cuisine);
+	public static DetecteurOuverture detecteur_ouverture_cuisine = new DetecteurOuverture("Détecteur ouverture cuisine",
+			cuisine, false, fenetre_cuisine);
 	public static DetecteurOuverture detecteur_ouverture_sallemanger = new DetecteurOuverture(
 			"Détecteur ouverture salle à manger", salle_a_manger, false, fenetre_sallemanger);
 	public static Camera camera_devant_maison = new Camera("Caméra devant la maison", devant_maison,
 			"Systeme defaillant, veuillez contacter le service maintenance !", 0);
 	public static Camera camera_jardin = new Camera("Caméra du jardin", jardin,
-			"|---------------------------------------------------------------------|\n|                  |   / 	    	      |  ______ |                   |\n|                  |  /                 |  |    | |     []_[]         |\n |       /|         | /                  |  |    | |     ('v')         |\n|      / |         |/           |_| |_| |__|____|_|    / |||)         |\n|     /  |         /                                  (_=*;;          |\n|    /   |        /                                                   |\n|   /    |       /                                                    |\n|   |    |      /               _____________________________         |\n|   |    |     /              //|   |    |    |    |    |  //        _|\n|   |    |    /              // |   |    |    |    |    | //        / |\n|   |   /    /              //| |   |    |    |    |    |//        /  |\n|   |  /    /              // | |   |    |    |    |    //        /__/|\n|   | /    /              //| | |   |    |    |    |   //        //   |\n|   |/    /              // | | |   |    |    |    |  //        //    |\n|        /              //| | | |___|____|____|____|_//    ___________|\n|       /              // | | | /                   //    /  /  /  /  |\n|      /              //| | | |/                   //    /  /  /  /  /|\n|	    /              // | | | /                   //    /__/__/__/__/_|\n|    /              //| | | |/                   //    //           //|\n|   /              // | | | /                   //    //           // |\n|  /              //__|_|_|/___________________//                     |\n              | /                         										    |\n|/              													    |\n|---------------------------------------------------------------------|",
+			"|---------------------------------------------------------------------|\n"
+					+ "|                  |   / 	    	   |  ______ |                   |\n"
+					+ "|                  |  /                 |  |    | |     []_[]         |\n"
+					+ "|       /|         | /                  |  |    | |     ('v')         |\n"
+					+ "|      / |         |/           |_| |_| |__|____|_|    / |||)         |\n"
+					+ "|     /  |         /                                  (_=*;;          |\n"
+					+ "|    /   |        /                                                   |\n"
+					+ "|   /    |       /                                                    |\n"
+					+ "|   |    |      /               _____________________________         |\n"
+					+ "|   |    |     /              //|   |    |    |    |    |  //        _|\n"
+					+ "|   |    |    /              // |   |    |    |    |    | //        / |\n"
+					+ "|   |   /    /              //| |   |    |    |    |    |//        /  |\n"
+					+ "|   |  /    /              // | |   |    |    |    |    //        /__/|\n"
+					+ "|   | /    /              //| | |   |    |    |    |   //        //   |\n"
+					+ "|   |/    /              // | | |   |    |    |    |  //        //    |\n"
+					+ "|        /              //| | | |___|____|____|____|_//    ___________|\n"
+					+ "|       /              // | | | /                   //    /  /  /  /  |\n"
+					+ "|      /              //| | | |/                   //    /  /  /  /  /|\n"
+					+ "|	 /              // | | | /                   //    /__/__/__/__/_|\n"
+					+ "|    /              //| | | |/                   //    //           //|\n"
+					+ "|   /              // | | | /                   //    //           // |\n"
+					+ "|  /              //__|_|_|/___________________//                     |\n"
+					+ "| /                         										     |\n"
+					+ "|/              													     |\n"
+					+ "|---------------------------------------------------------------------|",
 			1);
 	public static Camera camera_entree = new Camera("Caméra de l'entrée", entree,
-			"|---------------------------------------------------------------------|\n |              |       |    				     |       |              |\n|              |       |      		         |       |              |\n|              |       |                       |       |              |\n|              |       |                       |       |              |\n|              |       |     _____________     |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |          _| |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |    |             |    |       |              |\n|              |       |____|_____________|____|       |              |\n|              |      /                         \\      |              |\n|              |     /                           \\     |              |\n|              |    /                             \\    |              |\n|	 		     |   /							     \\   |			     |\n|              |  /                                 \\  |              |\n|              | /                                   \\ |              |\n|______________|/        							    \\|______________|\n|                          										    |\n|               													    |\n|---------------------------------------------------------------------|",
+			"|----------------------------------------------------------------------|\n"
+					+ "|              |       |    				      |        |              |\n"
+					+ "|              |       |      		          |        |              |\n"
+					+ "|              |       |                       |        |              |\n"
+					+ "|              |       |                       |        |              |\n"
+					+ "|              |       |     _____________     |        |              |\n"
+					+ "|              |       |    |             |    |        |              |\n"
+					+ "|              |       |    |             |    |        |              |\n"
+					+ "|              |       |    |             |    |        |              |\n"
+					+ "|              |       |    |             |    |        |              |\n"
+					+ "|              |       |    |          _| |    |        |              |\n"
+					+ "|              |       |    |             |    |        |              |\n"
+					+ "|              |       |    |             |    |        |              |\n"
+					+ "|              |       |    |             |    |        |              |\n"
+					+ "|              |       |____|_____________|____|        |              |\n"
+					+ "|              |      /                         \\      |              |\n"
+					+ "|              |     /                           \\     |              |\n"
+					+ "|              |    /                             \\    |              |\n"
+					+ "|   		      |   /							      \\   |			  |\n"
+					+ "|              |  /                                 \\  |              |\n"
+					+ "|              | /                                   \\ |              |\n"
+					+ "|______________|/        							 \\|______________|\n"
+					+ "|                          										      |\n"
+					+ "|               													      |\n"
+					+ "|----------------------------------------------------------------------|",
 			1);
 	// private static DetecteurIncendie(tecteur incendie,);
 	// private static DetecteurIncendie(tecteur incendie,);
@@ -222,9 +270,9 @@ public class Main {
 			heure++;
 		}
 	}
-	
+
 	public static boolean isDay() {
-			return heure>8&&heure<21;
+		return heure > 8 && heure < 21;
 	}
 
 	public static void checkTime() {
@@ -283,7 +331,7 @@ public class Main {
 		Objets[] objCouloir = { interrupteurCouloir };
 		Objets[] objSdB2 = { interrupteurSdB2, douche_sdb2 };
 		Objets[] objSalleDeJeux = { interrupteurSdJ, televisionSalleDeJeux, telecommandeSalleDeJeux, canapeSdJ,
-				fenetre_sallejeux, volet_sallejeux ,enceinteSdj};
+				fenetre_sallejeux, volet_sallejeux, enceinteSdj };
 		Objets[] objChambreParentale = { interrupteurChambreP, fenetre_chp, volet_chp, lingeP };
 		Objets[] objStudio = { interrupteurStudio, fenetre_studio, volet_studio, guitare, piano, violon, batterie,
 				basse };
@@ -444,11 +492,12 @@ public class Main {
 					Objets cherche = Joueur.StringtoObjet(resObjet);
 					if (cherche != null && cherche instanceof ObjetRamassable) {
 						if (Joueur.getPieceCourante().estEclaire()) {
-						ajoutTemps(1);
-						Joueur.addInventaire((ObjetRamassable) cherche);
-						Joueur.getPieceCourante().soustractObjets(cherche);
-						}
-						else System.out.println("Vous savez que l'objet est dans cette pièce mais vous ne le voyez pas, il fait trop sombre ...");
+							ajoutTemps(1);
+							Joueur.addInventaire((ObjetRamassable) cherche);
+							Joueur.getPieceCourante().soustractObjets(cherche);
+						} else
+							System.out.println(
+									"Vous savez que l'objet est dans cette pièce mais vous ne le voyez pas, il fait trop sombre ...");
 					} else
 						System.out.println("Cet objet n'est pas disponible ... \n");
 				}

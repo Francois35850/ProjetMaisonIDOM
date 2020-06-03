@@ -5,12 +5,13 @@ import main.Piece;
 
 public class Camera extends ObjetNonRamassable {
 
-	
 	private int etat;
+	private String vue;
 
 	public Camera(String nom, Piece piece, String vue, int etat) {
-		super(nom,piece);
+		super(nom, piece);
 		this.etat = etat;
+		this.vue = vue;
 	}
 
 	public String etat() {
@@ -26,6 +27,7 @@ public class Camera extends ObjetNonRamassable {
 	public String toString() {
 		String res = "";
 		res += " - " + super.getNom() + " " + this.etat();
+		res += "\n" + vue + "\n";
 		return res;
 	}
 
@@ -35,7 +37,7 @@ public class Camera extends ObjetNonRamassable {
 
 	@Override
 	public void utiliserObjet() {
-
+		// Pas d'utilisation possible
 	}
 
 }
