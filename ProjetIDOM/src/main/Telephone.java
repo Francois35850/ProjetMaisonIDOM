@@ -356,7 +356,7 @@ public class Telephone {
 			@SuppressWarnings("resource")
 			Scanner sc = new Scanner(System.in);
 			while (utilise) {
-				System.out.println("Liste des actions possibles sur la piscine :\n - lumiere\n - ouvrir\n - alarme\n - retour");
+				System.out.println("Liste des actions possibles sur la piscine :\n - lumiere\n - ouvrir (5 mins) \n - alarme\n - retour");
 				String input = sc.nextLine();
 				switch (input.toUpperCase()) {
 				case "LUMIERE":
@@ -374,9 +374,12 @@ public class Telephone {
 					if (Main.piscine.getOuverture()) {
 						System.out.println("La piscine est déjà ouverte");
 					}
-					else System.out.println("Vous ouvrez la piscine");
-					main.Main.PPsucces2 = true;
-					Main.piscine.setOuverture(true);
+					else {
+						System.out.println("Vous ouvrez la piscine");
+						Main.ajoutTemps(5);
+						main.Main.PPsucces2 = true;
+						Main.piscine.setOuverture(true);
+					}
 					break;
 				case "ALARME":
 					Main.piscine.setSecu(!Main.piscine.getSecu());
