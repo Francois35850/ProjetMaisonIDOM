@@ -119,28 +119,6 @@ public class Joueur {
 			}
 		}
 	}
-	
-	public static void changerPieceCheat(String[] piece) {
-		if (piece.length < 2) {
-			System.out.println("Aucune pièce n'a été précisée.");
-		} else {
-			String resPiece = "";
-			resPiece = piece[1];
-			if (piece.length > 2) {
-				for (int i = 2; i < piece.length; i++) {
-					resPiece += " ";
-					resPiece += piece[i];
-				}
-			}
-			Piece deplacement = StringToPiece(resPiece);
-			if (deplacement == null)
-				System.out.println("Désolé je n'ai pas compris dans quelle pièce vous voulez aller...");
-			else {
-				setPieceCourante(deplacement);
-				System.out.println(getPieceCourante().toString());
-			}
-		}
-	}
 
 	public static Objets StringtoObjet(String o) {
 		ListIterator<ObjetRamassable> itInv = inventaire.listIterator();
